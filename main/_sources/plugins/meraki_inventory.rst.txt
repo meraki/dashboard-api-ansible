@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.meraki_inventory:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.meraki inventory -- Ansible dynamic inventory plugin for Cisco Mera
 .. Collection note
 
 .. note::
-    This inventory plugin is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This inventory plugin is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this inventory plugin,
     see :ref:`Requirements <ansible_collections.cisco.meraki.meraki_inventory_requirements>` for details.
 
@@ -66,7 +49,7 @@ Synopsis
 .. Description
 
 - Build inventories using the Cisco Meraki API.
-- Uses a YAML configuration file cisco\_meraki.[yml|yaml].
+- Uses a YAML configuration file cisco\_meraki.[yml\|yaml].
 
 
 .. Aliases
@@ -92,12 +75,13 @@ The below requirements are needed on the local controller node that executes thi
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -117,9 +101,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-compose" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
 
 
@@ -158,9 +142,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-groups" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
 
 
@@ -199,9 +183,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-keyed_groups" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
 
 
@@ -227,6 +211,361 @@ Parameters
 
   * - .. raw:: html
 
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-keyed_groups/default_value"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-keyed_groups/default_value:
+
+      .. rst-class:: ansible-option-title
+
+      **default_value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-keyed_groups/default_value" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      :ansible-option-versionadded:`added in ansible-core 2.12`
+
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The default value when the host variable's value is :ansval:`None` or an empty string.
+
+      This option is mutually exclusive with :ansopt:`cisco.meraki.meraki#inventory:keyed\_groups[].trailing\_separator`.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-keyed_groups/key"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-keyed_groups/key:
+
+      .. rst-class:: ansible-option-title
+
+      **key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-keyed_groups/key" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The key from input dictionary used to generate groups.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-keyed_groups/parent_group"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-keyed_groups/parent_group:
+
+      .. rst-class:: ansible-option-title
+
+      **parent_group**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-keyed_groups/parent_group" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      parent group for keyed group.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-keyed_groups/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-keyed_groups/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-keyed_groups/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A keyed group name will start with this prefix.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-keyed_groups/separator"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-keyed_groups/separator:
+
+      .. rst-class:: ansible-option-title
+
+      **separator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-keyed_groups/separator" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      separator used to build the keyed group name.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-keyed_groups/trailing_separator"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-keyed_groups/trailing_separator:
+
+      .. rst-class:: ansible-option-title
+
+      **trailing_separator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-keyed_groups/trailing_separator" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in ansible-core 2.12`
+
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Set this option to :ansval:`false` to omit the :ansopt:`cisco.meraki.meraki#inventory:keyed\_groups[].separator` after the host variable when the value is :ansval:`None` or an empty string.
+
+      This option is mutually exclusive with :ansopt:`cisco.meraki.meraki#inventory:keyed\_groups[].default\_value`.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-leading_separator"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-leading_separator:
+
+      .. rst-class:: ansible-option-title
+
+      **leading_separator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-leading_separator" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in ansible-core 2.11`
+
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use in conjunction with :ansopt:`cisco.meraki.meraki#inventory:keyed\_groups`.
+
+      By default, a keyed group that does not have a prefix or a separator provided will have a name that starts with an underscore.
+
+      This is because the default prefix is :ansval:`""` and the default separator is :ansval:`"\_"`.
+
+      Set this option to :ansval:`false` to omit the leading underscore (or other separator) if no prefix is given.
+
+      If the group name is derived from a mapping the separator is still used to concatenate the items.
+
+      To not use a separator in the group name at all, set the separator for the keyed group to an empty string instead.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
 
@@ -240,9 +579,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
 
 
@@ -281,9 +620,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -318,9 +657,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -359,9 +698,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -400,9 +739,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -441,9 +780,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -486,9 +825,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -527,9 +866,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -568,9 +907,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
 
 
@@ -583,7 +922,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -609,9 +948,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
 
 
@@ -650,9 +989,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_org_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
 
 
@@ -687,9 +1026,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -732,9 +1071,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -777,9 +1116,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
 
 
@@ -818,9 +1157,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -863,9 +1202,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
 
 
@@ -904,9 +1243,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -949,9 +1288,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
 
 
@@ -990,9 +1329,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -1035,9 +1374,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -1080,9 +1419,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -1125,9 +1464,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-strict" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
 
 
@@ -1140,7 +1479,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If \ :literal:`yes`\  make invalid entries a fatal error, otherwise skip and continue.
+      If :ansval:`yes` make invalid entries a fatal error, otherwise skip and continue.
 
       Since it is possible to use facts in the expressions they might not always be available and we ignore those errors by default.
 
@@ -1157,12 +1496,88 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-use_extra_vars"></div>
+
+      .. _ansible_collections.cisco.meraki.meraki_inventory__parameter-use_extra_vars:
+
+      .. rst-class:: ansible-option-title
+
+      **use_extra_vars**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-use_extra_vars" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in ansible-core 2.11`
+
+
+
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Merge extra vars into the available variables for composition (highest precedence).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-configuration:`Configuration:`
+
+      - INI entry:
+
+        .. code-block:: ini
+
+          [inventory_plugins]
+          use_extra_vars = false
+
+
+      - Environment variable: :envvar:`ANSIBLE\_INVENTORY\_USE\_EXTRA\_VARS`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. note::
+
+    Configuration entries listed above for each entry type (Ansible variable, environment variable, and so on) have a low to high priority order.
+    For example, a variable that is lower in the list will override a variable that is higher up.
+    The entry types are also ordered by precedence from low to high priority order.
+    For example, an ansible.cfg entry (further up in the list) is overwritten by an Ansible variable (further down in the list).
 
 .. Attributes
 
 
 .. Notes
 
+Notes
+-----
+
+.. note::
+   - Inventories are not finalized at this stage, so the auto populated :literal:`all` and :literal:`ungrouped` groups will only reflect what previous inventory sources explicitly added to them.
+   - Runtime 'magic variables' are not available during inventory construction. For example, :literal:`groups` and :literal:`hostvars` do not exist yet.
 
 .. Seealso
 
@@ -1174,7 +1589,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     # cisco_meraki.yml
     ---
     plugin: cisco.meraki.meraki
@@ -1196,7 +1610,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -1214,20 +1627,19 @@ Authors
 - Nilashish Chakraborty (@NilashishC)
 
 
-.. hint::
-    Configuration entries for each entry type have a low to high priority order. For example, a variable that is lower in the list will override a variable that is higher up.
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

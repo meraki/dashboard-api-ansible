@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.networks_wireless_rf_profiles module -- Resource module for network
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module_requirements>` for details.
 
@@ -70,7 +53,7 @@ Synopsis
 
 - Manage operations create, update and delete of the resource networks \_wireless \_rf \_profiles.
 - Creates new RF profile for this network.
-- Delete a RF Profile. - \> Updates specified RF profile for this network. Note built-in RF profiles can only be assigned as a default, and its attributes are immutable.
+- Delete a RF Profile. \- \> Updates specified RF profile for this network. Note built\-in RF profiles can only be assigned as a default, and its attributes are immutable.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -99,12 +82,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -124,9 +108,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apBandSettings" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -142,11 +126,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-apBandSettings/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-apbandsettings/bandoperationmode:
 
@@ -158,13 +146,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apBandSettings/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -182,6 +174,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-apBandSettings/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-apbandsettings/bands:
 
       .. rst-class:: ansible-option-title
@@ -192,13 +188,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apBandSettings/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -210,11 +210,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-apBandSettings/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-apbandsettings/bands/enabled:
 
@@ -226,13 +230,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apBandSettings/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -251,6 +259,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-apBandSettings/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-apbandsettings/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -261,13 +273,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apBandSettings/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -304,9 +320,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-bandSelectionType" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -338,9 +354,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-clientBalancingEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -368,6 +384,591 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11be**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      802.11be settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11be is enabled on Wi\-Fi 7 capable APs.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      802.11be is enabled for all SSIDs or per SSID group.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids:
+
+      .. rst-class:: ansible-option-title
+
+      **ssids**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      802.11be settings for SSIDs.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups:
+
+      .. rst-class:: ansible-option-title
+
+      **groups**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      802.11be settings for SSID groups.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/1"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/1:
+
+      .. rst-class:: ansible-option-title
+
+      **1**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/1" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SSID group 1 includes SSIDs number 0\-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/1/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/1/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/1/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11be is enabled for the SSID group.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/2"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/2:
+
+      .. rst-class:: ansible-option-title
+
+      **2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/2" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SSID group 2 includes SSIDs number 4\-7.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/2/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/2/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/2/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11be is enabled for the SSID group.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/3"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/3:
+
+      .. rst-class:: ansible-option-title
+
+      **3**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/3" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SSID group 3 includes SSIDs number 8\-11.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/3/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/3/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/3/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11be is enabled for the SSID group.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/4:
+
+      .. rst-class:: ansible-option-title
+
+      **4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SSID group 4 includes SSIDs number 12\-14.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11be/ssids/groups/4/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-dot11be/ssids/groups/4/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11be/ssids/groups/4/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11be is enabled for the SSID group.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings"></div>
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings:
@@ -380,9 +981,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -398,11 +999,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/channelWidth"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/channelwidth:
 
@@ -414,13 +1019,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/channelWidth" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -436,7 +1045,104 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/dot11ax"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/dot11ax:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11ax**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/dot11ax" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IEEE 802.11ax (Wi\-Fi 6) settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/dot11ax/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/dot11ax/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/dot11ax/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Determines whether IEEE 802.11ax (Wi\-Fi 6) on the 5 GHz band is enabled. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/maxPower"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/maxpower:
 
@@ -448,13 +1154,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/maxPower" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -472,6 +1182,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -482,13 +1196,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -506,6 +1224,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/minPower"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/minpower:
 
       .. rst-class:: ansible-option-title
@@ -516,13 +1238,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/minPower" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -540,6 +1266,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/rxsop"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/rxsop:
 
       .. rst-class:: ansible-option-title
@@ -550,19 +1280,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/rxsop" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+      The RX\-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX\-SOP only after consulting a wireless expert. RX\-SOP can be configured in the range of \-65 to \-95 (dBm). A value of null will reset this to the default.
 
 
       .. raw:: html
@@ -574,6 +1308,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fiveGhzSettings/validAutoChannels"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-fiveghzsettings/validautochannels:
 
       .. rst-class:: ansible-option-title
@@ -584,13 +1322,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-fiveGhzSettings/validAutoChannels" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -619,9 +1361,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-flexRadios" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -637,11 +1379,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-flexRadios/byModel"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-flexradios/bymodel:
 
@@ -653,13 +1399,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-flexRadios/byModel" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -671,11 +1421,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-flexRadios/byModel/bands"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-flexradios/bymodel/bands:
 
@@ -687,13 +1441,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-flexRadios/byModel/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -711,6 +1469,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-flexRadios/byModel/model"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-flexradios/bymodel/model:
 
       .. rst-class:: ansible-option-title
@@ -721,13 +1483,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-flexRadios/byModel/model" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -757,9 +1523,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-isIndoorDefault" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -799,9 +1565,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-isOutdoorDefault" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -841,9 +1607,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -879,9 +1645,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -913,9 +1679,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -951,9 +1717,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -964,6 +1730,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -989,9 +1793,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1027,9 +1831,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1069,9 +1873,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1107,9 +1911,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1145,9 +1949,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1157,7 +1961,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -1183,9 +1987,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1221,9 +2025,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1263,9 +2067,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1305,9 +2109,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1343,9 +2147,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1385,9 +2189,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1423,9 +2227,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1465,9 +2269,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1503,9 +2307,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1545,9 +2349,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1587,9 +2391,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1629,9 +2433,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-minBitrateType" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1663,9 +2467,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1697,9 +2501,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1731,9 +2535,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1743,17 +2547,21 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Per-SSID radio settings by number.
+      Per\-SSID radio settings by number.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/0"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/0:
 
@@ -1765,13 +2573,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/0" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1783,11 +2595,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/0/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/0/bandoperationmode:
 
@@ -1799,13 +2615,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/0/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1823,6 +2643,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/0/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/0/bands:
 
       .. rst-class:: ansible-option-title
@@ -1833,13 +2657,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/0/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1851,11 +2679,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/0/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/0/bands/enabled:
 
@@ -1867,13 +2699,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/0/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1892,6 +2728,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/0/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/0/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -1902,13 +2742,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/0/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1934,6 +2778,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/0/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/0/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -1944,13 +2792,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/0/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1969,6 +2821,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/1"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/1:
 
       .. rst-class:: ansible-option-title
@@ -1979,13 +2835,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/1" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1997,11 +2857,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/1/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/1/bandoperationmode:
 
@@ -2013,13 +2877,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/1/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2037,6 +2905,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/1/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/1/bands:
 
       .. rst-class:: ansible-option-title
@@ -2047,13 +2919,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/1/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2065,11 +2941,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/1/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/1/bands/enabled:
 
@@ -2081,13 +2961,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/1/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2106,6 +2990,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/1/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/1/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -2116,13 +3004,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/1/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2148,6 +3040,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/1/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/1/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -2158,13 +3054,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/1/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2183,6 +3083,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/10"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/10:
 
       .. rst-class:: ansible-option-title
@@ -2193,13 +3097,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/10" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2211,11 +3119,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/10/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/10/bandoperationmode:
 
@@ -2227,13 +3139,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/10/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2251,6 +3167,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/10/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/10/bands:
 
       .. rst-class:: ansible-option-title
@@ -2261,13 +3181,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/10/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2279,11 +3203,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/10/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/10/bands/enabled:
 
@@ -2295,13 +3223,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/10/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2320,6 +3252,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/10/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/10/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -2330,13 +3266,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/10/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2362,6 +3302,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/10/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/10/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -2372,13 +3316,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/10/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2397,6 +3345,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/11"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/11:
 
       .. rst-class:: ansible-option-title
@@ -2407,13 +3359,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/11" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2425,11 +3381,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/11/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/11/bandoperationmode:
 
@@ -2441,13 +3401,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/11/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2465,6 +3429,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/11/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/11/bands:
 
       .. rst-class:: ansible-option-title
@@ -2475,13 +3443,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/11/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2493,11 +3465,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/11/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/11/bands/enabled:
 
@@ -2509,13 +3485,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/11/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2534,6 +3514,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/11/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/11/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -2544,13 +3528,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/11/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2576,6 +3564,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/11/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/11/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -2586,13 +3578,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/11/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2611,6 +3607,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/12"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/12:
 
       .. rst-class:: ansible-option-title
@@ -2621,13 +3621,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/12" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2639,11 +3643,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/12/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/12/bandoperationmode:
 
@@ -2655,13 +3663,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/12/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2679,6 +3691,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/12/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/12/bands:
 
       .. rst-class:: ansible-option-title
@@ -2689,13 +3705,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/12/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2707,11 +3727,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/12/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/12/bands/enabled:
 
@@ -2723,13 +3747,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/12/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2748,6 +3776,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/12/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/12/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -2758,13 +3790,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/12/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2790,6 +3826,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/12/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/12/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -2800,13 +3840,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/12/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2825,6 +3869,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/13"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/13:
 
       .. rst-class:: ansible-option-title
@@ -2835,13 +3883,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/13" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2853,11 +3905,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/13/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/13/bandoperationmode:
 
@@ -2869,13 +3925,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/13/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2893,6 +3953,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/13/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/13/bands:
 
       .. rst-class:: ansible-option-title
@@ -2903,13 +3967,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/13/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2921,11 +3989,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/13/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/13/bands/enabled:
 
@@ -2937,13 +4009,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/13/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2962,6 +4038,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/13/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/13/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -2972,13 +4052,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/13/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3004,6 +4088,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/13/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/13/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -3014,13 +4102,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/13/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3039,6 +4131,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/14"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/14:
 
       .. rst-class:: ansible-option-title
@@ -3049,13 +4145,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/14" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3067,11 +4167,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/14/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/14/bandoperationmode:
 
@@ -3083,13 +4187,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/14/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3107,6 +4215,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/14/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/14/bands:
 
       .. rst-class:: ansible-option-title
@@ -3117,13 +4229,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/14/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3135,11 +4251,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/14/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/14/bands/enabled:
 
@@ -3151,13 +4271,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/14/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3176,6 +4300,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/14/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/14/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -3186,13 +4314,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/14/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3218,6 +4350,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/14/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/14/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -3228,13 +4364,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/14/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3253,6 +4393,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/2"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/2:
 
       .. rst-class:: ansible-option-title
@@ -3263,13 +4407,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/2" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3281,11 +4429,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/2/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/2/bandoperationmode:
 
@@ -3297,13 +4449,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/2/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3321,6 +4477,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/2/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/2/bands:
 
       .. rst-class:: ansible-option-title
@@ -3331,13 +4491,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/2/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3349,11 +4513,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/2/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/2/bands/enabled:
 
@@ -3365,13 +4533,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/2/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3390,6 +4562,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/2/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/2/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -3400,13 +4576,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/2/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3432,6 +4612,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/2/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/2/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -3442,13 +4626,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/2/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3467,6 +4655,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/3"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/3:
 
       .. rst-class:: ansible-option-title
@@ -3477,13 +4669,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/3" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3495,11 +4691,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/3/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/3/bandoperationmode:
 
@@ -3511,13 +4711,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/3/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3535,6 +4739,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/3/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/3/bands:
 
       .. rst-class:: ansible-option-title
@@ -3545,13 +4753,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/3/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3563,11 +4775,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/3/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/3/bands/enabled:
 
@@ -3579,13 +4795,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/3/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3604,6 +4824,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/3/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/3/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -3614,13 +4838,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/3/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3646,6 +4874,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/3/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/3/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -3656,13 +4888,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/3/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3681,6 +4917,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/4"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/4:
 
       .. rst-class:: ansible-option-title
@@ -3691,13 +4931,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/4" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3709,11 +4953,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/4/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/4/bandoperationmode:
 
@@ -3725,13 +4973,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/4/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3749,6 +5001,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/4/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/4/bands:
 
       .. rst-class:: ansible-option-title
@@ -3759,13 +5015,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/4/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3777,11 +5037,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/4/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/4/bands/enabled:
 
@@ -3793,13 +5057,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/4/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3818,6 +5086,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/4/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/4/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -3828,13 +5100,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/4/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3860,6 +5136,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/4/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/4/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -3870,13 +5150,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/4/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3895,6 +5179,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/5"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/5:
 
       .. rst-class:: ansible-option-title
@@ -3905,13 +5193,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/5" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3923,11 +5215,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/5/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/5/bandoperationmode:
 
@@ -3939,13 +5235,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/5/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3963,6 +5263,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/5/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/5/bands:
 
       .. rst-class:: ansible-option-title
@@ -3973,13 +5277,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/5/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3991,11 +5299,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/5/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/5/bands/enabled:
 
@@ -4007,13 +5319,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/5/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4032,6 +5348,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/5/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/5/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -4042,13 +5362,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/5/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4074,6 +5398,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/5/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/5/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -4084,13 +5412,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/5/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4109,6 +5441,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/6"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/6:
 
       .. rst-class:: ansible-option-title
@@ -4119,13 +5455,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/6" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4137,11 +5477,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/6/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/6/bandoperationmode:
 
@@ -4153,13 +5497,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/6/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4177,6 +5525,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/6/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/6/bands:
 
       .. rst-class:: ansible-option-title
@@ -4187,13 +5539,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/6/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4205,11 +5561,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/6/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/6/bands/enabled:
 
@@ -4221,13 +5581,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/6/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4246,6 +5610,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/6/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/6/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -4256,13 +5624,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/6/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4288,6 +5660,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/6/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/6/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -4298,13 +5674,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/6/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4323,6 +5703,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/7"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/7:
 
       .. rst-class:: ansible-option-title
@@ -4333,13 +5717,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/7" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4351,11 +5739,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/7/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/7/bandoperationmode:
 
@@ -4367,13 +5759,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/7/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4391,6 +5787,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/7/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/7/bands:
 
       .. rst-class:: ansible-option-title
@@ -4401,13 +5801,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/7/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4419,11 +5823,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/7/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/7/bands/enabled:
 
@@ -4435,13 +5843,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/7/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4460,6 +5872,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/7/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/7/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -4470,13 +5886,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/7/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4502,6 +5922,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/7/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/7/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -4512,13 +5936,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/7/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4537,6 +5965,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/8"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/8:
 
       .. rst-class:: ansible-option-title
@@ -4547,13 +5979,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/8" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4565,11 +6001,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/8/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/8/bandoperationmode:
 
@@ -4581,13 +6021,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/8/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4605,6 +6049,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/8/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/8/bands:
 
       .. rst-class:: ansible-option-title
@@ -4615,13 +6063,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/8/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4633,11 +6085,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/8/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/8/bands/enabled:
 
@@ -4649,13 +6105,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/8/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4674,6 +6134,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/8/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/8/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -4684,13 +6148,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/8/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4716,6 +6184,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/8/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/8/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -4726,13 +6198,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/8/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4751,6 +6227,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/9"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/9:
 
       .. rst-class:: ansible-option-title
@@ -4761,13 +6241,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/9" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4779,11 +6263,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/9/bandOperationMode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/9/bandoperationmode:
 
@@ -4795,13 +6283,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/9/bandOperationMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4819,6 +6311,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/9/bands"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/9/bands:
 
       .. rst-class:: ansible-option-title
@@ -4829,13 +6325,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/9/bands" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4847,11 +6347,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/9/bands/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/9/bands/enabled:
 
@@ -4863,13 +6367,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/9/bands/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4888,6 +6396,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/9/bandSteeringEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/9/bandsteeringenabled:
 
       .. rst-class:: ansible-option-title
@@ -4898,13 +6410,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/9/bandSteeringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4930,6 +6446,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-perSsidSettings/9/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-perssidsettings/9/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -4940,13 +6460,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidSettings/9/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4976,9 +6500,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-rfProfileId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -5010,9 +6534,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5028,11 +6552,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sixGhzSettings/channelWidth"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-sixghzsettings/channelwidth:
 
@@ -5044,13 +6572,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings/channelWidth" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5068,6 +6600,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sixGhzSettings/maxPower"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-sixghzsettings/maxpower:
 
       .. rst-class:: ansible-option-title
@@ -5078,13 +6614,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings/maxPower" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5102,6 +6642,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sixGhzSettings/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-sixghzsettings/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -5112,13 +6656,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5136,6 +6684,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sixGhzSettings/minPower"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-sixghzsettings/minpower:
 
       .. rst-class:: ansible-option-title
@@ -5146,13 +6698,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings/minPower" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5170,6 +6726,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sixGhzSettings/rxsop"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-sixghzsettings/rxsop:
 
       .. rst-class:: ansible-option-title
@@ -5180,19 +6740,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings/rxsop" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+      The RX\-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX\-SOP only after consulting a wireless expert. RX\-SOP can be configured in the range of \-65 to \-95 (dBm). A value of null will reset this to the default.
 
 
       .. raw:: html
@@ -5204,6 +6768,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sixGhzSettings/validAutoChannels"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-sixghzsettings/validautochannels:
 
       .. rst-class:: ansible-option-title
@@ -5214,13 +6782,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sixGhzSettings/validAutoChannels" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5249,9 +6821,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-transmission" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5267,11 +6839,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-transmission/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-transmission/enabled:
 
@@ -5283,13 +6859,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-transmission/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5326,9 +6906,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5344,11 +6924,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/axEnabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/axenabled:
 
@@ -5360,19 +6944,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/axEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Determines whether ax radio on 2.4Ghz band is on or off. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true.
+      Determines whether IEEE 802.11ax (Wi\-Fi 6) on the 2.4 GHz band is enabled. Can be either true or false. If false, we highly recommend disabling band steering. Deprecated; use dot11ax.enabled instead. Defaults to true.
 
 
       .. rst-class:: ansible-option-line
@@ -5390,7 +6978,104 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/dot11ax"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/dot11ax:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11ax**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/dot11ax" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IEEE 802.11ax (Wi\-Fi 6) settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/dot11ax/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/dot11ax/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/dot11ax/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Determines whether IEEE 802.11ax (Wi\-Fi 6) on the 2.4 GHz band is enabled. Can be either true or false. If false, we highly recommend disabling band steering. Defaults to true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/maxPower"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/maxpower:
 
@@ -5402,13 +7087,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/maxPower" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5426,6 +7115,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/minBitrate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/minbitrate:
 
       .. rst-class:: ansible-option-title
@@ -5436,13 +7129,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5460,6 +7157,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/minPower"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/minpower:
 
       .. rst-class:: ansible-option-title
@@ -5470,13 +7171,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/minPower" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5494,6 +7199,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/rxsop"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/rxsop:
 
       .. rst-class:: ansible-option-title
@@ -5504,19 +7213,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/rxsop" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The RX-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX-SOP only after consulting a wireless expert. RX-SOP can be configured in the range of -65 to -95 (dBm). A value of null will reset this to the default.
+      The RX\-SOP level controls the sensitivity of the radio. It is strongly recommended to use RX\-SOP only after consulting a wireless expert. RX\-SOP can be configured in the range of \-65 to \-95 (dBm). A value of null will reset this to the default.
 
 
       .. raw:: html
@@ -5528,6 +7241,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-twoFourGhzSettings/validAutoChannels"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_rf_profiles_module__parameter-twofourghzsettings/validautochannels:
 
       .. rst-class:: ansible-option-title
@@ -5538,13 +7255,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-twoFourGhzSettings/validAutoChannels" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5570,10 +7291,10 @@ Notes
 .. note::
    - SDK Method used are wireless.Wireless.create\_network\_wireless\_rf\_profile, wireless.Wireless.delete\_network\_wireless\_rf\_profile, wireless.Wireless.update\_network\_wireless\_rf\_profile,
    - Paths used are post /networks/{networkId}/wireless/rfProfiles, delete /networks/{networkId}/wireless/rfProfiles/{rfProfileId}, put /networks/{networkId}/wireless/rfProfiles/{rfProfileId},
-   - Does not support \ :literal:`check\_mode`\ 
+   - Does not support :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
    - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -5596,7 +7317,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Create
       cisco.meraki.networks_wireless_rf_profiles:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -5630,8 +7350,23 @@ Examples
               - '5'
         bandSelectionType: ap
         clientBalancingEnabled: true
+        dot11be:
+          enabled: false
+          mode: all SSIDs
+          ssids:
+            groups:
+              '1':
+                enabled: true
+              '2':
+                enabled: false
+              '3':
+                enabled: true
+              '4':
+                enabled: false
         fiveGhzSettings:
           channelWidth: auto
+          dot11ax:
+            enabled: true
           maxPower: 30
           minBitrate: 12
           minPower: 8
@@ -5861,6 +7596,8 @@ Examples
           enabled: true
         twoFourGhzSettings:
           axEnabled: true
+          dot11ax:
+            enabled: true
           maxPower: 30
           minBitrate: 11.0
           minPower: 5
@@ -5902,8 +7639,23 @@ Examples
               - '5'
         bandSelectionType: ap
         clientBalancingEnabled: true
+        dot11be:
+          enabled: false
+          mode: all SSIDs
+          ssids:
+            groups:
+              '1':
+                enabled: true
+              '2':
+                enabled: false
+              '3':
+                enabled: true
+              '4':
+                enabled: false
         fiveGhzSettings:
           channelWidth: auto
+          dot11ax:
+            enabled: true
           maxPower: 30
           minBitrate: 12
           minPower: 8
@@ -6136,6 +7888,8 @@ Examples
           enabled: true
         twoFourGhzSettings:
           axEnabled: true
+          dot11ax:
+            enabled: true
           maxPower: 30
           minBitrate: 11.0
           minPower: 5
@@ -6173,7 +7927,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -6183,12 +7936,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -6208,9 +7962,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -6230,7 +7984,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"apBandSettings": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}}, "bandSelectionType": "string", "clientBalancingEnabled": true, "fiveGhzSettings": {"channelWidth": "string", "maxPower": 0, "minBitrate": 0, "minPower": 0, "rxsop": {}, "validAutoChannels": [0]}, "id": "string", "isIndoorDefault": true, "isOutdoorDefault": true, "minBitrateType": "string", "name": "string", "networkId": "string", "perSsidSettings": {"0": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "1": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "10": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "11": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "12": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "13": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "14": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "2": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "3": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "4": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "5": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "6": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "7": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "8": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "9": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}}, "sixGhzSettings": {"channelWidth": "string", "maxPower": 0, "minBitrate": 0, "minPower": 0, "rxsop": {}, "validAutoChannels": [0]}, "transmission": {"enabled": true}, "twoFourGhzSettings": {"axEnabled": true, "maxPower": 0, "minBitrate": 0, "minPower": 0, "rxsop": {}, "validAutoChannels": [0]}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"apBandSettings": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}}, "bandSelectionType": "string", "clientBalancingEnabled": true, "dot11be": {"enabled": true}, "fiveGhzSettings": {"channelWidth": "string", "dot11ax": {"enabled": true}, "maxPower": 0, "minBitrate": 0, "minPower": 0, "rxsop": {}, "validAutoChannels": [0]}, "id": "string", "isIndoorDefault": true, "isOutdoorDefault": true, "minBitrateType": "string", "name": "string", "networkId": "string", "perSsidSettings": {"0": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "1": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "10": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "11": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "12": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "13": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "14": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "2": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "3": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "4": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "5": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "6": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "7": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "8": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}, "9": {"bandOperationMode": "string", "bandSteeringEnabled": true, "bands": {"enabled": ["string"]}, "minBitrate": 0, "name": "string"}}, "sixGhzSettings": {"channelWidth": "string", "maxPower": 0, "minBitrate": 0, "minPower": 0, "rxsop": {}, "validAutoChannels": [0]}, "transmission": {"enabled": true}, "twoFourGhzSettings": {"axEnabled": true, "dot11ax": {"enabled": true}, "maxPower": 0, "minBitrate": 0, "minPower": 0, "rxsop": {}, "validAutoChannels": [0]}}`
 
 
       .. raw:: html
@@ -6250,18 +8004,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.networks_events_info_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.networks_events_info module -- Information module for networks \_ev
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.networks_events_info_module_requirements>` for details.
 
@@ -98,12 +81,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -123,9 +107,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-clientIp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -135,8 +119,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ClientIp query parameter. The IP of the client which the list of events will be filtered with. Only supported for track-by-IP networks.
-          
+      ClientIp query parameter. The IP of the client which the list of events will be filtered with. Only supported for track\-by\-IP networks.
 
 
       .. raw:: html
@@ -158,9 +141,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-clientMac" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -170,8 +153,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ClientMac query parameter. The MAC address of the client which the list of events will be filtered with. Only supported for track-by-MAC networks.
-          
+      ClientMac query parameter. The MAC address of the client which the list of events will be filtered with. Only supported for track\-by\-MAC networks.
 
 
       .. raw:: html
@@ -193,9 +175,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-clientName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -206,7 +188,6 @@ Parameters
         <div class="ansible-option-cell">
 
       ClientName query parameter. The name, or partial name, of the client which the list of events will be filtered with.
-          
 
 
       .. raw:: html
@@ -228,9 +209,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-deviceMac" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -262,9 +243,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-deviceName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -296,9 +277,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-deviceSerial" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -330,9 +311,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-direction" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -368,9 +349,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-endingBefore" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -381,7 +362,6 @@ Parameters
         <div class="ansible-option-cell">
 
       EndingBefore query parameter. A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-          
 
 
       .. raw:: html
@@ -403,9 +383,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-eventDetails" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -416,7 +396,6 @@ Parameters
         <div class="ansible-option-cell">
 
       EventDetails query parameter. The details of the event(Catalyst device only) which the list of events will be filtered with.
-          
 
 
       .. raw:: html
@@ -438,9 +417,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-eventSeverity" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -451,7 +430,6 @@ Parameters
         <div class="ansible-option-cell">
 
       EventSeverity query parameter. The severity of the event(Catalyst device only) which the list of events will be filtered with.
-          
 
 
       .. raw:: html
@@ -473,9 +451,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-excludedEventTypes" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -486,7 +464,6 @@ Parameters
         <div class="ansible-option-cell">
 
       ExcludedEventTypes query parameter. A list of event types. The returned events will be filtered to exclude events with these types.
-          
 
 
       .. raw:: html
@@ -508,9 +485,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-headers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -542,9 +519,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-includedEventTypes" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -555,7 +532,6 @@ Parameters
         <div class="ansible-option-cell">
 
       IncludedEventTypes query parameter. A list of event types. The returned events will be filtered to only include events with these types.
-          
 
 
       .. raw:: html
@@ -577,9 +553,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-isCatalyst" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -590,7 +566,6 @@ Parameters
         <div class="ansible-option-cell">
 
       IsCatalyst query parameter. Boolean indicating that whether it is a Catalyst device. For Catalyst device, eventDetails and eventSeverity can be used to filter events.
-          
 
 
       .. rst-class:: ansible-option-line
@@ -620,9 +595,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -658,9 +633,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -692,9 +667,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -730,9 +705,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -743,6 +718,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_events_info_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -768,9 +781,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -806,9 +819,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -848,9 +861,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -886,9 +899,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -924,9 +937,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -936,7 +949,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -962,9 +975,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1000,9 +1013,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1042,9 +1055,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1084,9 +1097,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1122,9 +1135,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1164,9 +1177,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1202,9 +1215,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1244,9 +1257,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1282,9 +1295,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1324,9 +1337,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1366,9 +1379,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1408,9 +1421,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1442,9 +1455,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perPage" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1454,7 +1467,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      PerPage query parameter. The number of entries per page returned. Acceptable range is 3 - 1000. Default is 10.
+      PerPage query parameter. The number of entries per page returned. Acceptable range is 3 \- 1000. Default is 10.
 
 
       .. raw:: html
@@ -1476,9 +1489,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-productType" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1489,7 +1502,6 @@ Parameters
         <div class="ansible-option-cell">
 
       ProductType query parameter. The product type to fetch events for. This parameter is required for networks with multiple device types. Valid types are wireless, appliance, switch, systemsManager, camera, cellularGateway, wirelessController, campusGateway, and secureConnect.
-          
 
 
       .. raw:: html
@@ -1511,9 +1523,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-smDeviceMac" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1524,7 +1536,6 @@ Parameters
         <div class="ansible-option-cell">
 
       SmDeviceMac query parameter. The MAC address of the Systems Manager device which the list of events will be filtered with.
-          
 
 
       .. raw:: html
@@ -1546,9 +1557,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-smDeviceName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1559,7 +1570,6 @@ Parameters
         <div class="ansible-option-cell">
 
       SmDeviceName query parameter. The name of the Systems Manager device which the list of events will be filtered with.
-          
 
 
       .. raw:: html
@@ -1581,9 +1591,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-startingAfter" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1594,7 +1604,6 @@ Parameters
         <div class="ansible-option-cell">
 
       StartingAfter query parameter. A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it.
-          
 
 
       .. raw:: html
@@ -1616,9 +1625,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-total_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -1628,7 +1637,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      total\_pages(int), use with perPage to get total results up to total\_pages\*perPage; -1 for all pages
+      total\_pages(int), use with perPage to get total results up to total\_pages\*perPage; \-1 for all pages
 
 
       .. raw:: html
@@ -1647,7 +1656,7 @@ Notes
 .. note::
    - SDK Method used are networks.Networks.get\_network\_events,
    - Paths used are get /networks/{networkId}/events,
-   - Supports \ :literal:`check\_mode`\ 
+   - Supports :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco meraki SDK
    - The parameters starting with meraki\_ are used by the Cisco meraki Python SDK to establish the connection
 
@@ -1668,7 +1677,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Get all networks _events
       cisco.meraki.networks_events_info:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -1716,7 +1724,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -1726,12 +1733,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -1751,9 +1759,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1793,18 +1801,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

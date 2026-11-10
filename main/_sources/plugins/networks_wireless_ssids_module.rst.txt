@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.networks_wireless_ssids module -- Resource module for networks \_wi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.networks_wireless_ssids_module_requirements>` for details.
 
@@ -98,12 +81,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -123,9 +107,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -135,17 +119,21 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The current setting for Active Directory. Only valid if splashPage is 'Password-protected with Active Directory'.
+      The current setting for Active Directory. Only valid if splashPage is 'Password\-protected with Active Directory'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-activeDirectory/credentials"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-activedirectory/credentials:
 
@@ -157,29 +145,37 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory/credentials" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      (Optional) The credentials of the user account to be used by the AP to bind to your Active Directory server. The Active Directory account should have permissions on all your Active Directory servers. Only valid if the splashPage is 'Password-protected with Active Directory'.
+      (Optional) The credentials of the user account to be used by the AP to bind to your Active Directory server. The Active Directory account should have permissions on all your Active Directory servers. Only valid if the splashPage is 'Password\-protected with Active Directory'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-activeDirectory/credentials/logonName"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-activedirectory/credentials/logonname:
 
@@ -191,13 +187,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory/credentials/logonName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -215,6 +215,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-activeDirectory/credentials/password"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-activedirectory/credentials/password:
 
       .. rst-class:: ansible-option-title
@@ -225,13 +229,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory/credentials/password" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -250,6 +258,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-activeDirectory/servers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-activedirectory/servers:
 
       .. rst-class:: ansible-option-title
@@ -260,13 +272,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory/servers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -278,11 +294,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-activeDirectory/servers/host"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-activedirectory/servers/host:
 
@@ -294,13 +314,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory/servers/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -318,6 +342,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-activeDirectory/servers/port"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-activedirectory/servers/port:
 
       .. rst-class:: ansible-option-title
@@ -328,13 +356,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-activeDirectory/servers/port" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -364,9 +396,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-adaptivePolicyGroupId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -398,9 +430,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-adultContentFilteringEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -440,9 +472,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apTagsAndVlanIds" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -458,11 +490,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-apTagsAndVlanIds/tags"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-aptagsandvlanids/tags:
 
@@ -474,13 +510,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apTagsAndVlanIds/tags" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -498,6 +538,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-apTagsAndVlanIds/vlanId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-aptagsandvlanids/vlanid:
 
       .. rst-class:: ansible-option-title
@@ -508,13 +552,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-apTagsAndVlanIds/vlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -543,9 +591,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-authMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -555,7 +603,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The association control method for the SSID ('open', 'open-enhanced', 'psk', 'open-with-radius', 'open-enhanced-with-radius', 'open-with-nac', '8021x-meraki', '8021x-nac', '8021x-radius', '8021x-google', '8021x-entra', '8021x-localradius', 'ipsk-with-radius', 'ipsk-without-radius', 'ipsk-with-nac' or 'ipsk-with-radius-easy-psk').
+      The association control method for the SSID ('open', 'open\-enhanced', 'psk', 'open\-with\-radius', 'open\-enhanced\-with\-radius', 'open\-with\-nac', '8021x\-meraki', '8021x\-nac', '8021x\-radius', '8021x\-google', '8021x\-entra', '8021x\-localradius', 'ipsk\-with\-radius', 'ipsk\-without\-radius', 'ipsk\-with\-nac' or 'ipsk\-with\-radius\-easy\-psk').
 
 
       .. raw:: html
@@ -577,9 +625,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-availabilityTags" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -611,9 +659,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-availableOnAllAps" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -653,9 +701,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-bandSelection" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -665,12 +713,132 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The client-serving radio frequencies of this SSID in the default indoor RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation with Band Steering').
+      The client\-serving radio frequencies of this SSID in the default indoor RF profile. ('Dual band operation', '5 GHz band only' or 'Dual band operation with Band Steering').
 
 
       .. raw:: html
 
         </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-campusGateway"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-campusgateway:
+
+      .. rst-class:: ansible-option-title
+
+      **campusGateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-campusGateway" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Campus gateway settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-campusGateway/cluster"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-campusgateway/cluster:
+
+      .. rst-class:: ansible-option-title
+
+      **cluster**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-campusGateway/cluster" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Cluster configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-campusGateway/cluster/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-campusgateway/cluster/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-campusGateway/cluster/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The campus gateway cluster ID to use when the ipAssignmentMode is 'Campus Gateway'. This param is only valid when ipAssignmentMode is 'Campus Gateway'.
+
+
+      .. raw:: html
+
+        </div>
+
+
 
   * - .. raw:: html
 
@@ -687,9 +855,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-concentratorNetworkId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -721,9 +889,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-defaultVlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -755,9 +923,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-disassociateClientsOnVpnFailover" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -767,7 +935,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Disassociate clients when 'VPN' concentrator failover occurs in order to trigger clients to re-associate and generate new DHCP requests. This param is only valid if ipAssignmentMode is 'VPN'.
+      Disassociate clients when 'VPN' concentrator failover occurs in order to trigger clients to re\-associate and generate new DHCP requests. This param is only valid if ipAssignmentMode is 'VPN'.
 
 
       .. rst-class:: ansible-option-line
@@ -797,9 +965,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dnsRewrite" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -815,11 +983,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dnsRewrite/dnsCustomNameservers"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dnsrewrite/dnscustomnameservers:
 
@@ -831,13 +1003,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dnsRewrite/dnsCustomNameservers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -855,6 +1031,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dnsRewrite/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dnsrewrite/enabled:
 
       .. rst-class:: ansible-option-title
@@ -865,9 +1045,56 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dnsRewrite/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Boolean indicating whether or not DNS server rewrite is enabled. If disabled, upstream DNS will be used.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11k"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dot11k:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11k**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11k" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -875,9 +1102,51 @@ Parameters
 
     - .. raw:: html
 
+        <div class="ansible-option-cell">
+
+      The current setting for 802.11k.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dot11k/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dot11k/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dot11k/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Boolean indicating whether or not DNS server rewrite is enabled. If disabled, upstream DNS will be used.
+      Whether 802.11k is enabled or not.
 
 
       .. rst-class:: ansible-option-line
@@ -908,9 +1177,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot11r" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -926,11 +1195,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dot11r/adaptive"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dot11r/adaptive:
 
@@ -942,13 +1215,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot11r/adaptive" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -974,6 +1251,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dot11r/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dot11r/enabled:
 
       .. rst-class:: ansible-option-title
@@ -984,13 +1265,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot11r/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1027,9 +1312,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot11w" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1045,11 +1330,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dot11w/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dot11w/enabled:
 
@@ -1061,13 +1350,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot11w/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1093,6 +1386,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dot11w/required"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-dot11w/required:
 
       .. rst-class:: ansible-option-title
@@ -1103,13 +1400,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot11w/required" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1146,9 +1447,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1188,9 +1489,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-encryptionMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1222,9 +1523,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-enterpriseAdminAccess" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1256,9 +1557,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-gre" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1274,11 +1575,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-gre/concentrator"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-gre/concentrator:
 
@@ -1290,13 +1595,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-gre/concentrator" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1308,11 +1617,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-gre/concentrator/host"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-gre/concentrator/host:
 
@@ -1324,13 +1637,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-gre/concentrator/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1349,6 +1666,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-gre/key"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-gre/key:
 
       .. rst-class:: ansible-option-title
@@ -1359,13 +1680,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-gre/key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1394,9 +1719,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ipAssignmentMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1428,9 +1753,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-lanIsolationEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1470,9 +1795,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1482,17 +1807,21 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The current setting for LDAP. Only valid if splashPage is 'Password-protected with LDAP'.
+      The current setting for LDAP. Only valid if splashPage is 'Password\-protected with LDAP'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/baseDistinguishedName"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/basedistinguishedname:
 
@@ -1504,13 +1833,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/baseDistinguishedName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1528,6 +1861,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/credentials"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/credentials:
 
       .. rst-class:: ansible-option-title
@@ -1538,13 +1875,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/credentials" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1556,11 +1897,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/credentials/distinguishedName"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/credentials/distinguishedname:
 
@@ -1572,13 +1917,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/credentials/distinguishedName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1596,6 +1945,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/credentials/password"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/credentials/password:
 
       .. rst-class:: ansible-option-title
@@ -1606,13 +1959,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/credentials/password" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1631,6 +1988,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/serverCaCertificate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/servercacertificate:
 
       .. rst-class:: ansible-option-title
@@ -1641,13 +2002,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/serverCaCertificate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1659,11 +2024,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/serverCaCertificate/contents"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/servercacertificate/contents:
 
@@ -1675,13 +2044,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/serverCaCertificate/contents" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1700,6 +2073,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/servers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/servers:
 
       .. rst-class:: ansible-option-title
@@ -1710,13 +2087,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/servers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1728,11 +2109,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/servers/host"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/servers/host:
 
@@ -1744,13 +2129,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/servers/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1768,6 +2157,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ldap/servers/port"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-ldap/servers/port:
 
       .. rst-class:: ansible-option-title
@@ -1778,13 +2171,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ldap/servers/port" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1814,9 +2211,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localAuthFallback" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1832,11 +2229,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localAuthFallback/cacheTimeout"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localauthfallback/cachetimeout:
 
@@ -1848,19 +2249,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localAuthFallback/cacheTimeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The duration (in seconds) for which auths are cached. The timeout is measured from the user's most recent non-cached authentication to the network. Between 3600 (1 hour) and 86400 (1 day).
+      The duration (in seconds) for which auths are cached. The timeout is measured from the user's most recent non\-cached authentication to the network. Between 3600 (1 hour) and 86400 (1 day).
 
 
       .. raw:: html
@@ -1872,6 +2277,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localAuthFallback/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localauthfallback/enabled:
 
       .. rst-class:: ansible-option-title
@@ -1882,19 +2291,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localAuthFallback/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      If true, MR devices will cache authentication credentials for EAP-TLS or for MAC based authentication.
+      If true, MR devices will cache authentication credentials for EAP\-TLS or for MAC based authentication.
 
 
       .. rst-class:: ansible-option-line
@@ -1914,6 +2327,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localAuthFallback/serverCaCertificate"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localauthfallback/servercacertificate:
 
       .. rst-class:: ansible-option-title
@@ -1924,13 +2341,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localAuthFallback/serverCaCertificate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1942,11 +2363,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localAuthFallback/serverCaCertificate/contents"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localauthfallback/servercacertificate/contents:
 
@@ -1958,13 +2383,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localAuthFallback/serverCaCertificate/contents" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1994,9 +2423,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -2006,17 +2435,21 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The current setting for Local Authentication, a built-in RADIUS server on the access point. Only valid if authMode is '8021x-localradius'.
+      The current setting for Local Authentication, a built\-in RADIUS server on the access point. Only valid if authMode is '8021x\-localradius'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/cacheTimeout"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/cachetimeout:
 
@@ -2028,13 +2461,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/cacheTimeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2052,6 +2489,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication:
 
       .. rst-class:: ansible-option-title
@@ -2062,13 +2503,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2080,11 +2525,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication/clientRootCaCertificate"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication/clientrootcacertificate:
 
@@ -2096,13 +2545,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication/clientRootCaCertificate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2114,11 +2567,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication/clientRootCaCertificate/contents"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication/clientrootcacertificate/contents:
 
@@ -2130,13 +2587,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication/clientRootCaCertificate/contents" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2155,6 +2616,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication/enabled:
 
       .. rst-class:: ansible-option-title
@@ -2165,19 +2630,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Whether or not to use EAP-TLS certificate-based authentication to validate wireless clients.
+      Whether or not to use EAP\-TLS certificate\-based authentication to validate wireless clients.
 
 
       .. rst-class:: ansible-option-line
@@ -2197,6 +2666,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication/ocspResponderUrl"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication/ocspresponderurl:
 
       .. rst-class:: ansible-option-title
@@ -2207,13 +2680,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication/ocspResponderUrl" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2231,6 +2708,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication/useLdap"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication/useldap:
 
       .. rst-class:: ansible-option-title
@@ -2241,13 +2722,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication/useLdap" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2273,6 +2758,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/certificateAuthentication/useOcsp"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/certificateauthentication/useocsp:
 
       .. rst-class:: ansible-option-title
@@ -2283,13 +2772,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/certificateAuthentication/useOcsp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2316,6 +2809,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/passwordAuthentication"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/passwordauthentication:
 
       .. rst-class:: ansible-option-title
@@ -2326,29 +2823,37 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/passwordAuthentication" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The current setting for password-based authentication.
+      The current setting for password\-based authentication.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-localRadius/passwordAuthentication/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-localradius/passwordauthentication/enabled:
 
@@ -2360,19 +2865,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-localRadius/passwordAuthentication/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Whether or not to use EAP-TTLS/PAP or PEAP-GTC password-based authentication via LDAP lookup.
+      Whether or not to use EAP\-TTLS/PAP or PEAP\-GTC password\-based authentication via LDAP lookup.
 
 
       .. rst-class:: ansible-option-line
@@ -2404,9 +2913,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-mandatoryDhcpEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2446,9 +2955,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2484,9 +2993,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -2518,9 +3027,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2556,9 +3065,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2569,6 +3078,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -2594,9 +3141,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2632,9 +3179,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2674,9 +3221,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2712,9 +3259,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2750,9 +3297,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2762,7 +3309,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -2788,9 +3335,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2826,9 +3373,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2868,9 +3415,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2910,9 +3457,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2948,9 +3495,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2990,9 +3537,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -3028,9 +3575,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -3070,9 +3617,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -3108,9 +3655,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -3150,9 +3697,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -3192,9 +3739,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -3234,9 +3781,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-minBitrate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`float`
+        :ansible-option-type:`float`
 
       .. raw:: html
 
@@ -3268,9 +3815,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -3302,9 +3849,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -3320,11 +3867,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/radius"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/radius:
 
@@ -3336,29 +3887,37 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/radius" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      RADIUS settings. This param is only valid when authMode is 'open-with-radius' and ipAssignmentMode is not 'NAT mode'.
+      RADIUS settings. This param is only valid when authMode is 'open\-with\-radius' and ipAssignmentMode is not 'NAT mode'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/radius/guestVlan"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/radius/guestvlan:
 
@@ -3370,29 +3929,37 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/radius/guestVlan" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Guest VLAN settings. Used to direct traffic to a guest VLAN when none of the RADIUS servers are reachable or a client receives access-reject from the RADIUS server.
+      Guest VLAN settings. Used to direct traffic to a guest VLAN when none of the RADIUS servers are reachable or a client receives access\-reject from the RADIUS server.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/radius/guestVlan/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/radius/guestvlan/enabled:
 
@@ -3404,13 +3971,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/radius/guestVlan/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3436,6 +4007,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/radius/guestVlan/name"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/radius/guestvlan/name:
 
       .. rst-class:: ansible-option-title
@@ -3446,13 +4021,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/radius/guestVlan/name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3472,6 +4051,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/tagging"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/tagging:
 
       .. rst-class:: ansible-option-title
@@ -3482,13 +4065,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/tagging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3500,11 +4087,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/tagging/byApTags"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/tagging/byaptags:
 
@@ -3516,13 +4107,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/tagging/byApTags" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3534,11 +4129,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/tagging/byApTags/tags"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/tagging/byaptags/tags:
 
@@ -3550,13 +4149,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/tagging/byApTags/tags" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3574,6 +4177,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/tagging/byApTags/vlanName"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/tagging/byaptags/vlanname:
 
       .. rst-class:: ansible-option-title
@@ -3584,13 +4191,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/tagging/byApTags/vlanName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3609,6 +4220,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/tagging/defaultVlanName"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/tagging/defaultvlanname:
 
       .. rst-class:: ansible-option-title
@@ -3619,13 +4234,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/tagging/defaultVlanName" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3643,6 +4262,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-namedVlans/tagging/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-namedvlans/tagging/enabled:
 
       .. rst-class:: ansible-option-title
@@ -3653,13 +4276,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-namedVlans/tagging/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3697,9 +4324,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -3731,9 +4358,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-number" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -3765,9 +4392,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-oauth" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -3783,11 +4410,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-oauth/allowedDomains"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-oauth/alloweddomains:
 
@@ -3799,13 +4430,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-oauth/allowedDomains" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -3834,9 +4469,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perClientBandwidthLimitDown" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -3868,9 +4503,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perClientBandwidthLimitUp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -3902,9 +4537,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidBandwidthLimitDown" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -3936,9 +4571,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-perSsidBandwidthLimitUp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -3970,9 +4605,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-psk" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -4004,9 +4639,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -4016,7 +4651,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Whether or not RADIUS accounting is enabled. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius'.
+      Whether or not RADIUS accounting is enabled. This param is only valid if the authMode is 'open\-with\-radius', '8021x\-radius' or 'ipsk\-with\-radius'.
 
 
       .. rst-class:: ansible-option-line
@@ -4046,9 +4681,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingInterimInterval" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -4080,9 +4715,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -4092,17 +4727,21 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The RADIUS accounting 802.1X servers to be used for authentication. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius' and radiusAccountingEnabled is 'true'.
+      The RADIUS accounting 802.1X servers to be used for authentication. This param is only valid if the authMode is 'open\-with\-radius', '8021x\-radius' or 'ipsk\-with\-radius' and radiusAccountingEnabled is 'true'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/caCertificate"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusaccountingservers/cacertificate:
 
@@ -4114,13 +4753,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/caCertificate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4138,6 +4781,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/host"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusaccountingservers/host:
 
       .. rst-class:: ansible-option-title
@@ -4148,13 +4795,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4172,6 +4823,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/port"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusaccountingservers/port:
 
       .. rst-class:: ansible-option-title
@@ -4182,13 +4837,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/port" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4206,6 +4865,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/radsecEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusaccountingservers/radsecenabled:
 
       .. rst-class:: ansible-option-title
@@ -4216,13 +4879,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/radsecEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4248,6 +4915,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/secret"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusaccountingservers/secret:
 
       .. rst-class:: ansible-option-title
@@ -4258,13 +4929,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/secret" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4293,9 +4968,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingStartDelay" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -4327,9 +5002,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAttributeForGroupPolicies" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -4339,7 +5014,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Specify the RADIUS attribute used to look up group policies ('Filter-Id', 'Reply-Message', 'Airespace-ACL-Name' or 'Aruba-User-Role'). Access points must receive this attribute in the RADIUS Access-Accept message.
+      Specify the RADIUS attribute used to look up group policies ('Filter\-Id', 'Reply\-Message', 'Airespace\-ACL\-Name' or 'Aruba\-User\-Role'). Access points must receive this attribute in the RADIUS Access\-Accept message.
 
 
       .. raw:: html
@@ -4361,9 +5036,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAuthenticationNasId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -4373,7 +5048,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The template of the NAS identifier to be used for RADIUS authentication (ex. $NODE\_MAC$ $VAP\_NUM$).
+      The NAS identifier to use for RADIUS authentication. With 802.11r enabled or adaptive, use $NODE\_MAC$, $VAP\_NUM$, $VAP\_NAME$, and/or custom text. The complete rendered NAS identifier must be 1–48 bytes.
 
 
       .. raw:: html
@@ -4395,9 +5070,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusCalledStationId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -4429,9 +5104,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusCoaEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -4441,7 +5116,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If true, Meraki devices will act as a RADIUS Dynamic Authorization Server and will respond to RADIUS Change-of-Authorization and Disconnect messages sent by the RADIUS server.
+      If true, Meraki devices will act as a RADIUS Dynamic Authorization Server and will respond to RADIUS Change\-of\-Authorization and Disconnect messages sent by the RADIUS server.
 
 
       .. rst-class:: ansible-option-line
@@ -4471,9 +5146,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusFailoverPolicy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -4505,9 +5180,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusFallbackEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -4547,9 +5222,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusGuestVlanEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -4559,7 +5234,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Whether or not RADIUS Guest VLAN is enabled. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode.
+      Whether or not RADIUS Guest VLAN is enabled. This param is only valid if the authMode is 'open\-with\-radius' and addressing mode is not set to 'isolated' or 'nat' mode.
 
 
       .. rst-class:: ansible-option-line
@@ -4589,9 +5264,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusGuestVlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -4601,7 +5276,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode is 'open-with-radius' and addressing mode is not set to 'isolated' or 'nat' mode.
+      VLAN ID of the RADIUS Guest VLAN. This param is only valid if the authMode is 'open\-with\-radius' and addressing mode is not set to 'isolated' or 'nat' mode.
 
 
       .. raw:: html
@@ -4623,9 +5298,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusLoadBalancingPolicy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -4657,9 +5332,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusOverride" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -4699,9 +5374,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusProxyEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -4741,9 +5416,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusRadsec" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -4759,11 +5434,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusRadsec/tlsTunnel"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusradsec/tlstunnel:
 
@@ -4775,13 +5454,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusRadsec/tlsTunnel" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4793,11 +5476,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusRadsec/tlsTunnel/timeout"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusradsec/tlstunnel/timeout:
 
@@ -4809,13 +5496,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusRadsec/tlsTunnel/timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4845,9 +5536,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServerAttemptsLimit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -4857,7 +5548,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The maximum number of transmit attempts after which a RADIUS server is failed over (must be between 1-5).
+      The maximum number of transmit attempts after which a RADIUS server is failed over (must be between 1\-5).
 
 
       .. raw:: html
@@ -4879,9 +5570,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -4891,17 +5582,21 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The RADIUS 802.1X servers to be used for authentication. This param is only valid if the authMode is 'open-with-radius', '8021x-radius' or 'ipsk-with-radius'.
+      The RADIUS 802.1X servers to be used for authentication. This param is only valid if the authMode is 'open\-with\-radius', '8021x\-radius' or 'ipsk\-with\-radius'.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/caCertificate"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusservers/cacertificate:
 
@@ -4913,13 +5608,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/caCertificate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4937,6 +5636,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/host"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusservers/host:
 
       .. rst-class:: ansible-option-title
@@ -4947,13 +5650,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -4971,6 +5678,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/openRoamingCertificateId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusservers/openroamingcertificateid:
 
       .. rst-class:: ansible-option-title
@@ -4981,13 +5692,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/openRoamingCertificateId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5005,6 +5720,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/port"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusservers/port:
 
       .. rst-class:: ansible-option-title
@@ -5015,19 +5734,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/port" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UDP port the RADIUS server listens on for Access-requests.
+      UDP port the RADIUS server listens on for Access\-requests.
 
 
       .. raw:: html
@@ -5039,6 +5762,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/radsecEnabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusservers/radsecenabled:
 
       .. rst-class:: ansible-option-title
@@ -5049,13 +5776,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/radsecEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5081,6 +5812,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/secret"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-radiusservers/secret:
 
       .. rst-class:: ansible-option-title
@@ -5091,13 +5826,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/secret" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5126,9 +5865,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServerTimeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -5138,7 +5877,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The amount of time for which a RADIUS client waits for a reply from the RADIUS server (must be between 1-10 seconds).
+      The amount of time for which a RADIUS client waits for a reply from the RADIUS server (must be between 1\-10 seconds).
 
 
       .. raw:: html
@@ -5160,9 +5899,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusTestingEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -5172,7 +5911,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If true, Meraki devices will periodically send Access-Request messages to configured RADIUS servers using identity 'meraki\_8021x\_test' to ensure that the RADIUS servers are reachable.
+      If true, Meraki devices will periodically send Access\-Request messages to configured RADIUS servers using identity 'meraki\_8021x\_test' to ensure that the RADIUS servers are reachable.
 
 
       .. rst-class:: ansible-option-line
@@ -5202,9 +5941,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-secondaryConcentratorNetworkId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -5236,9 +5975,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-security" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5254,11 +5993,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-security/encryption"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security/encryption:
 
@@ -5270,13 +6013,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-security/encryption" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5288,11 +6035,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-security/encryption/akms"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security/encryption/akms:
 
@@ -5304,13 +6055,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-security/encryption/akms" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5328,6 +6083,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-security/encryption/ciphers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-security/encryption/ciphers:
 
       .. rst-class:: ansible-option-title
@@ -5338,13 +6097,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-security/encryption/ciphers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5374,9 +6137,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-speedBurst" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -5392,11 +6155,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-speedBurst/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_wireless_ssids_module__parameter-speedburst/enabled:
 
@@ -5408,13 +6175,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-speedBurst/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -5451,9 +6222,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-splashGuestSponsorDomains" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -5485,9 +6256,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-splashPage" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -5497,7 +6268,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The type of splash page for the SSID ('None', 'Click-through splash page', 'Billing', 'Password-protected with Meraki RADIUS', 'Password-protected with custom RADIUS', 'Password-protected with Active Directory', 'Password-protected with LDAP', 'SMS authentication', 'Systems Manager Sentry', 'Facebook Wi-Fi', 'Google OAuth', 'Microsoft Entra ID', 'Sponsored guest', 'Cisco ISE' or 'Google Apps domain').This attribute is not supported for template children.
+      The type of splash page for the SSID ('None', 'Click\-through splash page', 'Billing', 'Password\-protected with Meraki RADIUS', 'Password\-protected with custom RADIUS', 'Password\-protected with Active Directory', 'Password\-protected with LDAP', 'SMS authentication', 'Systems Manager Sentry', 'Facebook Wi\-Fi', 'Google OAuth', 'Microsoft Entra ID', 'Sponsored guest' or 'Cisco ISE').This attribute is not supported for template children.
 
 
       .. raw:: html
@@ -5519,9 +6290,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ssidAdminAccessible" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -5561,9 +6332,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-useVlanTagging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -5603,9 +6374,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-visible" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -5645,9 +6416,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-vlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -5679,9 +6450,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-walledGardenEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -5691,7 +6462,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Allow access to a configurable list of IP ranges, which users may access prior to sign-on.
+      Allow access to a configurable list of IP ranges, which users may access prior to sign\-on.
 
 
       .. rst-class:: ansible-option-line
@@ -5721,9 +6492,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-walledGardenRanges" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -5755,9 +6526,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-wpaEncryptionMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -5767,7 +6538,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The types of WPA encryption. ('WPA1 only', 'WPA1 and WPA2', 'WPA2 only', 'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192-bit Security').
+      The types of WPA encryption. ('WPA1 only', 'WPA1 and WPA2', 'WPA2 only', 'WPA3 Transition Mode', 'WPA3 only' or 'WPA3 192\-bit Security').
 
 
       .. raw:: html
@@ -5786,10 +6557,10 @@ Notes
 .. note::
    - SDK Method used are wireless.Wireless.update\_network\_wireless\_ssid,
    - Paths used are put /networks/{networkId}/wireless/ssids/{number},
-   - Does not support \ :literal:`check\_mode`\ 
+   - Does not support :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
    - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -5808,7 +6579,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Update by id
       cisco.meraki.networks_wireless_ssids:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -5853,6 +6623,9 @@ Examples
           - tag2
         availableOnAllAps: false
         bandSelection: 5 GHz band only
+        campusGateway:
+          cluster:
+            id: '10'
         concentratorNetworkId: N_24329156
         defaultVlanId: 1
         disassociateClientsOnVpnFailover: false
@@ -5860,6 +6633,8 @@ Examples
           dnsCustomNameservers:
             - 8.8.8.8
             - 8.8.4.4
+          enabled: true
+        dot11k:
           enabled: true
         dot11r:
           adaptive: true
@@ -5882,7 +6657,10 @@ Examples
             distinguishedName: cn=user,dc=example,dc=com
             password: password
           serverCaCertificate:
-            contents: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+            contents: "-----BEGIN CERTIFICATE-----
+    MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+    -----END CERTIFICATE-----
+    "
           servers:
             - host: 127.0.0.1
               port: 389
@@ -5890,12 +6668,18 @@ Examples
           cacheTimeout: 6500
           enabled: true
           serverCaCertificate:
-            contents: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+            contents: "-----BEGIN CERTIFICATE-----
+    MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+    -----END CERTIFICATE-----
+    "
         localRadius:
           cacheTimeout: 60
           certificateAuthentication:
             clientRootCaCertificate:
-              contents: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+              contents: "-----BEGIN CERTIFICATE-----
+    MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+    -----END CERTIFICATE-----
+    "
             enabled: true
             ocspResponderUrl: http://ocsp-server.example.com
             useLdap: false
@@ -5931,7 +6715,10 @@ Examples
         radiusAccountingEnabled: true
         radiusAccountingInterimInterval: 5
         radiusAccountingServers:
-          - caCertificate: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+          - caCertificate: "-----BEGIN CERTIFICATE-----
+    MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+    -----END CERTIFICATE-----
+    "
             host: 0.0.0.0
             port: 3000
             radsecEnabled: true
@@ -5954,7 +6741,10 @@ Examples
         radiusServerAttemptsLimit: 5
         radiusServerTimeout: 5
         radiusServers:
-          - caCertificate: '-----BEGIN CERTIFICATE----- MIIEKjCC... CERTIFICATE-----'
+          - caCertificate: "-----BEGIN CERTIFICATE-----
+    MIIEKjCCAxKgAwIBAgIRANb+lsED3eb4+6YKLFFYqEkwDQYJKoZIhvcNAQELBQAw
+    -----END CERTIFICATE-----
+    "
             host: 0.0.0.0
             openRoamingCertificateId: 2
             port: 3000
@@ -5985,7 +6775,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -5995,12 +6784,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -6020,9 +6810,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -6042,7 +6832,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"adaptivePolicyGroupId": "string", "adminSplashUrl": "string", "adultContentFilteringEnabled": true, "authMode": "string", "availabilityTags": ["string"], "availableOnAllAps": true, "bandSelection": "string", "defaultVlanId": 0, "dnsRewrite": {"dnsCustomNameservers": ["string"], "enabled": true}, "dot11r": {"adaptive": true, "enabled": true}, "dot11w": {"enabled": true, "required": true}, "enabled": true, "encryptionMode": "string", "enterpriseAdminAccess": "string", "gre": {"clientIsolation": true, "concentrator": {"host": "string"}, "key": 0}, "ipAssignmentMode": "string", "lanIsolationEnabled": true, "localAuth": true, "localAuthFallback": {"cacheTimeout": 0, "enabled": true, "serverCaCertificate": {"contents": {}}}, "mandatoryDhcpEnabled": true, "minBitrate": 0, "name": "string", "namedVlans": {"radius": {"guestVlan": {"enabled": true, "name": "string"}}, "tagging": {"byApTags": [{"tags": ["string"], "vlanName": "string"}], "defaultVlanName": "string", "enabled": true}}, "number": 0, "oauth": {"allowedDomains": ["string"]}, "perClientBandwidthLimitDown": 0, "perClientBandwidthLimitUp": 0, "perSsidBandwidthLimitDown": 0, "perSsidBandwidthLimitUp": 0, "psk": "string", "radiusAccountingEnabled": true, "radiusAccountingServers": [{"caCertificate": "string", "host": "string", "openRoamingCertificateId": 0, "port": 0}], "radiusAttributeForGroupPolicies": "string", "radiusAuthenticationNasId": "string", "radiusCalledStationId": "string", "radiusCoaEnabled": true, "radiusEnabled": true, "radiusFailoverPolicy": "string", "radiusFallbackEnabled": true, "radiusLoadBalancingPolicy": "string", "radiusOverride": true, "radiusProxyEnabled": true, "radiusServerAttemptsLimit": 0, "radiusServerTimeout": 0, "radiusServers": [{"caCertificate": "string", "host": "string", "id": "string", "openRoamingCertificateId": 0, "port": 0, "radsecEnabled": true}], "radiusTestingEnabled": true, "security": {"encryption": {"akms": ["string"], "ciphers": ["string"]}}, "speedBurst": {"enabled": true}, "splashPage": "string", "splashTimeout": "string", "ssidAdminAccessible": true, "useVlanTagging": true, "visible": true, "walledGardenEnabled": true, "walledGardenRanges": ["string"], "wifiPersonalNetworkEnabled": true, "wpaEncryptionMode": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"adaptivePolicyGroupId": "string", "adminSplashUrl": "string", "adultContentFilteringEnabled": true, "authMode": "string", "availabilityTags": ["string"], "availableOnAllAps": true, "bandSelection": "string", "campusGateway": {"cluster": {"id": "string"}}, "defaultVlanId": 0, "dnsRewrite": {"dnsCustomNameservers": ["string"], "enabled": true}, "dot11k": {"enabled": true}, "dot11r": {"adaptive": true, "enabled": true}, "dot11w": {"enabled": true, "required": true}, "enabled": true, "encryptionMode": "string", "enterpriseAdminAccess": "string", "gre": {"clientIsolation": true, "concentrator": {"host": "string"}, "key": 0}, "ipAssignmentMode": "string", "lanIsolationEnabled": true, "localAuth": true, "localAuthFallback": {"cacheTimeout": 0, "enabled": true, "serverCaCertificate": {"contents": {}}}, "mandatoryDhcpEnabled": true, "minBitrate": 0, "name": "string", "namedVlans": {"radius": {"guestVlan": {"enabled": true, "name": "string"}}, "tagging": {"byApTags": [{"tags": ["string"], "vlanName": "string"}], "defaultVlanName": "string", "enabled": true}}, "number": 0, "oauth": {"allowedDomains": ["string"]}, "perClientBandwidthLimitDown": 0, "perClientBandwidthLimitUp": 0, "perSsidBandwidthLimitDown": 0, "perSsidBandwidthLimitUp": 0, "psk": "string", "radiusAccountingEnabled": true, "radiusAccountingServers": [{"caCertificate": "string", "host": "string", "openRoamingCertificateId": 0, "port": 0}], "radiusAttributeForGroupPolicies": "string", "radiusAuthenticationNasId": "string", "radiusCalledStationId": "string", "radiusCoaEnabled": true, "radiusEnabled": true, "radiusFailoverPolicy": "string", "radiusFallbackEnabled": true, "radiusLoadBalancingPolicy": "string", "radiusOverride": true, "radiusProxyEnabled": true, "radiusServerAttemptsLimit": 0, "radiusServerTimeout": 0, "radiusServers": [{"caCertificate": "string", "host": "string", "id": "string", "openRoamingCertificateId": 0, "port": 0, "radsecEnabled": true}], "radiusTestingEnabled": true, "security": {"encryption": {"akms": ["string"], "ciphers": ["string"]}}, "speedBurst": {"enabled": true}, "splashPage": "string", "splashTimeout": "string", "ssidAdminAccessible": true, "useVlanTagging": true, "visible": true, "walledGardenEnabled": true, "walledGardenRanges": ["string"], "wifiPersonalNetworkEnabled": true, "wlanIdentifier": 0, "wpaEncryptionMode": "string"}`
 
 
       .. raw:: html
@@ -6062,18 +6852,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

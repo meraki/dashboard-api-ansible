@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.organizations_policies_global_firewall_rulesets_rules module -- Res
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module_requirements>` for details.
 
@@ -69,9 +52,9 @@ Synopsis
 .. Description
 
 - Manage operations create, update and delete of the resource organizations \_policies \_global \_firewall \_rulesets \_rules.
-- Create an Organization-Wide Policy Firewall Rule.
-- Delete an Organization-Wide Policy Firewall Rule.
-- Update an Organization-Wide Policy Firewall Rule.
+- Create an Organization\-Wide Policy Firewall Rule.
+- Delete an Organization\-Wide Policy Firewall Rule.
+- Update an Organization\-Wide Policy Firewall Rule.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -100,12 +83,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -125,9 +109,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -159,9 +143,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -177,11 +161,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria:
 
@@ -193,13 +181,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -211,11 +203,100 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/adaptivePolicyGroups"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/adaptivepolicygroups:
+
+      .. rst-class:: ansible-option-title
+
+      **adaptivePolicyGroups**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/adaptivePolicyGroups" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Adaptive policy groups.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/adaptivePolicyGroups/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/adaptivepolicygroups/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/adaptivePolicyGroups/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Adaptive policy group ID.
+
+
+      .. raw:: html
+
+        </div>
+
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/addressRanges"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/addressranges:
 
@@ -227,13 +308,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/addressRanges" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -251,6 +336,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applianceVlans"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/appliancevlans:
 
       .. rst-class:: ansible-option-title
@@ -261,13 +350,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applianceVlans" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -279,11 +372,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applianceVlans/interfaceId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/appliancevlans/interfaceid:
 
@@ -295,13 +392,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applianceVlans/interfaceId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -320,6 +421,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applicationCategories"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applicationcategories:
 
       .. rst-class:: ansible-option-title
@@ -330,13 +435,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applicationCategories" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -348,11 +457,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applicationCategories/applications"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applicationcategories/applications:
 
@@ -364,13 +477,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applicationCategories/applications" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -382,11 +499,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applicationCategories/applications/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applicationcategories/applications/id:
 
@@ -398,13 +519,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applicationCategories/applications/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -422,6 +547,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applicationCategories/applications/name"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applicationcategories/applications/name:
 
       .. rst-class:: ansible-option-title
@@ -432,13 +561,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applicationCategories/applications/name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -457,6 +590,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applicationCategories/id"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applicationcategories/id:
 
       .. rst-class:: ansible-option-title
@@ -467,13 +604,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applicationCategories/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -491,6 +632,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applicationCategories/name"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applicationcategories/name:
 
       .. rst-class:: ansible-option-title
@@ -501,13 +646,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applicationCategories/name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -526,6 +675,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applications"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applications:
 
       .. rst-class:: ansible-option-title
@@ -536,13 +689,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applications" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -554,11 +711,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applications/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applications/id:
 
@@ -570,13 +731,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applications/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -594,6 +759,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/applications/name"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/applications/name:
 
       .. rst-class:: ansible-option-title
@@ -604,13 +773,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/applications/name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -627,7 +800,138 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/countries"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/countries:
+
+      .. rst-class:: ansible-option-title
+
+      **countries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/countries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Countries.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/countries/code"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/countries/code:
+
+      .. rst-class:: ansible-option-title
+
+      **code**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/countries/code" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Country code (ISO 3166\-1 alpha\-2).
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/fqdns"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/fqdns:
+
+      .. rst-class:: ansible-option-title
+
+      **fqdns**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/fqdns" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Fully qualified domain names or wildcard patterns.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/policyObjectGroups"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/policyobjectgroups:
 
@@ -639,13 +943,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/policyObjectGroups" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -657,11 +965,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/policyObjectGroups/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/policyobjectgroups/id:
 
@@ -673,13 +985,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/policyObjectGroups/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -698,6 +1014,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/policyObjects"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/policyobjects:
 
       .. rst-class:: ansible-option-title
@@ -708,13 +1028,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/policyObjects" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -726,11 +1050,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/policyObjects/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/policyobjects/id:
 
@@ -742,13 +1070,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/policyObjects/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -767,6 +1099,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/ports"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/ports:
 
       .. rst-class:: ansible-option-title
@@ -777,13 +1113,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/ports" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -801,6 +1141,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/services"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/services:
 
       .. rst-class:: ansible-option-title
@@ -811,13 +1155,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/services" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -829,11 +1177,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/services/ports"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/services/ports:
 
@@ -845,13 +1197,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/services/ports" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -869,6 +1225,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/services/protocol"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/services/protocol:
 
       .. rst-class:: ansible-option-title
@@ -879,13 +1239,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/criteria/services/protocol" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -899,11 +1263,270 @@ Parameters
         </div>
 
 
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/siteSpecificVlans"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/sitespecificvlans:
+
+      .. rst-class:: ansible-option-title
+
+      **siteSpecificVlans**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/siteSpecificVlans" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Site\-specific VLANs with address offset configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/siteSpecificVlans/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/sitespecificvlans/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/siteSpecificVlans/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Address offsets added to the VLAN's base network address to form the target host address.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/siteSpecificVlans/address/offsets"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/sitespecificvlans/address/offsets:
+
+      .. rst-class:: ansible-option-title
+
+      **offsets**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/siteSpecificVlans/address/offsets" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IP address offsets. For IPv4, the offset is added to the base address (e.g., base 10.0.0.0/24 + offset 25 = 10.0.0.25). For IPv6, the offset forms the interface identifier suffix appended to the /64 prefix (e.g., prefix 2001 db8 /64 + offset 'ff fe01' = 2001 db8 ff fe01).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/siteSpecificVlans/address/offsets/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/sitespecificvlans/address/offsets/ipv4:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/siteSpecificVlans/address/offsets/ipv4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 address offset. Added to the base network address to determine the host address within the subnet. Maximum value 16777215 (2^24\-1, covering up to /8 subnets).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/siteSpecificVlans/address/offsets/ipv6"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/sitespecificvlans/address/offsets/ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/siteSpecificVlans/address/offsets/ipv6" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 interface identifier offset in colon\-separated hex format (e.g., '200 ff fe01 f'). Appended to the /64 network prefix to form the complete IPv6 address.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-destinations/criteria/siteSpecificVlans/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/criteria/sitespecificvlans/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-destinations/criteria/siteSpecificVlans/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN ID (1\-4094).
+
+
+      .. raw:: html
+
+        </div>
+
+
 
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinations/matchCriteria"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-destinations/matchcriteria:
 
@@ -915,13 +1538,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-destinations/matchCriteria" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -950,9 +1577,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -980,6 +1607,91 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-logging"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-logging:
+
+      .. rst-class:: ansible-option-title
+
+      **logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-logging" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Logging settings for the rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-logging/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-logging/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-logging/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether logging is enabled for traffic matching this rule.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-meraki_action_batch_retry_wait_time:
@@ -992,9 +1704,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1030,9 +1742,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -1064,9 +1776,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1102,9 +1814,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1115,6 +1827,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -1140,9 +1890,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1178,9 +1928,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1220,9 +1970,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1258,9 +2008,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1296,9 +2046,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1308,7 +2058,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -1334,9 +2084,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1372,9 +2122,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1414,9 +2164,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1456,9 +2206,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1494,9 +2244,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1536,9 +2286,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1574,9 +2324,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1616,9 +2366,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1654,9 +2404,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1696,9 +2446,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1738,9 +2488,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1780,9 +2530,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1814,9 +2564,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-organizationId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1848,9 +2598,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-policy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1860,7 +2610,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Rule policy - allow or deny traffic.
+      Rule policy \- allow or deny traffic.
 
 
       .. raw:: html
@@ -1882,9 +2632,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-priority" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1916,9 +2666,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-ruleId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1950,9 +2700,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-rulesetId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1984,9 +2734,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -2002,11 +2752,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria:
 
@@ -2018,13 +2772,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2036,11 +2794,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/addressRanges"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/addressranges:
 
@@ -2052,13 +2814,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/addressRanges" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2076,6 +2842,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/applianceVlans"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/appliancevlans:
 
       .. rst-class:: ansible-option-title
@@ -2086,13 +2856,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/applianceVlans" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2104,11 +2878,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/applianceVlans/interfaceId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/appliancevlans/interfaceid:
 
@@ -2120,13 +2898,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/applianceVlans/interfaceId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2145,6 +2927,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/policyObjectGroups"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/policyobjectgroups:
 
       .. rst-class:: ansible-option-title
@@ -2155,13 +2941,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/policyObjectGroups" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2173,11 +2963,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/policyObjectGroups/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/policyobjectgroups/id:
 
@@ -2189,13 +2983,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/policyObjectGroups/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2214,6 +3012,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/policyObjects"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/policyobjects:
 
       .. rst-class:: ansible-option-title
@@ -2224,13 +3026,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/policyObjects" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2242,11 +3048,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/policyObjects/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/policyobjects/id:
 
@@ -2258,13 +3068,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/policyObjects/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2283,6 +3097,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/criteria/ports"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/ports:
 
       .. rst-class:: ansible-option-title
@@ -2293,13 +3111,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/criteria/ports" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2312,11 +3134,270 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sources/criteria/siteSpecificVlans"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/sitespecificvlans:
+
+      .. rst-class:: ansible-option-title
+
+      **siteSpecificVlans**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sources/criteria/siteSpecificVlans" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Site\-specific VLANs with address offset configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sources/criteria/siteSpecificVlans/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/sitespecificvlans/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sources/criteria/siteSpecificVlans/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Address offsets added to the VLAN's base network address to form the target host address.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sources/criteria/siteSpecificVlans/address/offsets"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/sitespecificvlans/address/offsets:
+
+      .. rst-class:: ansible-option-title
+
+      **offsets**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sources/criteria/siteSpecificVlans/address/offsets" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IP address offsets. For IPv4, the offset is added to the base address (e.g., base 10.0.0.0/24 + offset 25 = 10.0.0.25). For IPv6, the offset forms the interface identifier suffix appended to the /64 prefix (e.g., prefix 2001 db8 /64 + offset 'ff fe01' = 2001 db8 ff fe01).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sources/criteria/siteSpecificVlans/address/offsets/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/sitespecificvlans/address/offsets/ipv4:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sources/criteria/siteSpecificVlans/address/offsets/ipv4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 address offset. Added to the base network address to determine the host address within the subnet. Maximum value 16777215 (2^24\-1, covering up to /8 subnets).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sources/criteria/siteSpecificVlans/address/offsets/ipv6"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/sitespecificvlans/address/offsets/ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sources/criteria/siteSpecificVlans/address/offsets/ipv6" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 interface identifier offset in colon\-separated hex format (e.g., '200 ff fe01 f'). Appended to the /64 network prefix to form the complete IPv6 address.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-sources/criteria/siteSpecificVlans/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/criteria/sitespecificvlans/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-sources/criteria/siteSpecificVlans/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN ID (1\-4094).
+
+
+      .. raw:: html
+
+        </div>
+
+
 
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sources/matchCriteria"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_policies_global_firewall_rulesets_rules_module__parameter-sources/matchcriteria:
 
@@ -2328,13 +3409,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-sources/matchCriteria" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2360,10 +3445,10 @@ Notes
 .. note::
    - SDK Method used are organizations.Organizations.create\_organization\_policies\_global\_firewall\_rulesets\_rule, organizations.Organizations.delete\_organization\_policies\_global\_firewall\_rulesets\_rule, organizations.Organizations.update\_organization\_policies\_global\_firewall\_rulesets\_rule,
    - Paths used are post /organizations/{organizationId}/policies/global/firewall/rulesets/rules, delete /organizations/{organizationId}/policies/global/firewall/rulesets/rules/{ruleId}, put /organizations/{organizationId}/policies/global/firewall/rulesets/rules/{ruleId},
-   - Does not support \ :literal:`check\_mode`\ 
+   - Does not support :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
    - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -2386,7 +3471,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Create
       cisco.meraki.organizations_policies_global_firewall_rulesets_rules:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -2414,6 +3498,8 @@ Examples
         description: This is rule 1
         destinations:
           criteria:
+            adaptivePolicyGroups:
+              - id: '123'
             addressRanges:
               - 1.1.1.1
               - 2.2.2.2
@@ -2428,6 +3514,10 @@ Examples
             applications:
               - id: meraki:layer7/application/5
                 name: Advertising.com
+            countries:
+              - code: US
+            fqdns:
+              - '*.example.com'
             policyObjectGroups:
               - id: '45'
             policyObjects:
@@ -2440,6 +3530,12 @@ Examples
                   - '80'
                   - '443'
                 protocol: tcp
+            siteSpecificVlans:
+              - address:
+                  offsets:
+                    ipv4: 25
+                    ipv6: 0:ff:fe01:0
+                id: 100
           matchCriteria:
             - addressRanges
             - services
@@ -2449,6 +3545,8 @@ Examples
             - policyObjectGroups
             - applianceVlans
         enabled: true
+        logging:
+          enabled: false
         name: Allow developers
         organizationId: string
         policy: deny
@@ -2468,6 +3566,12 @@ Examples
             ports:
               - '22'
               - 42-46
+            siteSpecificVlans:
+              - address:
+                  offsets:
+                    ipv4: 25
+                    ipv6: 0:ff:fe01:0
+                id: 100
           matchCriteria:
             - addressRanges
             - ports
@@ -2527,6 +3631,8 @@ Examples
         description: This is rule 1
         destinations:
           criteria:
+            adaptivePolicyGroups:
+              - id: '123'
             addressRanges:
               - 1.1.1.1
               - 2.2.2.2
@@ -2541,6 +3647,10 @@ Examples
             applications:
               - id: meraki:layer7/application/5
                 name: Advertising.com
+            countries:
+              - code: US
+            fqdns:
+              - '*.example.com'
             policyObjectGroups:
               - id: '45'
             policyObjects:
@@ -2553,6 +3663,12 @@ Examples
                   - '80'
                   - '443'
                 protocol: tcp
+            siteSpecificVlans:
+              - address:
+                  offsets:
+                    ipv4: 25
+                    ipv6: 0:ff:fe01:0
+                id: 100
           matchCriteria:
             - addressRanges
             - services
@@ -2562,6 +3678,8 @@ Examples
             - policyObjectGroups
             - applianceVlans
         enabled: true
+        logging:
+          enabled: false
         name: Allow developers
         organizationId: string
         policy: deny
@@ -2582,13 +3700,18 @@ Examples
             ports:
               - '22'
               - 42-46
+            siteSpecificVlans:
+              - address:
+                  offsets:
+                    ipv4: 25
+                    ipv6: 0:ff:fe01:0
+                id: 100
           matchCriteria:
             - addressRanges
             - ports
             - policyObjects
             - policyObjectGroups
             - applianceVlans
-
 
 
 
@@ -2601,12 +3724,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -2626,9 +3750,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -2648,7 +3772,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"createdAt": "string", "description": "string", "destinations": {"criteria": {"addressRanges": ["string"], "applianceVlans": [{"interfaceId": "string"}], "applicationCategories": [{"id": "string"}], "applications": [{"id": "string", "name": "string"}], "countries": [{"code": "string"}], "fqdns": ["string"], "policyObjectGroups": [{"id": "string"}], "policyObjects": [{"id": "string"}], "ports": ["string"], "services": [{"ports": ["string"], "protocol": "string"}], "siteSpecificVlans": [{"address": {"offsets": {"ipv4": 0, "ipv6": "string"}}, "id": 0}]}, "matchCriteria": ["string"]}, "enabled": true, "lastUpdatedAt": "string", "name": "string", "policy": "string", "priority": 0, "ruleId": "string", "rulesetId": "string", "sources": {"criteria": {"addressRanges": ["string"], "applianceVlans": [{"interfaceId": "string"}], "policyObjectGroups": [{"id": "string"}], "policyObjects": [{"id": "string"}], "ports": ["string"], "siteSpecificVlans": [{"address": {"offsets": {"ipv4": 0, "ipv6": "string"}}, "id": 0}]}, "matchCriteria": ["string"]}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"createdAt": "string", "description": "string", "destinations": {"criteria": {"adaptivePolicyGroups": [{"id": "string"}], "addressRanges": ["string"], "applianceVlans": [{"interfaceId": "string"}], "applicationCategories": [{"id": "string"}], "applications": [{"id": "string", "name": "string"}], "countries": [{"code": "string"}], "fqdns": ["string"], "policyObjectGroups": [{"id": "string"}], "policyObjects": [{"id": "string"}], "ports": ["string"], "services": [{"ports": ["string"], "protocol": "string"}], "siteSpecificVlans": [{"address": {"offsets": {"ipv4": 0, "ipv6": "string"}}, "id": 0}]}, "matchCriteria": ["string"]}, "enabled": true, "lastUpdatedAt": "string", "logging": {"enabled": true}, "name": "string", "policy": "string", "priority": 0, "ruleId": "string", "rulesetId": "string", "sources": {"criteria": {"addressRanges": ["string"], "applianceVlans": [{"interfaceId": "string"}], "policyObjectGroups": [{"id": "string"}], "policyObjects": [{"id": "string"}], "ports": ["string"], "siteSpecificVlans": [{"address": {"offsets": {"ipv4": 0, "ipv6": "string"}}, "id": 0}]}, "matchCriteria": ["string"]}}`
 
 
       .. raw:: html
@@ -2668,18 +3792,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

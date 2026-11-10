@@ -1,0 +1,6014 @@
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. meta::
+  :antsibull-docs: 2.28.0
+
+.. Anchors
+
+.. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Title
+
+cisco.meraki.organizations_wireless_ssids_profiles module -- Resource module for organizations \_wireless \_ssids \_profiles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
+
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.meraki.organizations_wireless_ssids_profiles`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.meraki 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource organizations \_wireless \_ssids \_profiles.
+- Create a new SSID profile in an organization.
+- Delete an SSID profile.
+- Update this SSID profile.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- meraki \>= 2.4.9
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+  :class: longtable ansible-option-table
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Id path parameter.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_action_batch_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_action_batch_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_action\_batch\_retry\_wait\_time (integer), action batch concurrency error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_api_key:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_api_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_api\_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI\_DASHBOARD\_API\_KEY
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_base_url:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_base_url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_base\_url (string), preceding all endpoint resources
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"https://api.meraki.com/api/v1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_be_geo_id:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_be_geo_id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_certificate_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_certificate_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_certificate\_path (string), path for TLS/SSL certificate verification if behind local proxy
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_inherit_logging_config:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_inherit_logging_config**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_inherit\_logging\_config (boolean), Inherits your own logger instance
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_log_file_prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_file_prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_log\_file\_prefix (string), log file name appended with date and timestamp
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"meraki\_api\_"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_log_path:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_log_path**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      log\_path (string), path to output log; by default, working directory of script if not specified
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_maximum_retries:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_maximum_retries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`2`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_nginx_429_retry_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_nginx_429_retry_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_nginx\_429\_retry\_wait\_time (integer), Nginx 429 retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_output_log:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_output_log**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_output\_log (boolean), create an output log file?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_print_console:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_print_console**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_print\_console (boolean), print logging output to console?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_requests_proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_requests_proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_requests\_proxy (string), proxy server and port, if needed, for HTTPS
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_retry_4xx_error:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error (boolean), retry if encountering other 4XX error (besides 429)?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_retry_4xx_error_wait_time:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_retry_4xx_error_wait_time**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_retry\_4xx\_error\_wait\_time (integer), other 4XX error retry wait time
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_simulate:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_simulate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_single\_request\_timeout (integer), maximum number of seconds for each API call
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_suppress_logging:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_suppress_logging**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_suppress\_logging (boolean), disable all logging? you're on your own then!
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_use_iterator_for_get_pages:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_use_iterator_for_get_pages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_use\_iterator\_for\_get\_pages (boolean), list\* methods will return an iterator with each object instead of a complete list with all items
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-meraki_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_wait\_on\_rate\_limit (boolean), retry if 429 rate limit error encountered?
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of the SSID profile.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-organizationId"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-organizationid:
+
+      .. rst-class:: ansible-option-title
+
+      **organizationId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-organizationId" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      OrganizationId path parameter. Organization ID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-precedence"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-precedence:
+
+      .. rst-class:: ansible-option-title
+
+      **precedence**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-precedence" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Precedence configuration for the SSID profile.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-precedence/radius"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-precedence/radius:
+
+      .. rst-class:: ansible-option-title
+
+      **radius**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-precedence/radius" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Source of RADIUS configuration \- 'profile' means profile\-level config takes precedence, 'network' means SSID\-level config takes precedence.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid:
+
+      .. rst-class:: ansible-option-title
+
+      **ssid**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      SSID configuration for the profile.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing:
+
+      .. rst-class:: ansible-option-title
+
+      **addressing**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Addressing settings for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding:
+
+      .. rst-class:: ansible-option-title
+
+      **bonjourForwarding**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Bonjour forwarding settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether Bonjour forwarding is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding/rules"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding/rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding/rules" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Bonjour forwarding rules.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding/rules/description"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding/rules/description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding/rules/description" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Description of the rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding/rules/services"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding/rules/services:
+
+      .. rst-class:: ansible-option-title
+
+      **services**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding/rules/services" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Services.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding/rules/vlan"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding/rules/vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding/rules/vlan" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN settings for the rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/bonjourForwarding/rules/vlan/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/bonjourforwarding/rules/vlan/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/bonjourForwarding/rules/vlan/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN ID.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/mdns"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/mdns:
+
+      .. rst-class:: ansible-option-title
+
+      **mdns**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/mdns" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MDNS gateway settings and rules for an SSID and cluster.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/mdns/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/mdns/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/mdns/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      If true, mDNS is enabled for the SSID or cluster.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/mdns/rules"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/mdns/rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/mdns/rules" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of mDNS forwarding rules.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/mdns/rules/services"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/mdns/rules/services:
+
+      .. rst-class:: ansible-option-title
+
+      **services**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/mdns/rules/services" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Predefined or same\-organization custom mDNS service keys.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Addressing mode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/radius"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/radius:
+
+      .. rst-class:: ansible-option-title
+
+      **radius**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/radius" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS addressing settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/radius/guest"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/radius/guest:
+
+      .. rst-class:: ansible-option-title
+
+      **guest**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/radius/guest" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Guest VLAN settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/radius/guest/vlan"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/radius/guest/vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/radius/guest/vlan" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VLAN settings for guest networks.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/radius/guest/vlan/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/radius/guest/vlan/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/radius/guest/vlan/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether guest VLAN is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/addressing/radius/overrideVlanTag"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/addressing/radius/overridevlantag:
+
+      .. rst-class:: ansible-option-title
+
+      **overrideVlanTag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/addressing/radius/overrideVlanTag" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether to override VLAN tag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/advertisement"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/advertisement:
+
+      .. rst-class:: ansible-option-title
+
+      **advertisement**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/advertisement" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SSID advertisement settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/advertisement/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/advertisement/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/advertisement/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the SSID is advertised.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/name"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/name" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SSID name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius:
+
+      .. rst-class:: ansible-option-title
+
+      **radius**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS settings for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/accounting"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/accounting:
+
+      .. rst-class:: ansible-option-title
+
+      **accounting**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/accounting" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS accounting settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/accounting/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/accounting/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/accounting/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether RADIUS accounting is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/accounting/updateInterval"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/accounting/updateinterval:
+
+      .. rst-class:: ansible-option-title
+
+      **updateInterval**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/accounting/updateInterval" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Update interval for RADIUS accounting.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/das"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/das:
+
+      .. rst-class:: ansible-option-title
+
+      **das**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/das" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Direct Access Server settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/das/coa"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/das/coa:
+
+      .. rst-class:: ansible-option-title
+
+      **coa**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/das/coa" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Change of Authorization settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/das/coa/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/das/coa/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/das/coa/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether CoA is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTimers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Update the EAP timers settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/eapolKey"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/eapolkey:
+
+      .. rst-class:: ansible-option-title
+
+      **eapolKey**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/eapolKey" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EAPOL Key settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/eapolKey/maxRetries"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/eapolkey/maxretries:
+
+      .. rst-class:: ansible-option-title
+
+      **maxRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/eapolKey/maxRetries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Maximum number of EAPOL key retries.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/eapolKey/timeoutInMs"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/eapolkey/timeoutinms:
+
+      .. rst-class:: ansible-option-title
+
+      **timeoutInMs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/eapolKey/timeoutInMs" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EAPOL Key timeout in milliseconds.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/identity"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/identity:
+
+      .. rst-class:: ansible-option-title
+
+      **identity**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/identity" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EAP settings for identity requests.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/identity/maxRetries"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/identity/maxretries:
+
+      .. rst-class:: ansible-option-title
+
+      **maxRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/identity/maxRetries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Maximum number of EAP retries.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/identity/timeout"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/identity/timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/identity/timeout" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EAP timeout in seconds.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/maxRetries"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/maxretries:
+
+      .. rst-class:: ansible-option-title
+
+      **maxRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/maxRetries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Maximum number of general EAP retries.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/eapTimers/timeout"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/eaptimers/timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/eapTimers/timeout" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      General EAP timeout in seconds.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/identifiers"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/identifiers:
+
+      .. rst-class:: ansible-option-title
+
+      **identifiers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/identifiers" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS identifiers.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/identifiers/calledStation"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/identifiers/calledstation:
+
+      .. rst-class:: ansible-option-title
+
+      **calledStation**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/identifiers/calledStation" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Called station identifier.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/identifiers/nas"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/identifiers/nas:
+
+      .. rst-class:: ansible-option-title
+
+      **nas**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/identifiers/nas" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      NAS identifier.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies:
+
+      .. rst-class:: ansible-option-title
+
+      **policies**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS policies.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/attribute"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/attribute:
+
+      .. rst-class:: ansible-option-title
+
+      **attribute**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/attribute" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS attribute for policies.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/failover"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/failover:
+
+      .. rst-class:: ansible-option-title
+
+      **failover**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/failover" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Failover policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/failover/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/failover/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/failover/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Failover mode.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/fallback"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/fallback:
+
+      .. rst-class:: ansible-option-title
+
+      **fallback**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/fallback" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Fallback policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/fallback/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/fallback/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/fallback/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether fallback is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/loadBalancing"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/loadbalancing:
+
+      .. rst-class:: ansible-option-title
+
+      **loadBalancing**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/loadBalancing" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Load balancing policy.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/policies/loadBalancing/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/policies/loadbalancing/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/policies/loadBalancing/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Load balancing mode.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/proxy"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/proxy:
+
+      .. rst-class:: ansible-option-title
+
+      **proxy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/proxy" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS proxy settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/proxy/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/proxy/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/proxy/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether RADIUS proxy is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/servers"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/servers:
+
+      .. rst-class:: ansible-option-title
+
+      **servers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/servers" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Organization RADIUS servers, ordered by priority.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/servers/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/servers/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/servers/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS server ID.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/testing"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/testing:
+
+      .. rst-class:: ansible-option-title
+
+      **testing**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/testing" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RADIUS testing settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/radius/testing/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/radius/testing/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/radius/testing/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether RADIUS testing is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security:
+
+      .. rst-class:: ansible-option-title
+
+      **security**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Security settings for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption:
+
+      .. rst-class:: ansible-option-title
+
+      **encryption**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Encryption settings for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/akms"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/akms:
+
+      .. rst-class:: ansible-option-title
+
+      **akms**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/akms" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authentication key management systems used by the SSID (applicable for WPA3 only).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/ciphers"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/ciphers:
+
+      .. rst-class:: ansible-option-title
+
+      **ciphers**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/ciphers" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Encryption ciphers used by the SSID (applicable for WPA3 only).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/dot11r"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/dot11r:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11r**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/dot11r" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      802.11r settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/dot11r/adaptive"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/dot11r/adaptive:
+
+      .. rst-class:: ansible-option-title
+
+      **adaptive**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/dot11r/adaptive" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11r is adaptive.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/dot11r/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/dot11r/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/dot11r/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11r is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/dot11w"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/dot11w:
+
+      .. rst-class:: ansible-option-title
+
+      **dot11w**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/dot11w" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      802.11w settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/dot11w/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/dot11w/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/dot11w/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11w is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/dot11w/required"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/dot11w/required:
+
+      .. rst-class:: ansible-option-title
+
+      **required**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/dot11w/required" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether 802.11w is required.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/encryption/passphrase"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/encryption/passphrase:
+
+      .. rst-class:: ansible-option-title
+
+      **passphrase**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/encryption/passphrase" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Passphrase for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/identityPassphrase"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/identitypassphrase:
+
+      .. rst-class:: ansible-option-title
+
+      **identityPassphrase**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/identityPassphrase" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Identity passphrase settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/identityPassphrase/personalNetwork"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/identitypassphrase/personalnetwork:
+
+      .. rst-class:: ansible-option-title
+
+      **personalNetwork**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/identityPassphrase/personalNetwork" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Personal network settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/identityPassphrase/personalNetwork/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/identitypassphrase/personalnetwork/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/identityPassphrase/personalNetwork/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether personal network is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Security mode of the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/security/protocol"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/security/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/security/protocol" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Security protocol used by the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash:
+
+      .. rst-class:: ansible-option-title
+
+      **splash**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Splash settings for the SSID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/auth"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/auth:
+
+      .. rst-class:: ansible-option-title
+
+      **auth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/auth" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authentication\-related splash settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/auth/oauth"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/auth/oauth:
+
+      .. rst-class:: ansible-option-title
+
+      **oauth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/auth/oauth" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      OAuth settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/auth/oauth/domains"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/auth/oauth/domains:
+
+      .. rst-class:: ansible-option-title
+
+      **domains**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/auth/oauth/domains" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Email domains allowed by OAuth.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/auth/simultaneousLogins"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/auth/simultaneouslogins:
+
+      .. rst-class:: ansible-option-title
+
+      **simultaneousLogins**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/auth/simultaneousLogins" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Simultaneous login settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/auth/simultaneousLogins/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/auth/simultaneouslogins/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/auth/simultaneousLogins/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allow the same credentials to be used on multiple devices simultaneously.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal:
+
+      .. rst-class:: ansible-option-title
+
+      **captivePortal**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Captive portal configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/external"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/external:
+
+      .. rst-class:: ansible-option-title
+
+      **external**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/external" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      External captive portal configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/external/url"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/external/url:
+
+      .. rst-class:: ansible-option-title
+
+      **url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/external/url" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      External captive portal URL.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted:
+
+      .. rst-class:: ansible-option-title
+
+      **hosted**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Hosted splash configuration.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/consent"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/consent:
+
+      .. rst-class:: ansible-option-title
+
+      **consent**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/consent" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User consent settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/consent/message"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/consent/message:
+
+      .. rst-class:: ansible-option-title
+
+      **message**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/consent/message" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Consent message displayed to users.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/consent/required"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/consent/required:
+
+      .. rst-class:: ansible-option-title
+
+      **required**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/consent/required" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether users must provide consent.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/language"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/language:
+
+      .. rst-class:: ansible-option-title
+
+      **language**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/language" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Splash page language.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/language/code"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/language/code:
+
+      .. rst-class:: ansible-option-title
+
+      **code**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/language/code" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Language code.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/theme"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/theme:
+
+      .. rst-class:: ansible-option-title
+
+      **theme**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/theme" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Hosted theme.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/hosted/theme/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/hosted/theme/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/hosted/theme/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Splash theme identifier.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/captivePortal/provider"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/captiveportal/provider:
+
+      .. rst-class:: ansible-option-title
+
+      **provider**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/captivePortal/provider" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Captive portal provider selection.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/controllerUnreachable"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/controllerunreachable:
+
+      .. rst-class:: ansible-option-title
+
+      **controllerUnreachable**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/controllerUnreachable" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Behavior when the Meraki Cloud Splash controller is unreachable.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/controllerUnreachable/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/controllerunreachable/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/controllerUnreachable/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How authentication attempts are handled when the controller is unreachable.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Splash mode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/preAccess"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/preaccess:
+
+      .. rst-class:: ansible-option-title
+
+      **preAccess**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/preAccess" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Pre\-access settings before splash completion.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/preAccess/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/preaccess/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/preAccess/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Pre\-access mode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/preAccess/walledGarden"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/preaccess/walledgarden:
+
+      .. rst-class:: ansible-option-title
+
+      **walledGarden**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/preAccess/walledGarden" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Walled garden settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/preAccess/walledGarden/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/preaccess/walledgarden/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/preAccess/walledGarden/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allow access to specific IP ranges and domains before Splash.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/preAccess/walledGarden/ranges"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/preaccess/walledgarden/ranges:
+
+      .. rst-class:: ansible-option-title
+
+      **ranges**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/preAccess/walledGarden/ranges" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of IP address ranges and domains accessible before Splash.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/redirect"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/redirect:
+
+      .. rst-class:: ansible-option-title
+
+      **redirect**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/redirect" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Post\-Splash redirect settings.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/redirect/override"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/redirect/override:
+
+      .. rst-class:: ansible-option-title
+
+      **override**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/redirect/override" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Override settings for post\-Splash redirection.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/redirect/override/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/redirect/override/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/redirect/override/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether users will be redirected to a configured URL after completing the Splash or to the their originally requested URL.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/redirect/override/url"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/redirect/override/url:
+
+      .. rst-class:: ansible-option-title
+
+      **url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/redirect/override/url" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Custom URL where users will be redirected after completing the Splash.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ssid/splash/timeout"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__parameter-ssid/splash/timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ssid/splash/timeout" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Splash timeout in minutes. How often users must complete the Splash.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are wireless.Wireless.create\_organization\_wireless\_ssids\_profile, wireless.Wireless.delete\_organization\_wireless\_ssids\_profile, wireless.Wireless.update\_organization\_wireless\_ssids\_profile,
+   - Paths used are post /organizations/{organizationId}/wireless/ssids/profiles, delete /organizations/{organizationId}/wireless/ssids/profiles/{id}, put /organizations/{organizationId}/wireless/ssids/profiles/{id},
+   - Does not support :literal:`check\_mode`
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
+   - from Cisco Dashboard API Python(SDK)
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco Meraki documentation for wireless createOrganizationWirelessSsidsProfile <https://developer.cisco.com/meraki/api-v1/#!create-organization-wireless-ssids-profile>`_
+       Complete reference of the createOrganizationWirelessSsidsProfile API.
+   `Cisco Meraki documentation for wireless deleteOrganizationWirelessSsidsProfile <https://developer.cisco.com/meraki/api-v1/#!delete-organization-wireless-ssids-profile>`_
+       Complete reference of the deleteOrganizationWirelessSsidsProfile API.
+   `Cisco Meraki documentation for wireless updateOrganizationWirelessSsidsProfile <https://developer.cisco.com/meraki/api-v1/#!update-organization-wireless-ssids-profile>`_
+       Complete reference of the updateOrganizationWirelessSsidsProfile API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    - name: Create
+      cisco.meraki.organizations_wireless_ssids_profiles:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: present
+        name: Guest Profile
+        organizationId: string
+        precedence:
+          radius: profile
+        ssid:
+          addressing:
+            bonjourForwarding:
+              enabled: true
+              rules:
+                - description: Desc
+                  services:
+                    - All Services
+                  vlan:
+                    id: 1
+            mdns:
+              enabled: true
+              rules:
+                - services:
+                    - airplay
+                    - custom_42
+            mode: Bridge mode
+            radius:
+              guest:
+                vlan:
+                  enabled: true
+              overrideVlanTag: false
+          advertisement:
+            enabled: true
+          name: SSID name
+          radius:
+            accounting:
+              enabled: true
+              updateInterval: 60
+            das:
+              coa:
+                enabled: true
+            eapTimers:
+              eapolKey:
+                maxRetries: 2
+                timeoutInMs: 5000
+              identity:
+                maxRetries: 5
+                timeout: 5
+              maxRetries: 2
+              timeout: 5
+            identifiers:
+              calledStation: '1'
+              nas: some-nas-identifier
+            policies:
+              attribute: Filter-Id
+              failover:
+                mode: deny
+              fallback:
+                enabled: false
+              loadBalancing:
+                mode: priority
+            proxy:
+              enabled: false
+            servers:
+              - id: '1'
+            testing:
+              enabled: true
+          security:
+            encryption:
+              akms:
+                - SAE
+                - SAE-EXT
+              ciphers:
+                - GCMP 256
+              dot11r:
+                adaptive: false
+                enabled: false
+              dot11w:
+                enabled: true
+                required: true
+              passphrase: example-passphrase
+            identityPassphrase:
+              personalNetwork:
+                enabled: true
+            mode: psk
+            protocol: WPA3 only
+          splash:
+            auth:
+              oauth:
+                domains:
+                  - example.com
+                  - subdomain.example.com
+              simultaneousLogins:
+                enabled: false
+            captivePortal:
+              external:
+                url: https://example.com/splash
+              hosted:
+                consent:
+                  message: By continuing, you agree to our terms and conditions.
+                  required: true
+                language:
+                  code: EN
+                theme:
+                  id: c3ddcb4f16785ee747ab5ffc10867d6c8ea704be
+              provider: hosted
+            controllerUnreachable:
+              mode: default
+            mode: click-through
+            preAccess:
+              mode: block-all
+              walledGarden:
+                enabled: true
+                ranges:
+                  - 192.168.1.0/24
+                  - 10.0.0.0/8
+            redirect:
+              override:
+                enabled: true
+                url: https://example.com/redirect
+            timeout: 1440
+    - name: Update by id
+      cisco.meraki.organizations_wireless_ssids_profiles:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: present
+        id: string
+        name: Guest Profile
+        organizationId: string
+        ssid:
+          addressing:
+            bonjourForwarding:
+              enabled: true
+              rules:
+                - description: Desc
+                  services:
+                    - All Services
+                  vlan:
+                    id: 1
+            mdns:
+              enabled: true
+              rules:
+                - services:
+                    - airplay
+                    - custom_42
+            radius:
+              guest:
+                vlan:
+                  enabled: true
+              overrideVlanTag: false
+          advertisement:
+            enabled: true
+          name: SSID name
+          radius:
+            accounting:
+              enabled: true
+              updateInterval: 60
+            das:
+              coa:
+                enabled: true
+            eapTimers:
+              eapolKey:
+                maxRetries: 2
+                timeoutInMs: 5000
+              identity:
+                maxRetries: 5
+                timeout: 5
+              maxRetries: 2
+              timeout: 5
+            identifiers:
+              calledStation: '1'
+              nas: some-nas-identifier
+            policies:
+              attribute: Filter-Id
+              failover:
+                mode: deny
+              fallback:
+                enabled: false
+              loadBalancing:
+                mode: priority
+            proxy:
+              enabled: false
+            servers:
+              - id: '1'
+            testing:
+              enabled: true
+          security:
+            encryption:
+              akms:
+                - SAE
+                - SAE-EXT
+              ciphers:
+                - GCMP 256
+              dot11r:
+                adaptive: false
+                enabled: false
+              dot11w:
+                enabled: true
+                required: true
+              passphrase: example-passphrase
+            identityPassphrase:
+              personalNetwork:
+                enabled: true
+            mode: psk
+            protocol: WPA3 only
+          splash:
+            auth:
+              oauth:
+                domains:
+                  - example.com
+                  - subdomain.example.com
+              simultaneousLogins:
+                enabled: false
+            captivePortal:
+              external:
+                url: https://example.com/splash
+              hosted:
+                consent:
+                  message: By continuing, you agree to our terms and conditions.
+                  required: true
+                language:
+                  code: EN
+                theme:
+                  id: c3ddcb4f16785ee747ab5ffc10867d6c8ea704be
+              provider: hosted
+            controllerUnreachable:
+              mode: default
+            mode: click-through
+            preAccess:
+              mode: block-all
+              walledGarden:
+                enabled: true
+                ranges:
+                  - 192.168.1.0/24
+                  - 10.0.0.0/8
+            redirect:
+              override:
+                enabled: true
+                url: https://example.com/redirect
+            timeout: 1440
+    - name: Delete by id
+      cisco.meraki.organizations_wireless_ssids_profiles:
+        meraki_api_key: "{{ meraki_api_key }}"
+        meraki_base_url: "{{ meraki_base_url }}"
+        meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
+        meraki_certificate_path: "{{ meraki_certificate_path }}"
+        meraki_requests_proxy: "{{ meraki_requests_proxy }}"
+        meraki_wait_on_rate_limit: "{{ meraki_wait_on_rate_limit }}"
+        meraki_nginx_429_retry_wait_time: "{{ meraki_nginx_429_retry_wait_time }}"
+        meraki_action_batch_retry_wait_time: "{{ meraki_action_batch_retry_wait_time }}"
+        meraki_retry_4xx_error: "{{ meraki_retry_4xx_error }}"
+        meraki_retry_4xx_error_wait_time: "{{ meraki_retry_4xx_error_wait_time }}"
+        meraki_maximum_retries: "{{ meraki_maximum_retries }}"
+        meraki_output_log: "{{ meraki_output_log }}"
+        meraki_log_file_prefix: "{{ meraki_log_file_prefix }}"
+        meraki_log_path: "{{ meraki_log_path }}"
+        meraki_print_console: "{{ meraki_print_console }}"
+        meraki_suppress_logging: "{{ meraki_suppress_logging }}"
+        meraki_simulate: "{{ meraki_simulate }}"
+        meraki_be_geo_id: "{{ meraki_be_geo_id }}"
+        meraki_caller: "{{ meraki_caller }}"
+        meraki_use_iterator_for_get_pages: "{{ meraki_use_iterator_for_get_pages }}"
+        meraki_inherit_logging_config: "{{ meraki_inherit_logging_config }}"
+        state: absent
+        id: string
+        organizationId: string
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+  :class: longtable ansible-option-table
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-meraki_response"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_wireless_ssids_profiles_module__return-meraki_response:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco Meraki Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"id": "string", "name": "string", "precedence": {"radius": "string"}, "ssid": {"addressing": {"adultContentFiltering": {"enabled": true}, "bonjourForwarding": {"enabled": true, "rules": [{"description": "string", "services": ["string"], "vlan": {"id": 0}}]}, "dnsRewrite": {"dnsCustomNameservers": ["string"], "enabled": true}, "mdns": {"enabled": true, "rules": [{"services": ["string"]}]}, "mode": "string", "radius": {"guest": {"vlan": {"enabled": true}}, "overrideVlanTag": true}}, "advertisement": {"enabled": true}, "name": "string", "radius": {"accounting": {"enabled": true, "updateInterval": 0}, "das": {"coa": {"enabled": true}}, "eapTimers": {"eapolKey": {"maxRetries": 0, "timeoutInMs": 0}, "identity": {"maxRetries": 0, "timeout": 0}, "maxRetries": 0, "timeout": 0}, "identifiers": {"calledStation": "string", "nas": "string"}, "policies": {"attribute": "string", "failover": {"mode": "string"}, "fallback": {"enabled": true}, "loadBalancing": {"mode": "string"}, "numAttempts": 0, "timeout": 0}, "proxy": {"enabled": true}, "servers": [{"address": "string", "id": 0, "modes": [{"mode": "string", "port": 0}], "name": "string"}], "testing": {"enabled": true}}, "security": {"dhcp": {"mandatory": {"enabled": true}}, "encryption": {"akms": ["string"], "ciphers": ["string"]}, "mode": "string", "protocol": "string"}, "splash": {"auth": {"oauth": {"domains": ["string"]}, "simultaneousLogins": {"enabled": true}}, "captivePortal": {"external": {"url": "string"}, "hosted": {"consent": {"message": "string", "required": true}, "language": {"code": "string"}, "theme": {"id": "string"}}, "provider": "string"}, "controllerUnreachable": {"mode": "string"}, "mode": "string", "preAccess": {"mode": "string", "walledGarden": {"enabled": true, "ranges": ["string"]}}, "redirect": {"override": {"enabled": true, "url": "string"}}, "timeout": 0}}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Francisco Munoz (@fmunoz)
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. ansible-links::
+
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
+
+.. Parsing errors

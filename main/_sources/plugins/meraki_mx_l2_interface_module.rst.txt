@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.meraki_mx_l2_interface module -- Configure MX layer 2 interfaces
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
 
     To use it in a playbook, specify: :code:`cisco.meraki.meraki_mx_l2_interface`.
 
@@ -89,12 +72,13 @@ Synopsis
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -114,9 +98,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-access_policy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -134,9 +118,9 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`"open"`
-      - :ansible-option-choices-entry:`"8021x-radius"`
-      - :ansible-option-choices-entry:`"mac-radius"`
-      - :ansible-option-choices-entry:`"hybris-radius"`
+      - :ansible-option-choices-entry:`"8021x\-radius"`
+      - :ansible-option-choices-entry:`"mac\-radius"`
+      - :ansible-option-choices-entry:`"hybris\-radius"`
 
 
       .. raw:: html
@@ -158,9 +142,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-allowed_vlans" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -170,7 +154,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Comma-delimited list of the VLAN ID's allowed on the port, or 'all' to permit all VLAN's on the port.
+      Comma\-delimited list of the VLAN ID's allowed on the port, or 'all' to permit all VLAN's on the port.
 
 
       .. raw:: html
@@ -192,9 +176,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-auth_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -204,7 +188,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Authentication key provided by the dashboard. Required if environmental variable \ :literal:`MERAKI\_KEY`\  is not set.
+      Authentication key provided by the dashboard. Required if environmental variable :literal:`MERAKI\_KEY` is not set.
 
 
       .. raw:: html
@@ -226,9 +210,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-drop_untagged_traffic" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -270,9 +254,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -312,9 +296,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -352,9 +336,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-internal_error_retry_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -390,9 +374,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-net_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -428,13 +412,11 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-net_name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-aliases:`aliases: name, network`
+        :ansible-option-aliases:`aliases: name, network`
 
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -470,13 +452,11 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-number" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-aliases:`aliases: port, port_id`
+        :ansible-option-aliases:`aliases: port, port_id`
 
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -508,9 +488,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-org_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -544,13 +524,11 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-org_name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-aliases:`aliases: organization`
+        :ansible-option-aliases:`aliases: organization`
 
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -582,9 +560,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-output_format" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -594,7 +572,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Instructs module whether response keys should be snake case (ex. \ :literal:`net\_id`\ ) or camel case (ex. \ :literal:`netId`\ ).
+      Instructs module whether response keys should be snake case (ex. :literal:`net\_id`\ ) or camel case (ex. :literal:`netId`\ ).
 
 
       .. rst-class:: ansible-option-line
@@ -624,9 +602,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-output_level" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -666,9 +644,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-port_type" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -708,9 +686,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-rate_limit_retry_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -746,9 +724,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-state" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -788,9 +766,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -826,9 +804,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-use_https" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -838,7 +816,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If \ :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
+      If :literal:`no`\ , it will use HTTP. Otherwise it will use HTTPS.
 
       Only useful for internal Meraki developers.
 
@@ -870,9 +848,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-use_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -882,7 +860,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If \ :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
+      If :literal:`no`\ , it will not use a proxy, even if one is defined in an environment variable on the target hosts.
 
 
       .. rst-class:: ansible-option-line
@@ -912,9 +890,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-validate_certs" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -954,9 +932,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-vlan" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -985,9 +963,9 @@ Notes
 -----
 
 .. note::
-   - More information about the Meraki API can be found at \ https://dashboard.meraki.com/api_docs\ .
+   - More information about the Meraki API can be found at \ `https://dashboard.meraki.com/api\_docs <https://dashboard.meraki.com/api_docs>`__.
    - Some of the options are likely only used for developers within Meraki.
-   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the \ :literal:`ANSIBLE\_MERAKI\_FORMAT`\  environment variable to \ :literal:`camelcase`\ .
+   - As of Ansible 2.9, Meraki modules output keys as snake case. To use camel case, set the :literal:`ANSIBLE\_MERAKI\_FORMAT` environment variable to :literal:`camelcase`.
    - Ansible's Meraki modules will stop supporting camel case output in Ansible 2.13. Please update your playbooks.
    - Check Mode downloads the current configuration from the dashboard, then compares changes against this download. Check Mode will report changed if there are differences in the configurations, but does not submit changes to the API for validation of change.
 
@@ -1001,7 +979,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Query layer 2 interface settings
       meraki_mx_l2_interface:
         auth_key: abc123
@@ -1032,7 +1009,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -1042,12 +1018,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -1067,9 +1044,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`complex`
+        :ansible-option-type:`complex`
 
       .. raw:: html
 
@@ -1091,11 +1068,15 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         </div>
 
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/access_policy"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/access_policy:
 
@@ -1107,13 +1088,17 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/access_policy" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1142,6 +1127,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/allowed_vlans"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/allowed_vlans:
 
       .. rst-class:: ansible-option-title
@@ -1152,19 +1141,23 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/allowed_vlans" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Comma-delimited list of the VLAN ID's allowed on the port, or 'all' to permit all VLAN's on the port.
+      Comma\-delimited list of the VLAN ID's allowed on the port, or 'all' to permit all VLAN's on the port.
 
 
       .. rst-class:: ansible-option-line
@@ -1187,6 +1180,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/drop_untagged_traffic"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/drop_untagged_traffic:
 
       .. rst-class:: ansible-option-title
@@ -1197,13 +1194,17 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/drop_untagged_traffic" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1234,6 +1235,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/enabled:
 
       .. rst-class:: ansible-option-title
@@ -1244,13 +1249,17 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/enabled" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1279,6 +1288,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/number"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/number:
 
       .. rst-class:: ansible-option-title
@@ -1289,13 +1302,17 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/number" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1324,6 +1341,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/type"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/type:
 
       .. rst-class:: ansible-option-title
@@ -1334,13 +1355,17 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/type" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1369,6 +1394,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-data/vlan"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.meraki_mx_l2_interface_module__return-data/vlan:
 
       .. rst-class:: ansible-option-title
@@ -1379,13 +1408,17 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-data/vlan" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1433,18 +1466,19 @@ Authors
 - Kevin Breit (@kbreit)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers module -- Resourc
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module_requirements>` for details.
 
@@ -98,12 +81,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -123,9 +107,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -161,9 +145,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -195,9 +179,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -233,9 +217,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -246,6 +230,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -271,9 +293,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -309,9 +331,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -351,9 +373,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -389,9 +411,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -427,9 +449,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -439,7 +461,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -465,9 +487,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -503,9 +525,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -545,9 +567,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -587,9 +609,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -625,9 +647,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -667,9 +689,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -705,9 +727,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -747,9 +769,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -785,9 +807,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -827,9 +849,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -869,9 +891,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -911,9 +933,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-organizationId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -945,9 +967,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -963,11 +985,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor:
 
@@ -979,13 +1005,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -997,11 +1027,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/ebgpHoldTimer"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/ebgpholdtimer:
 
@@ -1013,13 +1047,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/ebgpHoldTimer" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1037,6 +1075,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/ebgpMultihop"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/ebgpmultihop:
 
       .. rst-class:: ansible-option-title
@@ -1047,19 +1089,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/ebgpMultihop" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Configure this if the neighbor is not adjacent. The eBGP multi-hop must be an integer between 1 and 255.
+      Configure this if the neighbor is not adjacent. The eBGP multi\-hop must be an integer between 1 and 255.
 
 
       .. raw:: html
@@ -1071,6 +1117,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/ipVersion"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/ipversion:
 
       .. rst-class:: ansible-option-title
@@ -1081,13 +1131,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/ipVersion" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1105,6 +1159,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/multiExitDiscriminator"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/multiexitdiscriminator:
 
       .. rst-class:: ansible-option-title
@@ -1115,13 +1173,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/multiExitDiscriminator" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1139,6 +1201,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/neighborIp"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/neighborip:
 
       .. rst-class:: ansible-option-title
@@ -1149,13 +1215,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/neighborIp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1173,6 +1243,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/pathPrepend"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/pathprepend:
 
       .. rst-class:: ansible-option-title
@@ -1183,13 +1257,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/pathPrepend" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1207,6 +1285,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/remoteAsNumber"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/remoteasnumber:
 
       .. rst-class:: ansible-option-title
@@ -1217,13 +1299,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/remoteAsNumber" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1241,6 +1327,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/sourceIp"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/sourceip:
 
       .. rst-class:: ansible-option-title
@@ -1251,13 +1341,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/sourceIp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1273,7 +1367,138 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/vrf"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/vrf:
+
+      .. rst-class:: ansible-option-title
+
+      **vrf**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/vrf" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The VRF associated with the BGP neighbor. Required for Catalyst BGP peers, including an explicit default VRF (id 0); optional for existing MX peers, which use the default VRF when omitted.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/vrf/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/vrf/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/vrf/id" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VRF ID for the Catalyst BGP neighbor. Use 0 for the default VRF.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/vrf/name"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/vrf/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/vrf/name" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      VRF name for the Catalyst BGP neighbor.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ebgpNeighbor/weight"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ebgpneighbor/weight:
 
@@ -1285,13 +1510,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ebgpNeighbor/weight" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1310,6 +1539,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs:
 
       .. rst-class:: ansible-option-title
@@ -1320,29 +1553,37 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Optional The ECMP per-uplink BGP-over-IPsec configuration for the VPN peer.
+      Optional The ECMP per\-uplink BGP\-over\-IPsec configuration for the VPN peer.
 
 
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs/ebgpNeighbor"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs/ebgpneighbor:
 
@@ -1354,13 +1595,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs/ebgpNeighbor" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1372,11 +1617,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs/ebgpNeighbor/neighborIp"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs/ebgpneighbor/neighborip:
 
@@ -1388,13 +1637,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs/ebgpNeighbor/neighborIp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1412,6 +1665,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs/ebgpNeighbor/sourceIp"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs/ebgpneighbor/sourceip:
 
       .. rst-class:: ansible-option-title
@@ -1422,13 +1679,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs/ebgpNeighbor/sourceIp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1447,6 +1708,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs/id"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs/id:
 
       .. rst-class:: ansible-option-title
@@ -1457,13 +1722,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1481,6 +1750,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs/privateSubnets"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs/privatesubnets:
 
       .. rst-class:: ansible-option-title
@@ -1491,13 +1764,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs/privateSubnets" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1515,6 +1792,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ecmpUplinkConfigs/wan"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ecmpuplinkconfigs/wan:
 
       .. rst-class:: ansible-option-title
@@ -1525,13 +1806,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ecmpUplinkConfigs/wan" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1550,6 +1835,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/group"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/group:
 
       .. rst-class:: ansible-option-title
@@ -1560,13 +1849,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/group" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1578,11 +1871,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/group/activeActiveTunnel"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/group/activeactivetunnel:
 
@@ -1594,13 +1891,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/group/activeActiveTunnel" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1626,6 +1927,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/group/failover"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/group/failover:
 
       .. rst-class:: ansible-option-title
@@ -1636,13 +1941,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/group/failover" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1654,11 +1963,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/group/failover/directToInternet"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/group/failover/directtointernet:
 
@@ -1670,13 +1983,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/group/failover/directToInternet" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1703,6 +2020,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/group/number"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/group/number:
 
       .. rst-class:: ansible-option-title
@@ -1713,13 +2034,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/group/number" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1738,6 +2063,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ikeVersion"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ikeversion:
 
       .. rst-class:: ansible-option-title
@@ -1748,13 +2077,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ikeVersion" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1772,6 +2105,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies:
 
       .. rst-class:: ansible-option-title
@@ -1782,13 +2119,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1800,11 +2141,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childAuthAlgo"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/childauthalgo:
 
@@ -1816,13 +2161,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childAuthAlgo" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1840,6 +2189,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childCipherAlgo"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/childcipheralgo:
 
       .. rst-class:: ansible-option-title
@@ -1850,13 +2203,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childCipherAlgo" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1874,6 +2231,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childLifetime"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/childlifetime:
 
       .. rst-class:: ansible-option-title
@@ -1884,13 +2245,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childLifetime" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1908,6 +2273,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/childPfsGroup"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/childpfsgroup:
 
       .. rst-class:: ansible-option-title
@@ -1918,19 +2287,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/childPfsGroup" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      This is the Diffie-Hellman group to be used for Perfect Forward Secrecy in Phase 2. The value should be an array with one of the following values 'disabled','group14', 'group5', 'group2', 'group1'.
+      This is the Diffie\-Hellman group to be used for Perfect Forward Secrecy in Phase 2. The value should be an array with one of the following values 'disabled','group14', 'group5', 'group2', 'group1'.
 
 
       .. raw:: html
@@ -1942,6 +2315,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeAuthAlgo"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/ikeauthalgo:
 
       .. rst-class:: ansible-option-title
@@ -1952,13 +2329,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeAuthAlgo" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1976,6 +2357,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeCipherAlgo"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/ikecipheralgo:
 
       .. rst-class:: ansible-option-title
@@ -1986,13 +2371,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeCipherAlgo" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2010,6 +2399,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeDiffieHellmanGroup"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/ikediffiehellmangroup:
 
       .. rst-class:: ansible-option-title
@@ -2020,19 +2413,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeDiffieHellmanGroup" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      This is the Diffie-Hellman group to be used in Phase 1. The value should be an array with one of the following algorithms 'group14', 'group5', 'group2', 'group1'.
+      This is the Diffie\-Hellman group to be used in Phase 1. The value should be an array with one of the following algorithms 'group14', 'group5', 'group2', 'group1'.
 
 
       .. raw:: html
@@ -2044,6 +2441,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikeLifetime"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/ikelifetime:
 
       .. rst-class:: ansible-option-title
@@ -2054,13 +2455,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikeLifetime" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2078,6 +2483,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPolicies/ikePrfAlgo"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpolicies/ikeprfalgo:
 
       .. rst-class:: ansible-option-title
@@ -2088,19 +2497,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPolicies/ikePrfAlgo" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Optional This is the pseudo-random function to be used in IKE\_SA. The value should be an array with one of the following algorithms 'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default to the Authentication algorithm.
+      Optional This is the pseudo\-random function to be used in IKE\_SA. The value should be an array with one of the following algorithms 'prfsha256', 'prfsha1', 'prfmd5', 'default'. The 'default' option can be used to default to the Authentication algorithm.
 
 
       .. raw:: html
@@ -2113,6 +2526,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/ipsecPoliciesPreset"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/ipsecpoliciespreset:
 
       .. rst-class:: ansible-option-title
@@ -2123,19 +2540,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/ipsecPoliciesPreset" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      One of the following available presets 'default', 'aws', 'azure', 'umbrella', 'umbrella\_short\_lived', 'secure', 'zscaler'. If this is provided, the 'ipsecPolicies' parameter is ignored. Note that 'umbrella\_short\_lived' maps to the Dashboard UI label 'Umbrella', while 'umbrella' maps to the Dashboard UI label 'Umbrella (Deprecated)'.
+      One of the following available presets 'default (insecure)', 'secure', 'aws (insecure)', 'aws\_v2', 'azure (insecure)', 'azure\_v2', 'umbrella (insecure)', 'umbrella\_v2', 'umbrella (deprecated)', 'zscaler (insecure)', 'zscaler\_v2'. If this is provided, the 'ipsecPolicies' parameter is ignored.
 
 
       .. raw:: html
@@ -2147,6 +2568,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/isRouteBased"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/isroutebased:
 
       .. rst-class:: ansible-option-title
@@ -2157,19 +2582,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/isRouteBased" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Optional If true, the VPN peer is route-based. If not included, the default is false. Supported only for MX 19.1 and above.
+      Optional If true, the VPN peer is route\-based. If not included, the default is false. Supported only for MX 19.1 and above.
 
 
       .. rst-class:: ansible-option-line
@@ -2189,6 +2618,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/localId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/localid:
 
       .. rst-class:: ansible-option-title
@@ -2199,13 +2632,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/localId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2223,6 +2660,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/name"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/name:
 
       .. rst-class:: ansible-option-title
@@ -2233,13 +2674,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2257,6 +2702,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/network"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/network:
 
       .. rst-class:: ansible-option-title
@@ -2267,13 +2716,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/network" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2285,11 +2738,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/network/ids"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/network/ids:
 
@@ -2301,13 +2758,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/network/ids" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2326,6 +2787,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/networkTags"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/networktags:
 
       .. rst-class:: ansible-option-title
@@ -2336,13 +2801,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/networkTags" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2360,6 +2829,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/peerId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/peerid:
 
       .. rst-class:: ansible-option-title
@@ -2370,13 +2843,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/peerId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2394,6 +2871,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/priorityInGroup"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/priorityingroup:
 
       .. rst-class:: ansible-option-title
@@ -2404,13 +2885,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/priorityInGroup" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2428,6 +2913,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/privateSubnets"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/privatesubnets:
 
       .. rst-class:: ansible-option-title
@@ -2438,13 +2927,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/privateSubnets" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2462,6 +2955,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/publicHostname"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/publichostname:
 
       .. rst-class:: ansible-option-title
@@ -2472,13 +2969,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/publicHostname" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2496,6 +2997,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/publicIp"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/publicip:
 
       .. rst-class:: ansible-option-title
@@ -2506,13 +3011,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/publicIp" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2530,6 +3039,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/remoteId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/remoteid:
 
       .. rst-class:: ansible-option-title
@@ -2540,13 +3053,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/remoteId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2564,6 +3081,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/secret"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/secret:
 
       .. rst-class:: ansible-option-title
@@ -2574,13 +3095,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/secret" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2598,6 +3123,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/slaPolicy"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/slapolicy:
 
       .. rst-class:: ansible-option-title
@@ -2608,13 +3137,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/slaPolicy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2626,11 +3159,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-peers/slaPolicy/id"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers_module__parameter-peers/slapolicy/id:
 
@@ -2642,13 +3179,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-peers/slaPolicy/id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -2675,10 +3216,10 @@ Notes
 .. note::
    - SDK Method used are appliance.Appliance.update\_organization\_appliance\_vpn\_third\_party\_vpnpeers,
    - Paths used are put /organizations/{organizationId}/appliance/vpn/thirdPartyVPNPeers,
-   - Does not support \ :literal:`check\_mode`\ 
+   - Does not support :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
    - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -2697,9 +3238,8 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Update all
-      cisco.meraki.organizations_appliance_vpn_third_party_vpnpeers:
+      cisco.meraki.organizations_appliance_vpn_third_party_vpn_peers:
         meraki_api_key: "{{ meraki_api_key }}"
         meraki_base_url: "{{ meraki_base_url }}"
         meraki_single_request_timeout: "{{ meraki_single_request_timeout }}"
@@ -2735,6 +3275,9 @@ Examples
                 - 2
               remoteAsNumber: 64343
               sourceIp: 10.10.10.22
+              vrf:
+                id: '12345'
+                name: VRF Blue
               weight: 10
             ecmpUplinkConfigs:
               - ebgpNeighbor:
@@ -2767,7 +3310,7 @@ Examples
               ikeLifetime: 28800
               ikePrfAlgo:
                 - prfsha1
-            ipsecPoliciesPreset: default
+            ipsecPoliciesPreset: default (insecure)
             isRouteBased: true
             localId: myMXId@meraki.com
             name: Peer Name
@@ -2792,7 +3335,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -2802,12 +3344,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -2827,9 +3370,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -2849,7 +3392,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"peerId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"remoteId\\": \\"string\\",\\n    \\"localId\\": \\"string\\",\\n    \\"secret\\": \\"string\\",\\n    \\"privateSubnets\\": [\\n      \\"string\\"\\n    ],\\n    \\"ipsecPolicies\\": {\\n      \\"ikeCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikePrfAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeDiffieHellmanGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeLifetime\\": 0,\\n      \\"childCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childPfsGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"childLifetime\\": 0\\n    },\\n    \\"slaPolicy\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"ipsecPoliciesPreset\\": \\"string\\",\\n    \\"ikeVersion\\": \\"string\\",\\n    \\"networkTags\\": [\\n      \\"string\\"\\n    ],\\n    \\"network\\": {\\n      \\"names\\": [\\n        \\"string\\"\\n      ],\\n      \\"ids\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"isRouteBased\\": true,\\n    \\"ebgpNeighbor\\": {\\n      \\"neighborId\\": 0,\\n      \\"neighborIp\\": \\"string\\",\\n      \\"ipVersion\\": 0,\\n      \\"remoteAsNumber\\": 0,\\n      \\"ebgpHoldTimer\\": 0,\\n      \\"ebgpMultihop\\": 0,\\n      \\"sourceIp\\": \\"string\\",\\n      \\"receiveLimit\\": 0,\\n      \\"pathPrepend\\": [\\n        0\\n      ],\\n      \\"multiExitDiscriminator\\": 0,\\n      \\"weight\\": 0\\n    },\\n    \\"ecmpUplinkConfigs\\": [\\n      {\\n        \\"id\\": \\"string\\",\\n        \\"wan\\": \\"string\\",\\n        \\"privateSubnets\\": [\\n          \\"string\\"\\n        ],\\n        \\"ebgpNeighbor\\": {\\n          \\"neighborIp\\": \\"string\\",\\n          \\"sourceIp\\": \\"string\\"\\n        }\\n      }\\n    ],\\n    \\"priorityInGroup\\": 0,\\n    \\"group\\": {\\n      \\"number\\": 0,\\n      \\"failover\\": {\\n        \\"directToInternet\\": true\\n      },\\n      \\"activeActiveTunnel\\": true\\n    }\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"peerId\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"publicIp\\": \\"string\\",\\n    \\"remoteId\\": \\"string\\",\\n    \\"localId\\": \\"string\\",\\n    \\"secret\\": \\"string\\",\\n    \\"privateSubnets\\": [\\n      \\"string\\"\\n    ],\\n    \\"ipsecPolicies\\": {\\n      \\"ikeCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikePrfAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeDiffieHellmanGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"ikeLifetime\\": 0,\\n      \\"childCipherAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childAuthAlgo\\": [\\n        \\"string\\"\\n      ],\\n      \\"childPfsGroup\\": [\\n        \\"string\\"\\n      ],\\n      \\"childLifetime\\": 0\\n    },\\n    \\"slaPolicy\\": {\\n      \\"id\\": \\"string\\"\\n    },\\n    \\"ipsecPoliciesPreset\\": \\"string\\",\\n    \\"ikeVersion\\": \\"string\\",\\n    \\"networkTags\\": [\\n      \\"string\\"\\n    ],\\n    \\"network\\": {\\n      \\"names\\": [\\n        \\"string\\"\\n      ],\\n      \\"ids\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"isRouteBased\\": true,\\n    \\"ebgpNeighbor\\": {\\n      \\"neighborId\\": 0,\\n      \\"neighborIp\\": \\"string\\",\\n      \\"ipVersion\\": 0,\\n      \\"remoteAsNumber\\": 0,\\n      \\"ebgpHoldTimer\\": 0,\\n      \\"ebgpMultihop\\": 0,\\n      \\"sourceIp\\": \\"string\\",\\n      \\"vrf\\": {\\n        \\"id\\": \\"string\\",\\n        \\"name\\": \\"string\\"\\n      },\\n      \\"ttlSecurity\\": {\\n        \\"enabled\\": true\\n      },\\n      \\"authentication\\": {\\n        \\"password\\": \\"string\\"\\n      },\\n      \\"allowTransit\\": true,\\n      \\"receiveLimit\\": 0,\\n      \\"explicitOutboundRouteAdvertisement\\": {\\n        \\"enabled\\": {}\\n      },\\n      \\"filter\\": {\\n        \\"out\\": [\\n          \\"string\\"\\n        ]\\n      },\\n      \\"filterIn\\": [\\n        \\"string\\"\\n      ],\\n      \\"communityOut\\": [\\n        \\"string\\"\\n      ],\\n      \\"pathPrepend\\": [\\n        0\\n      ],\\n      \\"multiExitDiscriminator\\": 0,\\n      \\"weight\\": 0\\n    },\\n    \\"ecmpUplinkConfigs\\": [\\n      {\\n        \\"id\\": \\"string\\",\\n        \\"wan\\": \\"string\\",\\n        \\"privateSubnets\\": [\\n          \\"string\\"\\n        ],\\n        \\"ebgpNeighbor\\": {\\n          \\"neighborIp\\": \\"string\\",\\n          \\"sourceIp\\": \\"string\\"\\n        }\\n      }\\n    ],\\n    \\"priorityInGroup\\": 0,\\n    \\"group\\": {\\n      \\"number\\": 0,\\n      \\"failover\\": {\\n        \\"directToInternet\\": true\\n      },\\n      \\"activeActiveTunnel\\": true\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html
@@ -2869,18 +3412,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

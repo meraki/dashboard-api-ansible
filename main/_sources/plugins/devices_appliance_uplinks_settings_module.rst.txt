@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.devices_appliance_uplinks_settings module -- Resource module for de
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module_requirements>` for details.
 
@@ -98,12 +81,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -123,9 +107,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -141,11 +125,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1:
 
@@ -157,13 +145,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -175,11 +167,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/enabled:
 
@@ -191,13 +187,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -223,6 +223,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/pppoe"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/pppoe:
 
       .. rst-class:: ansible-option-title
@@ -233,13 +237,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/pppoe" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -251,11 +259,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/pppoe/authentication"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/pppoe/authentication:
 
@@ -267,13 +279,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/pppoe/authentication" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -285,11 +301,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/pppoe/authentication/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/pppoe/authentication/enabled:
 
@@ -301,13 +321,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/pppoe/authentication/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -333,6 +357,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/pppoe/authentication/password"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/pppoe/authentication/password:
 
       .. rst-class:: ansible-option-title
@@ -343,13 +371,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/pppoe/authentication/password" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -367,6 +399,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/pppoe/authentication/username"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/pppoe/authentication/username:
 
       .. rst-class:: ansible-option-title
@@ -377,13 +413,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/pppoe/authentication/username" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -402,6 +442,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/pppoe/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/pppoe/enabled:
 
       .. rst-class:: ansible-option-title
@@ -412,13 +456,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/pppoe/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -445,6 +493,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis:
 
       .. rst-class:: ansible-option-title
@@ -455,13 +507,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -473,11 +529,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv4:
 
@@ -489,13 +549,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv4" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -507,11 +571,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv4/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv4/address:
 
@@ -523,13 +591,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv4/address" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -547,6 +619,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv4/assignmentMode"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv4/assignmentmode:
 
       .. rst-class:: ansible-option-title
@@ -557,13 +633,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv4/assignmentMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -581,6 +661,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv4/gateway"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv4/gateway:
 
       .. rst-class:: ansible-option-title
@@ -591,13 +675,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv4/gateway" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -615,6 +703,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv4/nameservers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv4/nameservers:
 
       .. rst-class:: ansible-option-title
@@ -625,13 +717,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv4/nameservers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -643,11 +739,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv4/nameservers/addresses"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv4/nameservers/addresses:
 
@@ -659,19 +759,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv4/nameservers/addresses" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+      Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority. The addresses must be unique.
 
 
       .. raw:: html
@@ -685,6 +789,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv6"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv6:
 
       .. rst-class:: ansible-option-title
@@ -695,13 +803,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv6" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -713,11 +825,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv6/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv6/address:
 
@@ -729,19 +845,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv6/address" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Static address that will override the one(s) received by SLAAC.
+      Static IPv6 address in CIDR notation that overrides addresses received by SLAAC when PPPoE is disabled. With PPPoE enabled, use a bare IPv6 address without a prefix.
 
 
       .. raw:: html
@@ -753,6 +873,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv6/assignmentMode"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv6/assignmentmode:
 
       .. rst-class:: ansible-option-title
@@ -763,13 +887,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv6/assignmentMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -787,6 +915,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv6/gateway"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv6/gateway:
 
       .. rst-class:: ansible-option-title
@@ -797,13 +929,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv6/gateway" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -821,6 +957,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv6/nameservers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv6/nameservers:
 
       .. rst-class:: ansible-option-title
@@ -831,13 +971,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv6/nameservers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -849,11 +993,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/svis/ipv6/nameservers/addresses"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/svis/ipv6/nameservers/addresses:
 
@@ -865,13 +1013,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/svis/ipv6/nameservers/addresses" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -890,7 +1042,1563 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition:
+
+      .. rst-class:: ansible-option-title
+
+      **transition**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configuration options for IPoE transition IPv4 to IPv6.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/authentication"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/authentication:
+
+      .. rst-class:: ansible-option-title
+
+      **authentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/authentication" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for IPoE transition Authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/authentication/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/authentication/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/authentication/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether IPoE transition authentication is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/authentication/password"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/authentication/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/authentication/password" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password for IPoE transition authentication. This parameter is not returned.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/authentication/username"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/authentication/username:
+
+      .. rst-class:: ansible-option-title
+
+      **username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/authentication/username" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Username for IPoE transition authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the IPoE transition IPv4 to IPv6 is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv4:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 specific settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv4/local"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv4/local:
+
+      .. rst-class:: ansible-option-title
+
+      **local**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv4/local" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Static IPv4 settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv4/local/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv4/local/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv4/local/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Static IPv4 information used for host origination and NAT44 translation.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv6"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv6" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 specific settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv6/borderRelay"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv6/borderrelay:
+
+      .. rst-class:: ansible-option-title
+
+      **borderRelay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv6/borderRelay" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for the border relay for the IPoE transition Authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv6/borderRelay/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv6/borderrelay/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv6/borderRelay/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      CIDR for the border relay for the IPoE transition authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv6/borderRelay/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv6/borderrelay/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv6/borderRelay/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Mode selection for the border relay for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/ipv6/interfaceId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/ipv6/interfaceid:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaceId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/ipv6/interfaceId" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The 64\-bit interface ID (suffix) of the uplink IPv6 address.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/isp"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/isp:
+
+      .. rst-class:: ansible-option-title
+
+      **isp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/isp" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ISP selection for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/isp/name"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/isp/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/isp/name" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ISP name for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map:
+
+      .. rst-class:: ansible-option-title
+
+      **map**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP\-E/MAP\-T settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/draft"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/draft:
+
+      .. rst-class:: ansible-option-title
+
+      **draft**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/draft" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP\-E draft mode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/draft/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/draft/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/draft/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether MAP\-E draft mode is enabled. This field is accepted only for MAP\-E. Null is treated as omitted and preserves the existing setting.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP rule source and manual rule entries.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries:
+
+      .. rst-class:: ansible-option-title
+
+      **entries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Manual MAP rules. At most one entry is supported.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/borderRelay"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/borderrelay:
+
+      .. rst-class:: ansible-option-title
+
+      **borderRelay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/borderRelay" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP border relay address or prefix.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/borderRelay/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/borderrelay/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/borderRelay/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 border relay address for MAP\-E.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/borderRelay/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/borderrelay/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/borderRelay/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 border relay prefix for MAP\-T in CIDR notation, with a prefix length from 0 to 96.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/eaBitLength"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/eabitlength:
+
+      .. rst-class:: ansible-option-title
+
+      **eaBitLength**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/eaBitLength" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Embedded address bit length (0\-48).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv4:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 settings used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 prefix used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 network address used by the MAP rule, without the prefix length.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix/length"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix/length:
+
+      .. rst-class:: ansible-option-title
+
+      **length**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv4/prefix/length" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 prefix length (0\-32).
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv6"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv6" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 settings used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 prefix used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 network address used by the MAP rule, without the prefix length.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix/length"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix/length:
+
+      .. rst-class:: ansible-option-title
+
+      **length**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/ipv6/prefix/length" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 prefix length (0\-128).
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/entries/psIdOffset"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/entries/psidoffset:
+
+      .. rst-class:: ansible-option-title
+
+      **psIdOffset**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/entries/psIdOffset" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      PSID offset (0\-15).
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/map/rules/source"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/map/rules/source:
+
+      .. rst-class:: ansible-option-title
+
+      **source**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/map/rules/source" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How MAP rules are obtained. HTTPS requires an ISP supported for the transition mode.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/transition/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/transition/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/transition/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Mode selector for the IPoE transition IPv4 to IPv6 is enabled.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/vlanTagging"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/vlantagging:
 
@@ -902,13 +2610,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/vlanTagging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -920,11 +2632,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/vlanTagging/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/vlantagging/enabled:
 
@@ -936,13 +2652,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/vlanTagging/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -968,6 +2688,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan1/vlanTagging/vlanId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan1/vlantagging/vlanid:
 
       .. rst-class:: ansible-option-title
@@ -978,13 +2702,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan1/vlanTagging/vlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1004,6 +2732,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2:
 
       .. rst-class:: ansible-option-title
@@ -1014,13 +2746,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1032,11 +2768,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/enabled:
 
@@ -1048,13 +2788,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1080,6 +2824,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/pppoe"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/pppoe:
 
       .. rst-class:: ansible-option-title
@@ -1090,13 +2838,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/pppoe" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1108,11 +2860,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/pppoe/authentication"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/pppoe/authentication:
 
@@ -1124,13 +2880,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/pppoe/authentication" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1142,11 +2902,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/pppoe/authentication/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/pppoe/authentication/enabled:
 
@@ -1158,13 +2922,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/pppoe/authentication/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1190,6 +2958,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/pppoe/authentication/password"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/pppoe/authentication/password:
 
       .. rst-class:: ansible-option-title
@@ -1200,13 +2972,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/pppoe/authentication/password" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1224,6 +3000,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/pppoe/authentication/username"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/pppoe/authentication/username:
 
       .. rst-class:: ansible-option-title
@@ -1234,13 +3014,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/pppoe/authentication/username" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1259,6 +3043,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/pppoe/enabled"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/pppoe/enabled:
 
       .. rst-class:: ansible-option-title
@@ -1269,13 +3057,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/pppoe/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1302,6 +3094,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis:
 
       .. rst-class:: ansible-option-title
@@ -1312,13 +3108,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1330,11 +3130,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv4:
 
@@ -1346,13 +3150,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv4" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1364,11 +3172,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv4/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv4/address:
 
@@ -1380,13 +3192,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv4/address" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1404,6 +3220,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv4/assignmentMode"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv4/assignmentmode:
 
       .. rst-class:: ansible-option-title
@@ -1414,13 +3234,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv4/assignmentMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1438,6 +3262,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv4/gateway"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv4/gateway:
 
       .. rst-class:: ansible-option-title
@@ -1448,13 +3276,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv4/gateway" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1472,6 +3304,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv4/nameservers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv4/nameservers:
 
       .. rst-class:: ansible-option-title
@@ -1482,13 +3318,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv4/nameservers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1500,11 +3340,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv4/nameservers/addresses"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv4/nameservers/addresses:
 
@@ -1516,19 +3360,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv4/nameservers/addresses" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority.
+      Up to 2 nameserver addresses to use, ordered in priority from highest to lowest priority. The addresses must be unique.
 
 
       .. raw:: html
@@ -1542,6 +3390,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv6"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv6:
 
       .. rst-class:: ansible-option-title
@@ -1552,13 +3404,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv6" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1570,11 +3426,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv6/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv6/address:
 
@@ -1586,19 +3446,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv6/address" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Static address that will override the one(s) received by SLAAC.
+      Static IPv6 address in CIDR notation that overrides addresses received by SLAAC when PPPoE is disabled. With PPPoE enabled, use a bare IPv6 address without a prefix.
 
 
       .. raw:: html
@@ -1610,6 +3474,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv6/assignmentMode"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv6/assignmentmode:
 
       .. rst-class:: ansible-option-title
@@ -1620,13 +3488,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv6/assignmentMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1644,6 +3516,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv6/gateway"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv6/gateway:
 
       .. rst-class:: ansible-option-title
@@ -1654,13 +3530,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv6/gateway" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1678,6 +3558,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv6/nameservers"></div>
 
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv6/nameservers:
 
       .. rst-class:: ansible-option-title
@@ -1688,13 +3572,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv6/nameservers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1706,11 +3594,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/svis/ipv6/nameservers/addresses"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/svis/ipv6/nameservers/addresses:
 
@@ -1722,13 +3614,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/svis/ipv6/nameservers/addresses" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1747,7 +3643,1563 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition:
+
+      .. rst-class:: ansible-option-title
+
+      **transition**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configuration options for IPoE transition IPv4 to IPv6.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/authentication"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/authentication:
+
+      .. rst-class:: ansible-option-title
+
+      **authentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/authentication" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for IPoE transition Authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/authentication/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/authentication/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/authentication/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether IPoE transition authentication is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/authentication/password"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/authentication/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/authentication/password" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password for IPoE transition authentication. This parameter is not returned.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/authentication/username"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/authentication/username:
+
+      .. rst-class:: ansible-option-title
+
+      **username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/authentication/username" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Username for IPoE transition authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether the IPoE transition IPv4 to IPv6 is enabled.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv4:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 specific settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv4/local"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv4/local:
+
+      .. rst-class:: ansible-option-title
+
+      **local**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv4/local" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Static IPv4 settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv4/local/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv4/local/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv4/local/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Static IPv4 information used for host origination and NAT44 translation.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv6"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv6" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 specific settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv6/borderRelay"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv6/borderrelay:
+
+      .. rst-class:: ansible-option-title
+
+      **borderRelay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv6/borderRelay" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Settings for the border relay for the IPoE transition Authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv6/borderRelay/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv6/borderrelay/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv6/borderRelay/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      CIDR for the border relay for the IPoE transition authentication.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv6/borderRelay/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv6/borderrelay/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv6/borderRelay/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Mode selection for the border relay for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/ipv6/interfaceId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/ipv6/interfaceid:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaceId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/ipv6/interfaceId" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The 64\-bit interface ID (suffix) of the uplink IPv6 address.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/isp"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/isp:
+
+      .. rst-class:: ansible-option-title
+
+      **isp**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/isp" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ISP selection for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/isp/name"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/isp/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/isp/name" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ISP name for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map:
+
+      .. rst-class:: ansible-option-title
+
+      **map**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP\-E/MAP\-T settings for the IPoE transition.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/draft"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/draft:
+
+      .. rst-class:: ansible-option-title
+
+      **draft**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/draft" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP\-E draft mode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/draft/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/draft/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/draft/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether MAP\-E draft mode is enabled. This field is accepted only for MAP\-E. Null is treated as omitted and preserves the existing setting.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules"></div>
+
+      .. raw:: latex
+
+        \hspace{0.08\textwidth}\begin{minipage}[t]{0.24\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules:
+
+      .. rst-class:: ansible-option-title
+
+      **rules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP rule source and manual rule entries.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries:
+
+      .. rst-class:: ansible-option-title
+
+      **entries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Manual MAP rules. At most one entry is supported.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/borderRelay"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/borderrelay:
+
+      .. rst-class:: ansible-option-title
+
+      **borderRelay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/borderRelay" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MAP border relay address or prefix.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/borderRelay/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/borderrelay/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/borderRelay/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 border relay address for MAP\-E.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/borderRelay/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/borderrelay/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/borderRelay/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 border relay prefix for MAP\-T in CIDR notation, with a prefix length from 0 to 96.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/eaBitLength"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/eabitlength:
+
+      .. rst-class:: ansible-option-title
+
+      **eaBitLength**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/eaBitLength" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Embedded address bit length (0\-48).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv4"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv4:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv4**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv4" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 settings used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 prefix used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 network address used by the MAP rule, without the prefix length.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix/length"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix/length:
+
+      .. rst-class:: ansible-option-title
+
+      **length**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv4/prefix/length" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv4 prefix length (0\-32).
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv6"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv6:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv6" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 settings used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix"></div>
+
+      .. raw:: latex
+
+        \hspace{0.14\textwidth}\begin{minipage}[t]{0.18\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix:
+
+      .. rst-class:: ansible-option-title
+
+      **prefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 prefix used by the MAP rule.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix/address"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix/address:
+
+      .. rst-class:: ansible-option-title
+
+      **address**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix/address" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 network address used by the MAP rule, without the prefix length.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix/length"></div>
+
+      .. raw:: latex
+
+        \hspace{0.16\textwidth}\begin{minipage}[t]{0.16\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix/length:
+
+      .. rst-class:: ansible-option-title
+
+      **length**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/ipv6/prefix/length" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IPv6 prefix length (0\-128).
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/entries/psIdOffset"></div>
+
+      .. raw:: latex
+
+        \hspace{0.12\textwidth}\begin{minipage}[t]{0.2\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/entries/psidoffset:
+
+      .. rst-class:: ansible-option-title
+
+      **psIdOffset**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/entries/psIdOffset" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      PSID offset (0\-15).
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/map/rules/source"></div>
+
+      .. raw:: latex
+
+        \hspace{0.1\textwidth}\begin{minipage}[t]{0.22\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/map/rules/source:
+
+      .. rst-class:: ansible-option-title
+
+      **source**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/map/rules/source" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How MAP rules are obtained. HTTPS requires an ISP supported for the transition mode.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/transition/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/transition/mode:
+
+      .. rst-class:: ansible-option-title
+
+      **mode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/transition/mode" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Mode selector for the IPoE transition IPv4 to IPv6 is enabled.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/vlanTagging"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/vlantagging:
 
@@ -1759,13 +5211,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/vlanTagging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1777,11 +5233,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/vlanTagging/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
 
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/vlantagging/enabled:
 
@@ -1793,13 +5253,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/vlanTagging/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1825,6 +5289,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-interfaces/wan2/vlanTagging/vlanId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.06\textwidth}\begin{minipage}[t]{0.26\textwidth}
+
       .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-interfaces/wan2/vlantagging/vlanid:
 
       .. rst-class:: ansible-option-title
@@ -1835,13 +5303,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-interfaces/wan2/vlanTagging/vlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1872,9 +5344,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1910,9 +5382,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -1944,9 +5416,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1982,9 +5454,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1995,6 +5467,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.devices_appliance_uplinks_settings_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -2020,9 +5530,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2058,9 +5568,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2100,9 +5610,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2138,9 +5648,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2176,9 +5686,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2188,7 +5698,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -2214,9 +5724,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2252,9 +5762,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2294,9 +5804,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2336,9 +5846,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2374,9 +5884,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2416,9 +5926,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2454,9 +5964,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2496,9 +6006,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -2534,9 +6044,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2576,9 +6086,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2618,9 +6128,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2660,9 +6170,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-serial" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2691,10 +6201,10 @@ Notes
 .. note::
    - SDK Method used are appliance.Appliance.update\_device\_appliance\_uplinks\_settings,
    - Paths used are put /devices/{serial}/appliance/uplinks/settings,
-   - Does not support \ :literal:`check\_mode`\ 
+   - Does not support :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
    - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -2713,7 +6223,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Update all
       cisco.meraki.devices_appliance_uplinks_settings:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -2756,13 +6265,49 @@ Examples
                   addresses:
                     - 1.2.3.4
               ipv6:
-                address: 1:2:3::4
+                address: 1:2:3::4/64
                 assignmentMode: static
                 gateway: 1:2:3::5
                 nameservers:
                   addresses:
                     - 1001:4860:4860::8888
                     - 1001:4860:4860::8844
+            transition:
+              authentication:
+                enabled: true
+                password: password
+                username: 4o6ddns
+              enabled: true
+              ipv4:
+                local:
+                  address: null
+              ipv6:
+                borderRelay:
+                  address: null
+                  mode: auto
+                interfaceId: null
+              isp:
+                name: OCN IPoE
+              map:
+                draft:
+                  enabled: false
+                rules:
+                  entries:
+                    - borderRelay:
+                        address: 2001:db8:ffff::1
+                        prefix: null
+                      eaBitLength: 20
+                      ipv4:
+                        prefix:
+                          address: 192.0.2.0
+                          length: 18
+                      ipv6:
+                        prefix:
+                          address: '2001:db8:100::'
+                          length: 36
+                      psIdOffset: 6
+                  source: manual
+              mode: MAP-E
             vlanTagging:
               enabled: true
               vlanId: 1
@@ -2783,18 +6328,56 @@ Examples
                   addresses:
                     - 1.2.3.4
               ipv6:
-                address: 1:2:3::4
+                address: 1:2:3::4/64
                 assignmentMode: static
                 gateway: 1:2:3::5
                 nameservers:
                   addresses:
                     - 1001:4860:4860::8888
                     - 1001:4860:4860::8844
+            transition:
+              authentication:
+                enabled: true
+                password: password
+                username: 4o6ddns
+              enabled: true
+              ipv4:
+                local:
+                  address: null
+              ipv6:
+                borderRelay:
+                  address: null
+                  mode: auto
+                interfaceId: null
+              isp:
+                name: OCN IPoE
+              map:
+                draft:
+                  enabled: false
+                rules:
+                  entries:
+                    - borderRelay:
+                        address: 2001:db8:ffff::1
+                        prefix: null
+                      eaBitLength: 20
+                      ipv4:
+                        prefix:
+                          address: 192.0.2.0
+                          length: 18
+                      ipv6:
+                        prefix:
+                          address: '2001:db8:100::'
+                          length: 36
+                      psIdOffset: 6
+                  source: manual
+              mode: MAP-E
             vlanTagging:
               enabled: true
               vlanId: 1
+          wan3:
+            mtu:
+              limit: 1500
         serial: string
-
 
 
 
@@ -2807,12 +6390,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -2832,9 +6416,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -2854,7 +6438,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"wan1": {"enabled": true, "pppoe": {"authentication": {"enabled": true, "username": "string"}, "enabled": true}, "svis": {"ipv4": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}, "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}}, "vlanTagging": {"enabled": true, "vlanId": 0}}, "wan2": {"enabled": true, "pppoe": {"authentication": {"enabled": true, "username": "string"}, "enabled": true}, "svis": {"ipv4": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}, "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}}, "vlanTagging": {"enabled": true, "vlanId": 0}}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"wan1": {"enabled": true, "pppoe": {"authentication": {"enabled": true, "username": "string"}, "enabled": true}, "svis": {"ipv4": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}, "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}}, "transition": {"authentication": {"enabled": true, "username": "string"}, "enabled": true, "ipv4": {"local": {"address": {}}}, "ipv6": {"borderRelay": {"address": {}, "mode": "string"}, "interfaceId": {}}, "isp": {"name": "string"}, "map": {"draft": {"enabled": {}}, "rules": {"entries": [{"borderRelay": {"address": {}, "prefix": {}}, "eaBitLength": 0, "ipv4": {"prefix": {"address": "string", "length": 0}}, "ipv6": {"prefix": {"address": "string", "length": 0}}, "psIdOffset": 0}], "source": {}}}, "mode": "string"}, "vlanTagging": {"enabled": true, "vlanId": 0}}, "wan2": {"enabled": true, "pppoe": {"authentication": {"enabled": true, "username": "string"}, "enabled": true}, "svis": {"ipv4": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}, "ipv6": {"address": "string", "assignmentMode": "string", "gateway": "string", "nameservers": {"addresses": ["string"]}}}, "transition": {"authentication": {"enabled": true, "username": "string"}, "enabled": true, "ipv4": {"local": {"address": {}}}, "ipv6": {"borderRelay": {"address": {}, "mode": "string"}, "interfaceId": {}}, "isp": {"name": "string"}, "map": {"draft": {"enabled": {}}, "rules": {"entries": [{"borderRelay": {"address": {}, "prefix": {}}, "eaBitLength": 0, "ipv4": {"prefix": {"address": "string", "length": 0}}, "ipv6": {"prefix": {"address": "string", "length": 0}}, "psIdOffset": 0}], "source": {}}}, "mode": "string"}, "vlanTagging": {"enabled": true, "vlanId": 0}}}`
 
 
       .. raw:: html
@@ -2874,18 +6458,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-

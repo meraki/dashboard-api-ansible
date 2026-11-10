@@ -1,5 +1,7 @@
-
 :orphan:
+
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. _list_of_collection_env_vars:
 
@@ -9,4 +11,9 @@ Index of all Collection Environment Variables
 The following index documents all environment variables declared by plugins in collections.
 Environment variables used by the ansible-core configuration are documented in :ref:`ansible_configuration_settings`.
 
-No environment variables have been defined.
+.. envvar:: ANSIBLE_INVENTORY_USE_EXTRA_VARS
+
+    Merge extra vars into the available variables for composition (highest precedence).
+
+    *Used by:*
+    :ansplugin:`cisco.meraki.meraki inventory plugin <cisco.meraki.meraki#inventory>`

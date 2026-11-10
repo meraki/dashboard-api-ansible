@@ -1,22 +1,23 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="2.28.0" name="antsibull-docs" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>cisco.meraki.meraki inventory -- Ansible dynamic inventory plugin for Cisco Meraki devices. &mdash; MerakiAnsibleActions  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/ansible-basic-sphinx-ext.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/antsibull-minimal.css" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
-      <script src="../_static/doctools.js?v=888ff710"></script>
-      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -86,10 +87,12 @@
            <div itemprop="articleBody">
              
   <span class="target" id="ansible-collections-cisco-meraki-meraki-inventory"></span><section id="cisco-meraki-meraki-inventory-ansible-dynamic-inventory-plugin-for-cisco-meraki-devices">
-<h1>cisco.meraki.meraki inventory -- Ansible dynamic inventory plugin for Cisco Meraki devices.<a class="headerlink" href="#cisco-meraki-meraki-inventory-ansible-dynamic-inventory-plugin-for-cisco-meraki-devices" title="Permalink to this heading"></a></h1>
+<h1>cisco.meraki.meraki inventory -- Ansible dynamic inventory plugin for Cisco Meraki devices.<a class="headerlink" href="#cisco-meraki-meraki-inventory-ansible-dynamic-inventory-plugin-for-cisco-meraki-devices" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This inventory plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/meraki">cisco.meraki collection</a> (version 2.25.1).</p>
+<p>This inventory plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/ui/repo/published/cisco/meraki/">cisco.meraki collection</a> (version 2.26.0).</p>
+<p>It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
+To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.meraki</span></code>.
 You need further requirements to be able to use this inventory plugin,
 see <a class="reference internal" href="#ansible-collections-cisco-meraki-meraki-inventory-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -97,29 +100,30 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-meraki
 </div>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id65">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id66">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id67">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id68">Examples</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id1">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
 </ul>
 </nav>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id65" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Build inventories using the Cisco Meraki API.</p></li>
 <li><p>Uses a YAML configuration file cisco_meraki.[yml|yaml].</p></li>
 </ul>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-meraki-meraki-inventory-requirements"></span><h2><a class="toc-backref" href="#id66" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-meraki-meraki-inventory-requirements"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
 <p>The below requirements are needed on the local controller node that executes this inventory.</p>
 <ul class="simple">
 <li><p>meraki</p></li>
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id67" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
-<table class="ansible-option-table docutils align-default" style="width: 100%">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
+<table class="longtable ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Comments</p></th>
@@ -131,7 +135,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-meraki
 <a class="ansibleOptionLink" href="#parameter-compose" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Create vars from jinja2 expressions.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id1"><span class="problematic" id="id2">:ansible-option-default:`{}`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">{}</span></code></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -139,238 +143,349 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-meraki
 <a class="ansibleOptionLink" href="#parameter-groups" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Add hosts to group based on Jinja2 conditionals.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id3"><span class="problematic" id="id4">:ansible-option-default:`{}`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">{}</span></code></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-keyed_groups"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups"><strong>keyed_groups</strong></p>
-<a class="ansibleOptionLink" href="#parameter-keyed_groups" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Add hosts to group based on the values of a variable.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id5"><span class="problematic" id="id6">:ansible-option-default:`[]`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">[]</span></code></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-keyed_groups/default_value"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-default-value"><strong>default_value</strong></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups/default_value" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<p><em class="ansible-option-versionadded">added in ansible-core 2.12</em></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The default value when the host variable's value is <code class="ansible-value docutils literal notranslate"><span class="pre">None</span></code> or an empty string.</p>
+<p>This option is mutually exclusive with <code class="ansible-option docutils literal notranslate"><strong><a class="reference internal" href="#ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-trailing-separator"><span class="std std-ref"><span class="pre">keyed_groups[].trailing_separator</span></span></a></strong></code>.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-keyed_groups/key"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-key"><strong>key</strong></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups/key" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The key from input dictionary used to generate groups.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-keyed_groups/parent_group"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-parent-group"><strong>parent_group</strong></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups/parent_group" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>parent group for keyed group.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-keyed_groups/prefix"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-prefix"><strong>prefix</strong></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups/prefix" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A keyed group name will start with this prefix.</p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-keyed_groups/separator"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-separator"><strong>separator</strong></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups/separator" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>separator used to build the keyed group name.</p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code></p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-keyed_groups/trailing_separator"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-trailing-separator"><strong>trailing_separator</strong></p>
+<a class="ansibleOptionLink" href="#parameter-keyed_groups/trailing_separator" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><em class="ansible-option-versionadded">added in ansible-core 2.12</em></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Set this option to <code class="ansible-value docutils literal notranslate"><span class="pre">false</span></code> to omit the <code class="ansible-option docutils literal notranslate"><strong><a class="reference internal" href="#ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-separator"><span class="std std-ref"><span class="pre">keyed_groups[].separator</span></span></a></strong></code> after the host variable when the value is <code class="ansible-value docutils literal notranslate"><span class="pre">None</span></code> or an empty string.</p>
+<p>This option is mutually exclusive with <code class="ansible-option docutils literal notranslate"><strong><a class="reference internal" href="#ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups-default-value"><span class="std std-ref"><span class="pre">keyed_groups[].default_value</span></span></a></strong></code>.</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">true</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+</ul>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-leading_separator"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-leading-separator"><strong>leading_separator</strong></p>
+<a class="ansibleOptionLink" href="#parameter-leading_separator" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><em class="ansible-option-versionadded">added in ansible-core 2.11</em></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Use in conjunction with <code class="ansible-option docutils literal notranslate"><strong><a class="reference internal" href="#ansible-collections-cisco-meraki-meraki-inventory-parameter-keyed-groups"><span class="std std-ref"><span class="pre">keyed_groups</span></span></a></strong></code>.</p>
+<p>By default, a keyed group that does not have a prefix or a separator provided will have a name that starts with an underscore.</p>
+<p>This is because the default prefix is <code class="ansible-value docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> and the default separator is <code class="ansible-value docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code>.</p>
+<p>Set this option to <code class="ansible-value docutils literal notranslate"><span class="pre">false</span></code> to omit the leading underscore (or other separator) if no prefix is given.</p>
+<p>If the group name is derived from a mapping the separator is still used to concatenate the items.</p>
+<p>To not use a separator in the group name at all, set the separator for the keyed group to an empty string instead.</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">true</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_action_batch_retry_wait_time"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-action-batch-retry-wait-time"><strong>meraki_action_batch_retry_wait_time</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_action_batch_retry_wait_time (integer), action batch concurrency error retry wait time</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id7"><span class="problematic" id="id8">:ansible-option-default:`60`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">60</span></code></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_api_key"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-api-key"><strong>meraki_api_key</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_api_key (string), API key generated in dashboard; can also be set as an environment variable MERAKI_DASHBOARD_API_KEY</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_base_url"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-base-url"><strong>meraki_base_url</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_base_url (string), preceding all endpoint resources</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id9"><span class="problematic" id="id10">:ansible-option-default:`&quot;https://api.meraki.com/api/v1&quot;`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;https://api.meraki.com/api/v1&quot;</span></code></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_be_geo_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-be-geo-id"><strong>meraki_be_geo_id</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_be_geo_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE_GEO_ID</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id11"><span class="problematic" id="id12">:ansible-option-default:`&quot;&quot;`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_certificate_path"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-certificate-path"><strong>meraki_certificate_path</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_certificate_path (string), path for TLS/SSL certificate verification if behind local proxy</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id13"><span class="problematic" id="id14">:ansible-option-default:`&quot;&quot;`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_inherit_logging_config"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-inherit-logging-config"><strong>meraki_inherit_logging_config</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_inherit_logging_config (boolean), Inherits your own logger instance</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id15"><span class="problematic" id="id16">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id17"><span class="problematic" id="id18">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_log_file_prefix"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-log-file-prefix"><strong>meraki_log_file_prefix</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_log_file_prefix (string), log file name appended with date and timestamp</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id19"><span class="problematic" id="id20">:ansible-option-default:`&quot;meraki\_api\_&quot;`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;meraki_api_&quot;</span></code></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_log_path"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-log-path"><strong>meraki_log_path</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>log_path (string), path to output log; by default, working directory of script if not specified</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id21"><span class="problematic" id="id22">:ansible-option-default:`&quot;&quot;`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_maximum_retries"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-maximum-retries"><strong>meraki_maximum_retries</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_maximum_retries (integer), retry up to this many times when encountering 429s or other server-side errors</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id23"><span class="problematic" id="id24">:ansible-option-default:`2`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">2</span></code></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_nginx_429_retry_wait_time"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-nginx-429-retry-wait-time"><strong>meraki_nginx_429_retry_wait_time</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_nginx_429_retry_wait_time (integer), Nginx 429 retry wait time</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id25"><span class="problematic" id="id26">:ansible-option-default:`60`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">60</span></code></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_org_id"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-org-id"><strong>meraki_org_id</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_org_id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The organization ID to fetch the networks and devices from.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_output_log"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-output-log"><strong>meraki_output_log</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_output_log (boolean), create an output log file?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">true</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_print_console"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-print-console"><strong>meraki_print_console</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_print_console (boolean), print logging output to console?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">true</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_requests_proxy"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-requests-proxy"><strong>meraki_requests_proxy</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_requests_proxy (string), proxy server and port, if needed, for HTTPS</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id35"><span class="problematic" id="id36">:ansible-option-default:`&quot;&quot;`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-retry-4xx-error"><strong>meraki_retry_4xx_error</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_retry_4xx_error (boolean), retry if encountering other 4XX error (besides 429)?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_retry_4xx_error_wait_time"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-retry-4xx-error-wait-time"><strong>meraki_retry_4xx_error_wait_time</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_retry_4xx_error_wait_time (integer), other 4XX error retry wait time</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id41"><span class="problematic" id="id42">:ansible-option-default:`60`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">60</span></code></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_simulate"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-simulate"><strong>meraki_simulate</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_simulate (boolean), simulate POST/PUT/DELETE calls to prevent changes?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_single_request_timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-single-request-timeout"><strong>meraki_single_request_timeout</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_single_request_timeout (integer), maximum number of seconds for each API call</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id47"><span class="problematic" id="id48">:ansible-option-default:`60`</span></a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">60</span></code></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-meraki_suppress_logging"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-suppress-logging"><strong>meraki_suppress_logging</strong></p>
 <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>meraki_suppress_logging (boolean), disable all logging? you're on your own then!</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry:`true`</span></a></p></li>
-</ul>
-</div></td>
-</tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-use-iterator-for-get-pages"><strong>meraki_use_iterator_for_get_pages</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-</div></td>
-<td><div class="ansible-option-cell"><p>meraki_use_iterator_for_get_pages (boolean), list* methods will return an iterator with each object instead of a complete list with all items</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
-<ul class="simple">
-<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-wait-on-rate-limit"><strong>meraki_wait_on_rate_limit</strong></p>
-<a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<div class="ansibleOptionAnchor" id="parameter-meraki_use_iterator_for_get_pages"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-use-iterator-for-get-pages"><strong>meraki_use_iterator_for_get_pages</strong></p>
+<a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>meraki_wait_on_rate_limit (boolean), retry if 429 rate limit error encountered?</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<td><div class="ansible-option-cell"><p>meraki_use_iterator_for_get_pages (boolean), list* methods will return an iterator with each object instead of a complete list with all items</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-meraki_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-meraki-wait-on-rate-limit"><strong>meraki_wait_on_rate_limit</strong></p>
+<a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>meraki_wait_on_rate_limit (boolean), retry if 429 rate limit error encountered?</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">true</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-strict"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-strict"><strong>strict</strong></p>
 <a class="ansibleOptionLink" href="#parameter-strict" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>If <code class="docutils literal notranslate"><span class="pre">yes</span></code> make invalid entries a fatal error, otherwise skip and continue.</p>
+<td><div class="ansible-option-cell"><p>If <code class="ansible-value docutils literal notranslate"><span class="pre">yes</span></code> make invalid entries a fatal error, otherwise skip and continue.</p>
 <p>Since it is possible to use facts in the expressions they might not always be available and we ignore those errors by default.</p>
-<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
 <ul class="simple">
-<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-use_extra_vars"></div><p class="ansible-option-title" id="ansible-collections-cisco-meraki-meraki-inventory-parameter-use-extra-vars"><strong>use_extra_vars</strong></p>
+<a class="ansibleOptionLink" href="#parameter-use_extra_vars" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><em class="ansible-option-versionadded">added in ansible-core 2.11</em></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Merge extra vars into the available variables for composition (highest precedence).</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+<p class="ansible-option-line"><strong class="ansible-option-configuration">Configuration:</strong></p>
+<ul>
+<li><p>INI entry:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[inventory_plugins]</span>
+<span class="na">use_extra_vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+</pre></div>
+</div>
+</li>
+<li><p>Environment variable: <span class="target" id="index-0"></span><a class="reference internal" href="environment_variables.html#envvar-ANSIBLE_INVENTORY_USE_EXTRA_VARS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ANSIBLE_INVENTORY_USE_EXTRA_VARS</span></code></a></p></li>
 </ul>
 </div></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Configuration entries listed above for each entry type (Ansible variable, environment variable, and so on) have a low to high priority order.
+For example, a variable that is lower in the list will override a variable that is higher up.
+The entry types are also ordered by precedence from low to high priority order.
+For example, an ansible.cfg entry (further up in the list) is overwritten by an Ansible variable (further down in the list).</p>
+</div>
+</section>
+<section id="notes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Inventories are not finalized at this stage, so the auto populated <code class="docutils literal notranslate"><span class="pre">all</span></code> and <code class="docutils literal notranslate"><span class="pre">ungrouped</span></code> groups will only reflect what previous inventory sources explicitly added to them.</p></li>
+<li><p>Runtime 'magic variables' are not available during inventory construction. For example, <code class="docutils literal notranslate"><span class="pre">groups</span></code> and <code class="docutils literal notranslate"><span class="pre">hostvars</span></code> do not exist yet.</p></li>
+</ul>
+</div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id68" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="c1"># cisco_meraki.yml</span>
 <span class="nn">---</span>
 <span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.meraki.meraki</span>
-<span class="nt">meraki_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;enter</span><span class="nv"> </span><span class="s">Meraki</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">MERAKI_DASHBOARD_API_KEY</span><span class="nv"> </span><span class="s">env</span><span class="nv"> </span><span class="s">var&gt;&quot;</span>
-<span class="nt">meraki_org_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&lt;enter</span><span class="nv"> </span><span class="s">Meraki</span><span class="nv"> </span><span class="s">Org</span><span class="nv"> </span><span class="s">ID&gt;&quot;</span>
+<span class="nt">meraki_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;enter</span><span class="nv"> </span><span class="s">Meraki</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">MERAKI_DASHBOARD_API_KEY</span><span class="nv"> </span><span class="s">env</span><span class="nv"> </span><span class="s">var&gt;"</span>
+<span class="nt">meraki_org_id</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;enter</span><span class="nv"> </span><span class="s">Meraki</span><span class="nv"> </span><span class="s">Org</span><span class="nv"> </span><span class="s">ID&gt;"</span>
 <span class="nt">keyed_groups</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># group devices based on network ID</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meraki_network_id</span>
@@ -387,21 +502,18 @@ see <a class="reference internal" href="#ansible-collections-cisco-meraki-meraki
 </pre></div>
 </div>
 <section id="authors">
-<h3>Authors<a class="headerlink" href="#authors" title="Permalink to this heading"></a></h3>
+<h3>Authors<a class="headerlink" href="#authors" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Nilashish Chakraborty (&#64;NilashishC)</p></li>
 </ul>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Configuration entries for each entry type have a low to high priority order. For example, a variable that is lower in the list will override a variable that is higher up.</p>
-</div>
 </section>
 <section id="collection-links">
-<h3>Collection links<a class="headerlink" href="#collection-links" title="Permalink to this heading"></a></h3>
-<p class="ansible-links">
-  <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-  <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-</p></section>
+<h3>Collection links<a class="headerlink" href="#collection-links" title="Link to this heading"></a></h3>
+<ul class="ansible-links">
+<li><span><a aria-role="button" class="ansible-link reference external" href="https://github.com/meraki/dashboard-api-ansible/issues" rel="noopener external" target="_blank">Issue Tracker</a></span></li>
+<li><span><a aria-role="button" class="ansible-link reference external" href="https://github.com/meraki/dashboard-api-ansible" rel="noopener external" target="_blank">Repository (Sources)</a></span></li>
+</ul>
+</section>
 </section>
 </section>
 

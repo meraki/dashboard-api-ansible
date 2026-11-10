@@ -1,4 +1,3 @@
-
 .. Document meta
 
 :orphan:
@@ -6,33 +5,14 @@
 .. |antsibull-internal-nbsp| unicode:: 0xA0
     :trim:
 
-.. role:: ansible-attribute-support-label
-.. role:: ansible-attribute-support-property
-.. role:: ansible-attribute-support-full
-.. role:: ansible-attribute-support-partial
-.. role:: ansible-attribute-support-none
-.. role:: ansible-attribute-support-na
-.. role:: ansible-option-type
-.. role:: ansible-option-elements
-.. role:: ansible-option-required
-.. role:: ansible-option-versionadded
-.. role:: ansible-option-aliases
-.. role:: ansible-option-choices
-.. role:: ansible-option-choices-default-mark
-.. role:: ansible-option-default-bold
-.. role:: ansible-option-configuration
-.. role:: ansible-option-returned-bold
-.. role:: ansible-option-sample-bold
+.. meta::
+  :antsibull-docs: 2.28.0
 
 .. Anchors
 
 .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module:
 
 .. Anchors: short name for ansible.builtin
-
-.. Anchors: aliases
-
-
 
 .. Title
 
@@ -42,9 +22,12 @@ cisco.meraki.networks_switch_access_policies module -- Resource module for netwo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/cisco/meraki>`_ (version 2.25.1).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
 
-    To install it, use: :code:`ansible-galaxy collection install cisco.meraki`.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible\-galaxy collection install cisco.meraki`.
     You need further requirements to be able to use this module,
     see :ref:`Requirements <ansible_collections.cisco.meraki.networks_switch_access_policies_module_requirements>` for details.
 
@@ -68,8 +51,8 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource networks \_switch \_access \_policies. - \> Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
-- Delete an access policy for a switch network. - \> Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+- Manage operations create, update and delete of the resource networks \_switch \_access \_policies. \- \> Create an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
+- Delete an access policy for a switch network. \- \> Update an access policy for a switch network. If you would like to enable Meraki Authentication, set radiusServers to empty array.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -98,12 +81,13 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Parameter
     - Comments
@@ -123,9 +107,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-accessPolicyNumber" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -157,9 +141,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-accessPolicyType" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -169,7 +153,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Access Type of the policy. Automatically 'Hybrid authentication' when hostMode is 'Multi-Domain'.
+      Access Type of the policy. Automatically 'Hybrid authentication' when hostMode is 'Multi\-Domain'.
 
 
       .. raw:: html
@@ -191,9 +175,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot1x" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -209,11 +193,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-dot1x/controlDirection"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-dot1x/controldirection:
 
@@ -225,13 +213,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-dot1x/controlDirection" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -260,9 +252,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-guestGroupPolicyId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -294,9 +286,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-guestPortBouncing" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -306,7 +298,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.
+      If enabled, Meraki devices will periodically send access\-request messages to these RADIUS servers.
 
 
       .. rst-class:: ansible-option-line
@@ -336,9 +328,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-guestSgtId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -370,9 +362,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-guestVlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -404,9 +396,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-hostMode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -438,9 +430,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-increaseAccessSpeed" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -450,7 +442,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Enabling this option will make switches execute 802.1X and MAC-bypass authentication simultaneously so that clients authenticate faster. Only required when accessPolicyType is 'Hybrid Authentication.
+      Enabling this option will make switches execute 802.1X and MAC\-bypass authentication simultaneously so that clients authenticate faster. Only required when accessPolicyType is 'Hybrid Authentication.
 
 
       .. rst-class:: ansible-option-line
@@ -480,9 +472,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_action_batch_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -518,9 +510,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_api_key" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+        :ansible-option-type:`string` / :ansible-option-required:`required`
 
       .. raw:: html
 
@@ -552,9 +544,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_base_url" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -590,9 +582,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_be_geo_id" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -603,6 +595,44 @@ Parameters
         <div class="ansible-option-cell">
 
       meraki\_be\_geo\_id (string), optional partner identifier for API usage tracking; can also be set as an environment variable BE\_GEO\_ID
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`""`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-meraki_caller"></div>
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-meraki_caller:
+
+      .. rst-class:: ansible-option-title
+
+      **meraki_caller**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-meraki_caller" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      meraki\_caller (string), optional identifier for API usage tracking; can also be set as an environment variable MERAKI\_PYTHON\_SDK\_CALLER
 
 
       .. rst-class:: ansible-option-line
@@ -628,9 +658,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_certificate_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -666,9 +696,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_inherit_logging_config" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -708,9 +738,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_file_prefix" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -746,9 +776,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_log_path" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -784,9 +814,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_maximum_retries" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -796,7 +826,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server-side errors
+      meraki\_maximum\_retries (integer), retry up to this many times when encountering 429s or other server\-side errors
 
 
       .. rst-class:: ansible-option-line
@@ -822,9 +852,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_nginx_429_retry_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -860,9 +890,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_output_log" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -902,9 +932,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_print_console" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -944,9 +974,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_requests_proxy" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -982,9 +1012,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1024,9 +1054,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_retry_4xx_error_wait_time" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1062,9 +1092,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_simulate" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1104,9 +1134,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_single_request_timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
@@ -1142,9 +1172,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_suppress_logging" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1184,9 +1214,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_use_iterator_for_get_pages" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1226,9 +1256,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-meraki_wait_on_rate_limit" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -1268,9 +1298,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1302,9 +1332,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-networkId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -1336,9 +1366,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -1354,11 +1384,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/authentication"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/authentication:
 
@@ -1370,13 +1404,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/authentication" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1388,11 +1426,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/authentication/mode"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/authentication/mode:
 
@@ -1404,19 +1446,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/authentication/mode" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Authentication mode of the policy ( Open | Closed ).
+      Authentication mode of the policy ( Open \| Closed ).
 
 
       .. raw:: html
@@ -1429,6 +1475,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/cache"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/cache:
 
       .. rst-class:: ansible-option-title
@@ -1439,13 +1489,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/cache" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1457,11 +1511,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/cache/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/cache/enabled:
 
@@ -1473,13 +1531,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/cache/enabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1505,6 +1567,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/cache/timeout"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/cache/timeout:
 
       .. rst-class:: ansible-option-title
@@ -1515,13 +1581,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/cache/timeout" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1540,6 +1610,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth:
 
       .. rst-class:: ansible-option-title
@@ -1550,13 +1624,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1568,11 +1646,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataGroupPolicyId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datagrouppolicyid:
 
@@ -1584,13 +1666,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/dataGroupPolicyId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1608,6 +1694,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataSgtId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datasgtid:
 
       .. rst-class:: ansible-option-title
@@ -1618,13 +1708,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/dataSgtId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1642,6 +1736,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/dataVlanId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/datavlanid:
 
       .. rst-class:: ansible-option-title
@@ -1652,19 +1750,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/dataVlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+      VLAN that clients who use data will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi\-Auth.
 
 
       .. raw:: html
@@ -1676,6 +1778,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/suspendPortBounce"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/suspendportbounce:
 
       .. rst-class:: ansible-option-title
@@ -1686,13 +1792,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/suspendPortBounce" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1718,6 +1828,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/voiceGroupPolicyId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/voicegrouppolicyid:
 
       .. rst-class:: ansible-option-title
@@ -1728,13 +1842,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/voiceGroupPolicyId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1752,6 +1870,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/voiceSgtId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/voicesgtid:
 
       .. rst-class:: ansible-option-title
@@ -1762,13 +1884,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/voiceSgtId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1786,6 +1912,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/criticalAuth/voiceVlanId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/criticalauth/voicevlanid:
 
       .. rst-class:: ansible-option-title
@@ -1796,19 +1926,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/criticalAuth/voiceVlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+      VLAN that clients who use voice will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi\-Auth.
 
 
       .. raw:: html
@@ -1821,6 +1955,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthGroupPolicyId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthgrouppolicyid:
 
       .. rst-class:: ansible-option-title
@@ -1831,13 +1969,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/failedAuthGroupPolicyId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1855,6 +1997,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthSgtId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthsgtid:
 
       .. rst-class:: ansible-option-title
@@ -1865,13 +2011,17 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/failedAuthSgtId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
@@ -1889,6 +2039,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/failedAuthVlanId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/failedauthvlanid:
 
       .. rst-class:: ansible-option-title
@@ -1899,19 +2053,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/failedAuthVlanId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi-Auth.
+      VLAN that clients will be placed on when RADIUS authentication fails. Will be null if hostMode is Multi\-Auth.
 
 
       .. raw:: html
@@ -1923,6 +2081,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/preAuthenticationGroupPolicyId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/preauthenticationgrouppolicyid:
 
       .. rst-class:: ansible-option-title
@@ -1933,19 +2095,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/preAuthenticationGroupPolicyId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Group policy Number for pre-authentication group policy.
+      Group policy Number for pre\-authentication group policy.
 
 
       .. raw:: html
@@ -1957,6 +2123,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radius/reAuthenticationInterval"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radius/reauthenticationinterval:
 
       .. rst-class:: ansible-option-title
@@ -1967,19 +2137,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radius/reAuthenticationInterval" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Re-authentication period in seconds. Will be null if hostMode is Multi-Auth.
+      Re\-authentication period in seconds. Will be null if hostMode is Multi\-Auth.
 
 
       .. raw:: html
@@ -2002,9 +2176,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2014,7 +2188,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Enable to send start, interim-update and stop messages to a configured RADIUS accounting server for tracking connected clients.
+      Enable to send start, interim\-update and stop messages to a configured RADIUS accounting server for tracking connected clients.
 
 
       .. rst-class:: ansible-option-line
@@ -2044,9 +2218,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -2062,11 +2236,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/host"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/host:
 
@@ -2078,19 +2256,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Public IP address of the RADIUS accounting server.
+      Public IP address or fully\-qualified domain name of the RADIUS accounting server.
 
 
       .. raw:: html
@@ -2102,6 +2284,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/organizationRadiusServerId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/organizationradiusserverid:
 
       .. rst-class:: ansible-option-title
@@ -2112,19 +2298,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/organizationRadiusServerId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Organization wide RADIUS server ID. If this field is provided, the host, port and secret field will be ignored.
+      Organization wide RADIUS server ID. Omit host, port and secret when this field is provided. If supplied, host and port must match the organization\-wide server; secret is ignored.
 
 
       .. raw:: html
@@ -2136,6 +2326,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/port"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/port:
 
       .. rst-class:: ansible-option-title
@@ -2146,19 +2340,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/port" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UDP port that the RADIUS Accounting server listens on for access requests.
+      Port that the RADIUS Accounting server listens on for access requests.
 
 
       .. raw:: html
@@ -2168,7 +2366,104 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/radsec"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/radsec:
+
+      .. rst-class:: ansible-option-title
+
+      **radsec**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/radsec" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RadSec settings for this RADIUS accounting server assignment. If omitted, a copied server preserves its current transport and a new server uses RADIUS over UDP.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/radsec/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/radsec/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/radsec/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether this RADIUS accounting server assignment is configured to use RadSec.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/secret"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/secret:
 
@@ -2180,19 +2475,65 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/secret" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       RADIUS client shared secret.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusAccountingServers/serverId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusaccountingservers/serverid:
+
+      .. rst-class:: ansible-option-title
+
+      **serverId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusAccountingServers/serverId" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique ID of an existing Access Policy accounting server to copy.
 
 
       .. raw:: html
@@ -2215,9 +2556,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusCoaSupportEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2227,7 +2568,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Change of authentication for RADIUS re-authentication and disconnection.
+      Change of authentication for RADIUS re\-authentication and disconnection.
 
 
       .. rst-class:: ansible-option-line
@@ -2257,9 +2598,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusGroupAttribute" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -2291,9 +2632,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -2309,11 +2650,15 @@ Parameters
       .. raw:: html
 
         </div>
-    
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/host"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/host:
 
@@ -2325,19 +2670,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/host" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Public IP address of the RADIUS server.
+      Public IP address or fully\-qualified domain name of the RADIUS server.
 
 
       .. raw:: html
@@ -2349,6 +2698,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/organizationRadiusServerId"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/organizationradiusserverid:
 
       .. rst-class:: ansible-option-title
@@ -2359,19 +2712,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/organizationRadiusServerId" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Organization wide RADIUS server ID. If this field is provided, the host, port and secret field will be ignored.
+      Organization wide RADIUS server ID. Omit host, port and secret when this field is provided. If supplied, host and port must match the organization\-wide server; secret is ignored.
 
 
       .. raw:: html
@@ -2383,6 +2740,10 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/port"></div>
 
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/port:
 
       .. rst-class:: ansible-option-title
@@ -2393,19 +2754,23 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/port" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`integer`
+        :ansible-option-type:`integer`
 
       .. raw:: html
 
         </div>
 
+      .. raw:: latex
+
+        \end{minipage}
+
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      UDP port that the RADIUS server listens on for access requests.
+      Port that the RADIUS server listens on for access requests.
 
 
       .. raw:: html
@@ -2415,7 +2780,104 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers/radsec"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/radsec:
+
+      .. rst-class:: ansible-option-title
+
+      **radsec**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers/radsec" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RadSec settings for this RADIUS server assignment. If omitted, a copied server preserves its current transport and a new server uses RADIUS over UDP.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers/radsec/enabled"></div>
+
+      .. raw:: latex
+
+        \hspace{0.04\textwidth}\begin{minipage}[t]{0.28\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/radsec/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers/radsec/enabled" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Whether this RADIUS server assignment is configured to use RadSec.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-radiusServers/secret"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
 
       .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/secret:
 
@@ -2427,19 +2889,65 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusServers/secret" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`string`
+        :ansible-option-type:`string`
 
       .. raw:: html
 
         </div>
+
+      .. raw:: latex
+
+        \end{minipage}
 
     - .. raw:: html
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       RADIUS client shared secret.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radiusServers/serverId"></div>
+
+      .. raw:: latex
+
+        \hspace{0.02\textwidth}\begin{minipage}[t]{0.3\textwidth}
+
+      .. _ansible_collections.cisco.meraki.networks_switch_access_policies_module__parameter-radiusservers/serverid:
+
+      .. rst-class:: ansible-option-title
+
+      **serverId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radiusServers/serverId" title="Permalink to this option"></a>
+
+      .. ansible-option-type-line::
+
+        :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+      .. raw:: latex
+
+        \end{minipage}
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique ID of an existing Access Policy authentication server to copy.
 
 
       .. raw:: html
@@ -2462,9 +2970,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-radiusTestingEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2474,7 +2982,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      If enabled, Meraki devices will periodically send access-request messages to these RADIUS servers.
+      If enabled, Meraki devices will periodically send access\-request messages to these RADIUS servers.
 
 
       .. rst-class:: ansible-option-line
@@ -2504,9 +3012,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-urlRedirectWalledGardenEnabled" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2546,9 +3054,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-urlRedirectWalledGardenRanges" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+        :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
 
       .. raw:: html
 
@@ -2580,9 +3088,9 @@ Parameters
 
         <a class="ansibleOptionLink" href="#parameter-voiceVlanClients" title="Permalink to this option"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`boolean`
+        :ansible-option-type:`boolean`
 
       .. raw:: html
 
@@ -2592,7 +3100,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      CDP/LLDP capable voice clients will be able to use this VLAN. Automatically true when hostMode is 'Multi-Domain'.
+      CDP/LLDP capable voice clients will be able to use this VLAN. Automatically true when hostMode is 'Multi\-Domain'.
 
 
       .. rst-class:: ansible-option-line
@@ -2619,10 +3127,10 @@ Notes
 .. note::
    - SDK Method used are switch.Switch.create\_network\_switch\_access\_policy, switch.Switch.delete\_network\_switch\_access\_policy, switch.Switch.update\_network\_switch\_access\_policy,
    - Paths used are post /networks/{networkId}/switch/accessPolicies, delete /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber}, put /networks/{networkId}/switch/accessPolicies/{accessPolicyNumber},
-   - Does not support \ :literal:`check\_mode`\ 
+   - Does not support :literal:`check\_mode`
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager
    - from Cisco Dashboard API Python(SDK)
-   - The parameters starting with dnac\_ are used by the Cisco DNAC Python SDK to establish the connection
+   - The parameters starting with meraki\_ are used by the Cisco Meraki Python SDK to establish the connection
 
 .. Seealso
 
@@ -2645,7 +3153,6 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
     - name: Create
       cisco.meraki.networks_switch_access_policies:
         meraki_api_key: "{{ meraki_api_key }}"
@@ -2705,14 +3212,20 @@ Examples
           - host: 1.2.3.4
             organizationRadiusServerId: '42'
             port: 22
+            radsec:
+              enabled: true
             secret: secret
+            serverId: '2'
         radiusCoaSupportEnabled: false
         radiusGroupAttribute: '11'
         radiusServers:
           - host: 1.2.3.4
             organizationRadiusServerId: '42'
             port: 22
+            radsec:
+              enabled: false
             secret: secret
+            serverId: '1'
         radiusTestingEnabled: false
         urlRedirectWalledGardenEnabled: true
         urlRedirectWalledGardenRanges:
@@ -2778,6 +3291,8 @@ Examples
           - host: 1.2.3.4
             organizationRadiusServerId: '42'
             port: 22
+            radsec:
+              enabled: true
             secret: secret
             serverId: '2'
         radiusCoaSupportEnabled: false
@@ -2786,6 +3301,8 @@ Examples
           - host: 1.2.3.4
             organizationRadiusServerId: '42'
             port: 22
+            radsec:
+              enabled: false
             secret: secret
             serverId: '1'
         radiusTestingEnabled: false
@@ -2822,7 +3339,6 @@ Examples
 
 
 
-
 .. Facts
 
 
@@ -2832,12 +3348,13 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. rst-class:: ansible-option-table
+.. tabularcolumns:: \X{1}{3}\X{2}{3}
 
 .. list-table::
   :width: 100%
   :widths: auto
   :header-rows: 1
+  :class: longtable ansible-option-table
 
   * - Key
     - Description
@@ -2857,9 +3374,9 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <a class="ansibleOptionLink" href="#return-meraki_response" title="Permalink to this return value"></a>
 
-      .. rst-class:: ansible-option-type-line
+      .. ansible-option-type-line::
 
-      :ansible-option-type:`dictionary`
+        :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -2879,7 +3396,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": "string", "accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": {}}, "enforceRadiusMonitoring": true, "guestGroupPolicyId": "string", "guestPortBouncing": true, "guestSgtId": 0, "guestVlanId": {}, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"authentication": {"mode": "string"}, "cache": {"enabled": true, "timeout": 0}, "criticalAuth": {"dataGroupPolicyId": "string", "dataSgtId": 0, "dataVlanId": {}, "suspendPortBounce": true, "voiceGroupPolicyId": "string", "voiceSgtId": 0, "voiceVlanId": {}}, "failedAuthGroupPolicyId": "string", "failedAuthSgtId": 0, "failedAuthVlanId": {}, "preAuthenticationGroupPolicyId": "string", "reAuthenticationInterval": {}}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "serverId": "string"}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessPolicyNumber": "string", "accessPolicyType": "string", "counts": {"ports": {"withThisPolicy": 0}}, "dot1x": {"controlDirection": {}}, "enforceRadiusMonitoring": true, "guestGroupPolicyId": "string", "guestPortBouncing": true, "guestSgtId": 0, "guestVlanId": {}, "hostMode": "string", "increaseAccessSpeed": true, "name": "string", "radius": {"authentication": {"mode": "string"}, "cache": {"enabled": true, "timeout": 0}, "criticalAuth": {"dataGroupPolicyId": "string", "dataSgtId": 0, "dataVlanId": {}, "suspendPortBounce": true, "voiceGroupPolicyId": "string", "voiceSgtId": 0, "voiceVlanId": {}}, "failedAuthGroupPolicyId": "string", "failedAuthSgtId": 0, "failedAuthVlanId": {}, "preAuthenticationGroupPolicyId": {}, "reAuthenticationInterval": {}}, "radiusAccountingEnabled": true, "radiusAccountingServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "radsec": {"enabled": true}, "serverId": "string"}], "radiusCoaSupportEnabled": true, "radiusGroupAttribute": "string", "radiusServers": [{"host": "string", "organizationRadiusServerId": "string", "port": 0, "radsec": {"enabled": true}, "serverId": "string"}], "radiusTestingEnabled": true, "urlRedirectWalledGardenEnabled": true, "urlRedirectWalledGardenRanges": ["string"], "voiceVlanClients": true}`
 
 
       .. raw:: html
@@ -2899,18 +3416,19 @@ Authors
 - Francisco Munoz (@fmunoz)
 
 
-
 .. Extra links
 
 Collection links
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
+.. ansible-links::
 
-  <p class="ansible-links">
-    <a href="https://github.com/meraki/dashboard-api-ansible/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
-    <a href="https://github.com/meraki/dashboard-api-ansible" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
-  </p>
+  - title: "Issue Tracker"
+    url: "https://github.com/meraki/dashboard-api-ansible/issues"
+    external: true
+  - title: "Repository (Sources)"
+    url: "https://github.com/meraki/dashboard-api-ansible"
+    external: true
+
 
 .. Parsing errors
-
