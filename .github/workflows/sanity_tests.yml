@@ -14,6 +14,8 @@ jobs:
     strategy:
       matrix:
         include:
+          - ansible: stable-2.16
+            python-version: '3.12'
           - ansible: stable-2.17
             python-version: '3.12'
           - ansible: stable-2.18

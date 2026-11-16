@@ -15,7 +15,7 @@ except ImportError:
 else:
     MERAKI_SDK_IS_INSTALLED = True
 from ansible.module_utils.basic import env_fallback
-from ansible.module_utils._text import to_native
+from ansible.module_utils.common.text.converters import to_native
 try:
     from ansible.errors import AnsibleActionFail
 except ImportError:
@@ -264,7 +264,7 @@ class MERAKI(object):
                 suppress_logging=params.get("meraki_suppress_logging"),
                 simulate=params.get("meraki_simulate"),
                 be_geo_id=params.get("meraki_be_geo_id"),
-                caller=params.get("meraki_caller") or "MerakiAnsibleCollection/2.26.0 Cisco",
+                caller=params.get("meraki_caller") or "MerakiAnsibleCollection/2.26.1 Cisco",
                 use_iterator_for_get_pages=params.get(
                     "meraki_use_iterator_for_get_pages"),
                 inherit_logging_config=params.get(

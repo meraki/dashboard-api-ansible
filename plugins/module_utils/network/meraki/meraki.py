@@ -12,7 +12,7 @@ from ansible.module_utils.basic import json, env_fallback
 from ansible.module_utils.common.dict_transformations import camel_dict_to_snake_dict, snake_dict_to_camel_dict, recursive_diff
 from ansible.module_utils.urls import fetch_url
 from ansible.module_utils.six.moves.urllib.parse import urlencode
-from ansible.module_utils._text import to_native
+from ansible.module_utils.common.text.converters import to_native
 
 
 RATE_LIMIT_RETRY_MULTIPLIER = 3

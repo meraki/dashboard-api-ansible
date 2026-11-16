@@ -6,3 +6,9 @@ exclude_paths:
   - .github/
   - .ansible-lint
   - .ansible/
+
+# Opt-in rule, not part of any profile: flags passwords that could be logged
+enable_list:
+  - no-log-password
+warn_list:
+  - no-log-password

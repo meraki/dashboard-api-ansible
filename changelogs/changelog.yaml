@@ -1915,3 +1915,25 @@ releases:
           organizations_sase_connectors_batch_create - The corresponding endpoints were removed from the Dashboard API (present in v1.69.0, absent since
           v1.72.0), so these modules can no longer succeed."
     release_date: "2026-11-09"
+  2.26.1:
+    changes:
+      release_summary: "Maintenance release that addresses the Red Hat Automation Hub certification review: it raises the minimum ansible-core
+        version, removes development files from the published artifact and fixes documentation issues."
+      breaking_changes:
+        - "The minimum supported ansible-core version is now 2.16.0 (`requires_ansible: '>=2.16.0'` in meta/runtime.yml). ansible-core 2.15 is no longer
+          supported by Ansible Automation Platform."
+      minor_changes:
+        - "galaxy.yml - Declared the collection license with the SPDX identifier `GPL-3.0-or-later`, so the license type is shown on Automation Hub and
+          Galaxy."
+        - "galaxy.yml - Added `build_ignore` entries so development and CI files (tests, docs, scripts, GitHub workflows, helper scripts such as
+          run_all_playbooks.py, local logs and local credential files) are no longer included in the collection artifact."
+        - "tests/config.yml - Declared `python_requires: '>=3.11'`, the minimum Python version required by the Meraki Python SDK 4.x."
+        - "plugin_utils/meraki, module_utils/network/meraki/meraki - Import `to_native` from `ansible.module_utils.common.text.converters` instead of
+          the deprecated `ansible.module_utils._text`, which is removed in ansible-core 2.24."
+        - "CI - Added ansible-core 2.16 to the sanity test matrix and updated the partner certification checker workflow to v6.0.0."
+      bugfixes:
+        - "networks_sensor_mqtt_brokers - The `mqttBrokerId` option was documented with an invalid `type: null`, which broke its documentation page.
+          It is now documented as `type: str`, matching the argument spec."
+        - "README - Removed the outdated `Ansible >= 2.14` requirement and compatibility note (the minimum is declared in meta/runtime.yml) and updated the
+          requirements to Meraki Python SDK v4.4.0 or newer and Python 3.11 or newer."
+    release_date: "2026-11-16"
