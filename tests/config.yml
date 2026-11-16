@@ -1,0 +1,4 @@
+---
+modules:
+  # The Meraki Python SDK (4.x) requires Python 3.11 or newer
+  python_requires: '>=3.11'

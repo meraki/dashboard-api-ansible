@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: meraki
-version: 2.26.0
+version: 2.26.1
 readme: README.md
 authors:
   - Francisco Muñoz <fmunoz@cloverhound.com>
@@ -9,7 +9,8 @@ authors:
   - William Astorga <wastorga@cloverhound.com>
   - Jose Bogarin <jbogarin@cloverhound.com>
 description: Ansible Modules for Meraki
-license_file: "LICENSE"
+license:
+  - GPL-3.0-or-later
 tags:
   - cisco
   - meraki
@@ -20,7 +21,32 @@ tags:
 dependencies:
   ansible.utils: ">=2.0.0,<7.0"
 build_ignore:
-  - docs/_build/
+  # Development and CI files, not part of the collection content
+  - .github
+  - .vscode
+  - .ansible
+  - .ansible-lint
+  - .gitignore
+  - docs
+  - tests
+  - scripts
+  - workflows
+  - playbooks_logs
+  - playbooks_report.txt
+  - run_all_playbooks.py
+  - run_playbooks.py
+  - fmt.py
+  - Makefile
+  - Pipfile
+  - Pipfile.lock
+  - "*.tar.gz"
+  - "*.log"
+  - "*.DS_Store"
+  - .pytest_cache
+  - .yamlfmt
+  # Local credentials (gitignored), never ship them
+  - playbooks/credentials.yml
+  - playbooks/vars/credentials.yml
 repository: https://github.com/meraki/dashboard-api-ansible
 documentation: https://meraki.github.io/dashboard-api-ansible/
 homepage: https://github.com/meraki/dashboard-api-ansible

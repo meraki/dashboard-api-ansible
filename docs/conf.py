@@ -44,7 +44,7 @@ extensions = [
     'recommonmark',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
-    'ansible_basic_sphinx_ext',
+    'sphinx_antsibull_ext',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -69,7 +69,7 @@ smartquotes = False
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

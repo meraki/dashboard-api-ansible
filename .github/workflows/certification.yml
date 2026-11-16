@@ -35,9 +35,9 @@ concurrency:
 # for each affected version of ansible-core (for example, `tests/sanity/ignore-2.18.txt`) and add corresponding entries.
 jobs:
   call:
-    uses: ansible-collections/partner-certification-checker/.github/workflows/certification-reusable.yml@v4.1.0 # zizmor: ignore[unpinned-uses]
+    uses: ansible-collections/partner-certification-checker/.github/workflows/certification-reusable.yml@v6.0.0 # zizmor: ignore[unpinned-uses]
     # If the minimal Ansible Core version your collection supports Ansible
-    # is greater than 2.16.0, specify it below.
+    # is greater than 2.16.19, specify it below.
     # You might also have to specify Python version supported by that version,
     # see https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix
     # with:
@@ -47,6 +47,6 @@ jobs:
     #   collection-deps: ''
     #   automation-hub: true
     # Uncomment the lines below if you have 'automation-hub: true' and need to install collections from Red Hat Ansible Automation Hub.
-    # This requires setting a repository secret called 'AH_TOKEN' which value contains a Red Hat Ansible Automation Hub token.
+    # This requires setting a repository secret called 'AAP_TOKEN' which value contains a Red Hat Ansible Automation Hub token.
     # secrets:
-    #   AH_TOKEN: ${{ secrets.AH_TOKEN }}
+    #   AAP_TOKEN: ${{ secrets.AAP_TOKEN }}

@@ -21,7 +21,7 @@ options:
     type: bool
   mqttBrokerId:
     description: Networks Sensor Mqtt Brokers's mqttBrokerId.
-    type: null
+    type: str
   networkId:
     description: NetworkId path parameter. Network ID.
     type: str

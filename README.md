@@ -4,9 +4,8 @@ The Meraki-Ansible project provides an Ansible collection for managing and autom
 
 ## Requirements
 
-- Ansible >= 2.14
-- [Python Meraki SDK](https://github.com/meraki/dashboard-api-python) v1.33.0 or newer
-- Python >= 3.6, as the Meraki SDK doesn't support Python version 2.x
+- [Python Meraki SDK](https://github.com/meraki/dashboard-api-python) v4.4.0 or newer
+- Python >= 3.11, required by the Meraki SDK
 
 ## Installation
 
@@ -162,12 +161,12 @@ This collection has been tested against the following environments:
 | 1.69.0                     | 2.24.2                 | 3.0.0               |
 | 1.72.0                     | 2.25.1                 | 4.4.0               |
 | 1.76.0                     | 2.26.0                 | 4.7.0               |
+| 1.76.0                     | 2.26.1                 | 4.7.0               |
 
 *Notes*:
 
 1. The "Python `meraki` SDK version" column shows the minimum recommended version used during testing. Later versions of the SDK may also be used.
 2. The "Cisco Meraki Dashboard API" column corresponds to the `meraki_version` value you should use with this collection.
-3. This collection is not compatible with versions of Ansible before v2.14.
 
 ### Known issues
 
