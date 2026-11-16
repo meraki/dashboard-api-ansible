@@ -7,7 +7,7 @@
 Cisco.Meraki
 ============
 
-Collection version 2.26.0
+Collection version 2.26.1
 
 .. contents::
    :local:
@@ -27,7 +27,7 @@ Ansible Modules for Meraki
 
 **Supported ansible-core versions:**
 
-* 2.15.0 or newer
+* 2.16.0 or newer
 
 .. ansible-links::
 

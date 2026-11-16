@@ -22,7 +22,7 @@ cisco.meraki.organizations_config_templates_switch_profiles_info module -- Infor
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.0).
+    This module is part of the `cisco.meraki collection <https://galaxy.ansible.com/ui/repo/published/cisco/meraki/>`_ (version 2.26.1).
 
     It is not included in ``ansible-core``.
     To check whether it is installed, run :code:`ansible-galaxy collection list`.
